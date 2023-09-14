@@ -19,9 +19,6 @@ let pageNumber = 0
     }
 }
 
-////////////////////////////////////////////////
-
-
 
 //////////// Запрос на Popular Recipes, на рецепты из всех категорий или из конкретной категории(В параметре нужно передать название категории с большой буквы!) //////////////
 
@@ -39,32 +36,46 @@ export const getAllRecipes = async (category) => {
 
 // getAllRecipes("Dessert")
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////// Запрос на мастер-классы для Swiper, на все ингридиенты для select и на все регионы для select //////////////
+
+// 'events'
+// 'ingredients'
+// 'areas'
+// 'categories'
 
 
-//////////// Запрос на название всех категорий //////////////
+export const getAllSomething = async (point) => {
+    if (point === "events") {
+        url = `${BASE_URL}/events`
+    }
+    if (point === "ingredients") {
+        url = `${BASE_URL}/ingredients`
+    }
+    if (point === "areas") {
+        url = `${BASE_URL}/areas`
+    }
+    if (point === "categories") {
+        url = `${BASE_URL}/categories`
+    }
 
-export const getAllCategories = async () => {
-    url = `${BASE_URL}/categories`
     
     await fetchBaseFuction(url)
 }
 
-// getAllCategories()
-
-////////////////////////////////////////////////////////////
+// getAllSomething("events")
 
 
 
+//////////// Запрос на рецепт по айди //////////////
 
-//////////// Запрос на мастер-классы для Swiper //////////////
 
-export const getAllEventsForSwiper = async () => {
-    url = `${BASE_URL}/events`
+export const getRecipeById = async (id) => {
+    url = `${BASE_URL}/recipes/${id}`
     
     await fetchBaseFuction(url)
 }
 
-// getAllEventsForSwiper()
+// getRecipeById("6462a8f74c3d0ddd28897fc1")
 
-//////////////////////////////////////////////////////////////
+
