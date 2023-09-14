@@ -3,6 +3,14 @@
     padding-right: 20px;
 }
 
+@media screen and (min-width:375px) {
+    .header-container {
+        width: 375px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 .nav-menu {
     display: none;
 }
@@ -10,20 +18,32 @@
 .header-flex{
     display: flex;
     justify-content: space-between;
-    padding-top: 24px;
+    align-items: center;
+    padding-top: 15px;
 }
 
 .basket-btn{
-    display: inline-block;
     width: 24px;
     height: 24px;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+}
+
+.basket-icon{
+    fill: #050505;
 }
 
 .burger-btn{
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    margin-left: 14px;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+}
+
+.burger-icon{
+    fill: #050505;
 }
 
 .logo{
@@ -37,6 +57,12 @@
 
 .logo-color{
     color:#9BB537;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    gap: 14px;
 }
 
 .mob-menu{
@@ -58,7 +84,15 @@
     position: absolute;
     top: 20px;
     right: 20px;
+    border: none;
+    background-color: transparent;
+    padding: 0;
 }
+
+.close-icon{
+    fill: #F8F8F8;
+}
+
 
 .mob-menu-nav{
     padding-top: 200px;
@@ -78,16 +112,12 @@
     line-height: normal;
 }
 
-
-@media screen and (min-width:375px) {
-    .header-container {
-        width: 375px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    
+.switcher-icon{
+    fill: #050505;
 }
+
+
+
 
 @media screen and (min-width:768px) {
     .header-container {

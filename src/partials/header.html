@@ -10,18 +10,35 @@
             <span class="logo-color">tasty</span>treats.
         </a>
         <div class="buttons">
-            <button type="button" class="basket-btn"></button>
-            <button type="button" class="burger-btn js-open-menu"></button>
+            <button type="button" class="basket-btn">
+                <svg class="basket-icon" width="24px" height="24px">
+                    <use href="../img/sprite/icons.svg#icon-cart"></use>
+                </svg>
+            </button>
+            <button type="button" class="burger-btn js-open-menu">
+                <svg class="burger-icon" width="32px" height="32px">
+                    <use href="../img/sprite/icons.svg#icon-hamburger"></use>
+                </svg>
+            </button>
         </div>
     </div>
 
     <div class="mob-menu js-menu-container">
-        <button type="button" class="close-menu-btn js-close-menu">X</button>
+        <button type="button" class="close-menu-btn js-close-menu">
+            <svg class="close-icon" width="32px" height="32px">
+                <use href="../img/sprite/icons.svg#icon-close-x"></use>
+            </svg>
+        </button>
         <nav class="mob-menu-nav">
             <ul class="mob-menu-list list">
                 <li class="mob-menu-item"><a href="">Home</a></li>
                 <li class="mob-menu-item"><a href="">Favorites</a></li>
             </ul>
         </nav>
+        <button class="switcher-btn">
+            <svg class="switcher-icon" width="46px" height="20px">
+                <use href="../img/sprite/icons.svg#icon-sun"></use>
+            </svg>
+        </button>
     </div>
 </header>
