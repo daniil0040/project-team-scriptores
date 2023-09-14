@@ -93,6 +93,13 @@ ul {
   margin-bottom: 48px;
 }
 
+.hero-button:hover,
+.hero-button:active,
+.hero-button:focus {
+  background-color: #9bb537;
+  color: #fff;
+}
+
 /*  MOBILE CSS 375px */
 .hero-title {
   margin-top: 89px;
