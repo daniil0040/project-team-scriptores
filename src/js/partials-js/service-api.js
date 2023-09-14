@@ -37,7 +37,7 @@ export const getAllRecipes = async (category) => {
     await fetchBaseFuction(url)
 }
 
-getAllRecipes("Dessert")
+// getAllRecipes("Dessert")
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -50,7 +50,7 @@ export const getAllCategories = async () => {
     await fetchBaseFuction(url)
 }
 
-getAllCategories()
+// getAllCategories()
 
 ////////////////////////////////////////////////////////////
 
@@ -65,6 +65,6 @@ export const getAllEventsForSwiper = async () => {
     await fetchBaseFuction(url)
 }
 
-getAllEventsForSwiper()
+// getAllEventsForSwiper()
 
 //////////////////////////////////////////////////////////////
