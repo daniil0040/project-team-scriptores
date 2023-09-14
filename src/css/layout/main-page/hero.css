@@ -35,10 +35,25 @@ swiper-slide img {
 
 /* SWIPER SLIDE IMAGES */
 
-.slider-image {
+.slider-container-img {
+  justify-content: space-between;
+  height: 200px;
   border-radius: 15px;
   border: 1px solid rgba(155, 181, 55, 0.3);
   background: #050505;
+}
+
+.img1 {
+  width: 60px;
+  margin-left: 40px;
+}
+
+.img2 {
+  width: 130px;
+}
+
+.img3 {
+  width: 130px;
 }
 
 /* delete after import default CSS */
