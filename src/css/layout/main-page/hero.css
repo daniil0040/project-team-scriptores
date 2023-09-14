@@ -6,7 +6,6 @@ swiper-container {
 }
 
 swiper-slide {
-  position: relative;
   text-align: center;
   font-size: 18px;
   background: #fff;
@@ -33,19 +32,13 @@ swiper-slide img {
   flex-direction: row;
   gap: 16px;
 }
-.slider-item {
-  max-width: 200px;
-  height: 280px;
-  border-radius: 15px;
-  border: 1px solid rgba(155, 181, 55, 0.3);
-  background: #050505;
-}
 
 /* SWIPER SLIDE IMAGES */
 
 .slider-image {
-  width: 50%;
-  height: 50%;
+  border-radius: 15px;
+  border: 1px solid rgba(155, 181, 55, 0.3);
+  background: #050505;
 }
 
 /* delete after import default CSS */
