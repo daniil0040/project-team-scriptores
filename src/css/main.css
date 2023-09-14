@@ -4,6 +4,8 @@
   | default @import url()
   |============================
 */
+/* ROOT */
+@import url("./base/root.css");
 
 /* BASE */
 @import url('./base/reset.css');
