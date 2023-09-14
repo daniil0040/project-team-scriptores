@@ -1,0 +1,39 @@
+/**
+  |============================
+  | include css partials with
+  | default @import url()
+  |============================
+*/
+
+/* BASE */
+@import url('./base/reset.css');
+
+/* COMPONENTS */
+
+/* FONTS */
+@import url("./fonts/fonts.css");
+
+
+/* LAYOUT */
+/* main-page */
+@import url('./layout/header.css');
+
+@import url('./layout/main-page/hero.css');
+
+@import url('./layout/main-page/categories.css');
+
+@import url('./layout/main-page/popular.css');
+
+@import url('./layout/main-page/filter.css');
+
+@import url('./layout/main-page/cards.css');
+
+/* favorites-page */
+@import url('./layout/header.css');
+
+@import url('./layout/favorites-page/default.css');
+
+
+
+
+

@@ -2,20 +2,34 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
-    <link rel="stylesheet" href="./css/styles.css" />
+    <title>TastyTreats</title>
+    <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
-    <load ="partials/header.html" />
-
-    <section>
-      <h1>Lorem ipsum dolor sit amet.</h1>
-    </section>
-
-    <!-- Loads the specified .html file -->
-    <!-- <load ="partials/vite-promo.html" /> -->
+    
+    <!-- HEADER -->
+    <load src="./partials/header.html" />
+    
+    <!-- HERO -->
+    <load src="./partials/main-page/hero.html" />
+    
+    <!-- CATEGORIES -->
+    <load src="./partials/main-page/categories.html" />
+    
+    <!-- POPULAR -->
+    <load src="./partials/main-page/popular.html" />
+    
+    <!-- FILTERS -->
+    <load src="./partials/main-page/filters.html" />
+    
+    <!-- CARDS -->
+    <load src="./partials/main-page/cards.html" />
+    
+    <!-- FAVORITES-PAGE-BTN -->
+    <button type="button">
+      <a href="./favorites.html">Favorites</a>
+    </button>
 
     <script type="module" src="./js/main.js"></script>
   </body>
