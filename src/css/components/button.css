@@ -1,0 +1,16 @@
+.order-now {
+  min-width: 127px;
+  min-height: 45px;
+  padding: 14px 28px;
+
+  font-family: Inter;
+  color: #050505;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  border-radius: 15px;
+  border: 1px solid #9BB537;
+
+}
