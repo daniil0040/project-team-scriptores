@@ -11,6 +11,9 @@
 @import url('./base/reset.css');
 
 /* COMPONENTS */
+@import url("./components/container.css");
+@import url("./components/button.css");
+
 
 /* FONTS */
 @import url("./fonts/fonts.css");
