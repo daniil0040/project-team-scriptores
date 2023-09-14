@@ -5,10 +5,35 @@
 
 @media screen and (min-width:375px) {
     .header-container {
-        width: 375px;
+    width: 375px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+}
+
+@media screen and (min-width:768px){
+    .header-container {
+        width: 768px;
         margin-left: auto;
         margin-right: auto;
+        padding-left: 32px;
+        padding-right: 32px;
     }
+
+}
+
+@media screen and (min-width:1280px) {
+    .header-container {
+        width: 1280px;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+
+.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .nav-menu {
@@ -34,12 +59,43 @@
     fill: #050505;
 }
 
+@media (hover:hover){
+    .basket-icon:hover,
+    .basket-icon:focus{
+        fill: #9BB537;
+    }
+}
+
+@media not (hover:hover){
+    .basket-btn:active{
+        fill: #9BB537;
+    }
+}
+
 .burger-btn{
     border: none;
     background-color: transparent;
     padding: 0;
     width: 32px;
     height: 32px;
+}
+
+@media (hover:hover) {
+
+    .burger-icon:hover,
+    .burger-icon:focus {
+        fill: #9BB537;
+    }
+}
+
+@media not (hover:hover) {
+    .burger-btn:active {
+        fill: #9BB537;
+    }
+}
+
+.header-link:active{
+    color: #9BB537;
 }
 
 .burger-icon{
@@ -69,11 +125,13 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 55vw;
+    min-width: 54vw;
     height: 100vh;
     overflow: scroll;
+    z-index: 100;
     background-color: #9BB537;
     transform: translateX(100%);
+    transition: transform 250ms ease-in-out;
 }
 
 .mob-menu.is-open{
@@ -116,15 +174,12 @@
     fill: #050505;
 }
 
-
-
-
 @media screen and (min-width:768px) {
-    .header-container {
-        width: 768px;
-        padding-left: 32px;
-        padding-right: 32px;
+
+    .burger-btn{
+        display: none;
     }
+    
     .nav-menu {
          display: block;
         }
@@ -132,6 +187,23 @@
     .menu-list{
         display: flex;
         gap: 16px;
+    }
+
+    @media(hover:hover){
+        .header-link:hover,
+        .header-link:focus{
+            color: #9BB537;
+        }
+    }
+
+    @media not (hover:hover){
+        .header-link:active{
+            color: #9BB537;
+        }
+    }
+
+    .mob-menu{
+        display: none;
     }
 
     .menu-item{
@@ -149,12 +221,3 @@
     }
 }
 
-@media screen and (min-width:1280px) {
-    .header-container {
-        width: 1280px;
-        padding-left: 100px;
-        padding-right: 100px;
-    }
-
-
-}
