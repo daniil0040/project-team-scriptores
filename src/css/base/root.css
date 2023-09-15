@@ -1,9 +1,13 @@
 :root{
-    --text-color: #050505;
-    --secondary-text-color: #0505054D;
-    --thirdly-text-color: #05050580;
-    --cards-text-color: #F8F8F8;
+    --text-color-white-theme: #050505;
+    --text-color-black-theme: #FFFFFFCC;
+    --not-active-btn-color-white: #0505054D;
+    --not-active-btn-color-black: #FFFFFF80;
+    /* --thirdly-text-color: #05050580; */
+    --cards-text-color-white-theme: #F8F8F8;
+    --gray-cards-text-color-black-theme: #FFFFFFCC;
     --accent-color: #9BB537;
     --form-border-color: #05050533;
     --star-color: #EEA10C;
+    --black-bg-color: #050505;
 }
