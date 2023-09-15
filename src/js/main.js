@@ -37,6 +37,9 @@ import { } from "./partials-js/main-page-js/categ-cards"
 // SEARCH FILTER
 import { } from "./partials-js/main-page-js/search-filter"
 
+// SELECT
+import "./partials-js/main-page-js/select"
+
 // SEE RECIPE
 import { } from "./partials-js/main-page-js/see-recipe"
 
