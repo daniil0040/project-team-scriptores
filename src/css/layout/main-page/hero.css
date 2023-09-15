@@ -1,0 +1,122 @@
+/* SWIPER CSS */
+
+swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swip-cont {
+  display: block;
+  width: 100%;
+  height: 300px;
+}
+
+.slider-list {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+/* SWIPER SLIDE IMAGES */
+
+.slider-container-img {
+  justify-content: space-between;
+  height: 200px;
+  border-radius: 15px;
+  border: 1px solid rgba(155, 181, 55, 0.3);
+  background: #050505;
+}
+
+.img1 {
+  width: 60px;
+  margin-left: 40px;
+}
+
+.img2 {
+  width: 130px;
+}
+
+.img3 {
+  width: 130px;
+}
+
+/* delete after import default CSS */
+
+li {
+  list-style: none;
+}
+ul {
+  padding: 0;
+}
+
+/* BUTTON */
+
+.hero-button {
+  display: inline-flex;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  border: 1px solid #9bb537;
+  background-color: #fff;
+  color: #050505;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 48px;
+}
+
+.hero-button:hover,
+.hero-button:active,
+.hero-button:focus {
+  background-color: #9bb537;
+  color: #fff;
+}
+
+/*  MOBILE CSS 375px */
+.hero-title {
+  margin-top: 89px;
+  margin-bottom: 14px;
+  width: 335px;
+  color: #050505;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.hero-title-text {
+  color: #9bb537;
+  font-size: 26px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.hero-paragraph {
+  margin-bottom: 28px;
+  color: #050505;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.28;
+}
