@@ -27,7 +27,7 @@
 }
 
 
-.All-categories{
+.all-categories{
     min-width: 174px;
     min-height: 50px;
     padding: 14px 28px;
@@ -44,14 +44,14 @@
 
 }
 
-.All-categories :hover,
-.All-categories :focus{
+.all-categories :hover,
+.all-categories :focus{
     border-color: 9BB537;
     color: F8F8F8;
 }
 
 
-.Add-to-favorite{
+.add-to-favorite{
     min-width: 156px;
     min-height: 45px;
     padding: 14px 28px;
@@ -68,13 +68,13 @@
     border: 1px solid #9BB537;
 }
 
-.Add-to-favorite :hover,
-.Add-to-favorite :focus{
+.add-to-favorite :hover,
+.add-to-favorite :focus{
     color: #050505;  
 }
 
 
-.See-recipe{
+.see-recipe{
     min-width: 93px;
     min-height: 31px;
     padding: 8px 16px;
@@ -93,7 +93,7 @@
 }
 
 
-.Send{
+.send{
 
     min-width: 360px;
     min-height: 48px;
