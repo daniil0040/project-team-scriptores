@@ -99,7 +99,7 @@
     top: 0;
     right: 0;
     min-width: 54vw;
-    height: 100vh;
+    height: 100%;
     overflow: scroll;
     z-index: 100;
     background-color: var(--accent-color);
