@@ -6,9 +6,8 @@ const recipesWrap = document.querySelector('.popular-recipes-wrap');
 // робимо get запит 
 getAllRecipes("Popular")
 .then(data=> {
-    console.log(data);
-    console.log(createMarkup(data));
-    recipesContainer.innerHTML = createMarkup(data)})
+ 
+    recipesContainer.insertAdjacentHTML("beforeend", createMarkup(data))})
 .catch(err=>{
     console.log(err);
 })
