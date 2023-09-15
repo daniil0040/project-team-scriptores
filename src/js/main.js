@@ -11,7 +11,7 @@ import 'swiper/css';
 import { } from "./partials-js/service-api"
 
 // MENU-MODAL
-import { } from "./partials-js/menu"
+import "./partials-js/menu"
 
 // PARTIALS
 ////////////////////////////
