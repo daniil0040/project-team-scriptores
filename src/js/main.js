@@ -12,3 +12,33 @@ import { } from "./partials-js/service-api"
 
 // MENU-MODAL
 import { } from "./partials-js/menu"
+
+// PARTIALS
+////////////////////////////
+
+// ORDER NOW
+import { } from "./partials-js/main-page-js/order-now"
+
+// SWIPER
+import { } from "./partials-js/main-page-js/swiper"
+
+// CATEGORIES
+import { } from "./partials-js/main-page-js/categories"
+
+// POPULAR
+import { } from "./partials-js/main-page-js/popular"
+
+// ALL CATEGORIES CARDS
+import { } from "./partials-js/main-page-js/all-categ-cards"
+
+// CATEGORIES CARDS
+import { } from "./partials-js/main-page-js/categ-cards"
+
+// SEARCH FILTER
+import { } from "./partials-js/main-page-js/search-filter"
+
+// SEE RECIPE
+import { } from "./partials-js/main-page-js/see-recipe"
+
+// PAGINATION
+import { } from "./partials-js/main-page-js/pagination"
