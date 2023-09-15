@@ -41,9 +41,9 @@ export const getAllRecipes = async (category) => {
     return answer
 }
 
-getAllRecipes("Popular").then(data => {
-    console.log(data);
-})
+// getAllRecipes("Popular").then(data => {
+//     console.log(data);
+// })
 
 // getAllRecipes("Popular")
 
