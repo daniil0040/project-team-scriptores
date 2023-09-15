@@ -1,33 +1,5 @@
-.header-container {
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-@media screen and (min-width:375px) {
-    .header-container {
-    width: 375px;
-    margin-left: auto;
-    margin-right: auto;
-    }
-}
-
-@media screen and (min-width:768px){
-    .header-container {
-        width: 768px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 32px;
-        padding-right: 32px;
-    }
-
-}
-
-@media screen and (min-width:1280px) {
-    .header-container {
-        width: 1280px;
-        padding-left: 100px;
-        padding-right: 100px;
-    }
+:root{
+    --transition-dur-and-func:transform 250ms ease-in-out;
 }
 
 .is-hidden {
@@ -56,19 +28,19 @@
 }
 
 .basket-icon{
-    fill: #050505;
+    fill: var(--black-bg-color);
 }
 
 @media (hover:hover){
     .basket-icon:hover,
     .basket-icon:focus{
-        fill: #9BB537;
+        fill: var(--accent-color);
     }
 }
 
 @media not (hover:hover){
     .basket-btn:active{
-        fill: #9BB537;
+        fill: var(--accent-color);
     }
 }
 
@@ -84,22 +56,22 @@
 
     .burger-icon:hover,
     .burger-icon:focus {
-        fill: #9BB537;
+        fill: var(--accent-color);
     }
 }
 
 @media not (hover:hover) {
     .burger-btn:active {
-        fill: #9BB537;
+        fill: var(--accent-color);
     }
 }
 
 .header-link:active{
-    color: #9BB537;
+    color: var(--accent-color);
 }
 
 .burger-icon{
-    fill: #050505;
+    fill: var(--black-bg-color);
 }
 
 .logo{
@@ -108,11 +80,11 @@
     font-weight: 600;
     line-height: 112.5%;
     letter-spacing: -0.64px;
-    color: #050505;
+    color: var(--black-bg-color);
 }
 
 .logo-color{
-    color:#9BB537;
+    color: var(--accent-color);
 }
 
 .buttons{
@@ -129,9 +101,9 @@
     height: 100vh;
     overflow: scroll;
     z-index: 100;
-    background-color: #9BB537;
+    background-color: var(--accent-color);
     transform: translateX(100%);
-    transition: transform 250ms ease-in-out;
+    transition: var(--transition-dur-and-func);
 }
 
 .mob-menu.is-open{
@@ -148,7 +120,7 @@
 }
 
 .close-icon{
-    fill: #F8F8F8;
+    fill: var(--cards-text-color-white-theme);
 }
 
 
@@ -170,8 +142,16 @@
     line-height: normal;
 }
 
-.switcher-icon{
-    fill: #050505;
+.backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(46, 47, 66, 0.4);
+    top: 0;
+    overflow: auto;
+    z-index: 99;
+    transition: opacity var(--transition-dur-and-func),
+    visibility var(--transition-dur-and-func);
 }
 
 @media screen and (min-width:768px) {

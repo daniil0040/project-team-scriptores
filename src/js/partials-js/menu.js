@@ -1,6 +1,7 @@
 // НЕ ЗАБУДЬ ЗРОБИТИ ІМЕНОВАНИЙ ІМПОРТ ТА ЕКСПОРТ Ф-ЦІЇ ДО ФАЙЛУ main.js!!!!
 
 (() => {
+  const backdrop = document.querySelector('.backdrop')
   const mobileMenu = document.querySelector(".js-menu-container");
   const openMenuBtn = document.querySelector(".js-open-menu");
   const closeMenuButtons = document.querySelectorAll(".js-close-menu");
@@ -9,10 +10,11 @@
       openMenuBtn.getAttribute("aria-expanded") === "true" || false;
     openMenuBtn.setAttribute("aria-expanded", !isMenuOpen);
     mobileMenu.classList.toggle("is-open");
-    const scrollLockMethod = !isMenuOpen
-      ? "disableBodyScroll"
-      : "enableBodyScroll";
-    bodyScrollLock[scrollLockMethod](document.body);
+    backdrop.classList.toggle('is-hidden');
+    // const scrollLockMethod = !isMenuOpen
+    //   ? "disableBodyScroll"
+    //   : "enableBodyScroll";
+    // bodyScrollLock[scrollLockMethod](document.body);
   };
   openMenuBtn.addEventListener("click", toggleMenu);
   closeMenuButtons.forEach((closeMenuBtn) => {
@@ -22,7 +24,8 @@
   window.matchMedia("(min-width: 768px)").addEventListener("change", (e) => {
     if (!e.matches) return;
     mobileMenu.classList.remove("is-open");
+    backdrop.classList.add('is-hidden');
     openMenuBtn.setAttribute("aria-expanded", false);
-    bodyScrollLock.enableBodyScroll(document.body);
+    // bodyScrollLock.enableBodyScroll(document.body);
   });
 })();
