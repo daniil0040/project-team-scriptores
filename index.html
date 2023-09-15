@@ -9,16 +9,59 @@
     integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   
-  <script type="module" crossorigin src="/project-team-scriptores/assets/index-57b383f9.js"></script>
-  <link rel="modulepreload" crossorigin href="/project-team-scriptores/assets/main-b7450615.js">
-  <link rel="stylesheet" href="/project-team-scriptores/assets/main-c4ce951f.css">
+  <script type="module" crossorigin src="/project-team-scriptores/assets/index-4b8c1fab.js"></script>
+  <link rel="modulepreload" crossorigin href="/project-team-scriptores/assets/main-ebad1c9e.js">
+  <link rel="stylesheet" href="/project-team-scriptores/assets/main-ca30dd51.css">
   <link rel="stylesheet" href="/project-team-scriptores/assets/index-9a5e1c02.css">
 </head>
 
 <body>
 
   <!-- HEADER -->
-  
+  <header>
+    <div class="container header-flex">
+        <nav class="nav-menu">
+            <ul class="menu-list list">
+                <li class="menu-item"><a href="../index.html" class="header-link">Home</a></li>
+                <li class="menu-item"><a href="../favorites.html" class="header-link">Favorites</a></li>
+            </ul>
+        </nav>
+        <a href="../index.html" class="logo">
+            <span class="logo-color">tasty</span>treats.
+        </a>
+        <div class="buttons">
+            <a href="tel:+38073000000" class="basket-btn" >
+                <svg class="basket-icon" width="24px" height="24px">
+                    <use href="../img/sprite/icons.svg#icon-cart"></use>
+                </svg>
+            </a>
+            <button type="button" class="burger-btn js-open-menu">
+                <svg class="burger-icon" width="32px" height="32px">
+                    <use href="../img/sprite/icons.svg#icon-hamburger"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+<div class="backdrop is-hidden">
+    <div class="mob-menu container js-menu-container">
+        <button type="button" class="close-menu-btn js-close-menu">
+            <svg class="close-icon" width="32px" height="32px">
+                <use href="../img/sprite/icons.svg#icon-close-x"></use>
+            </svg>
+        </button>
+        <nav class="mob-menu-nav">
+            <ul class="mob-menu-list list">
+                <li class="mob-menu-item"><a href="../index.html">Home</a></li>
+                <li class="mob-menu-item"><a href="../favorites.html">Favorites</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<script defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+      integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+      crossorigin="anonymous"></script>
+</header>
 
   <!-- HERO -->
   <section class="hero-section">
