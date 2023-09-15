@@ -11,10 +11,10 @@
     openMenuBtn.setAttribute("aria-expanded", !isMenuOpen);
     mobileMenu.classList.toggle("is-open");
     backdrop.classList.toggle('is-hidden');
-    // const scrollLockMethod = !isMenuOpen
-    //   ? "disableBodyScroll"
-    //   : "enableBodyScroll";
-    // bodyScrollLock[scrollLockMethod](document.body);
+    const scrollLockMethod = !isMenuOpen
+      ? "disableBodyScroll"
+      : "enableBodyScroll";
+    bodyScrollLock[scrollLockMethod](document.body);
   };
   openMenuBtn.addEventListener("click", toggleMenu);
   closeMenuButtons.forEach((closeMenuBtn) => {
@@ -26,6 +26,6 @@
     mobileMenu.classList.remove("is-open");
     backdrop.classList.add('is-hidden');
     openMenuBtn.setAttribute("aria-expanded", false);
-    // bodyScrollLock.enableBodyScroll(document.body);
+    bodyScrollLock.enableBodyScroll(document.body);
   });
 })();
