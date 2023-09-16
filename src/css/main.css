@@ -4,6 +4,9 @@
   | default @import url()
   |============================
 */
+/* UTILS */
+@import url("./utils/basicLightbox.min.css");
+
 /* ROOT */
 @import url("./base/root.css");
 
@@ -33,6 +36,8 @@
 @import url('./layout/main-page/filter.css');
 
 @import url('./layout/main-page/cards.css');
+
+@import url('./layout/main-page/see-recipe.css');
 
 /* favorites-page */
 @import url('./layout/header.css');

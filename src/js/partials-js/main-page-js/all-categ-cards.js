@@ -11,7 +11,7 @@ getAllRecipes()
         console.log(err);
     })
 
-function createAllCategCardsMarkup(arr) {
+export function createAllCategCardsMarkup(arr) {
     return arr.map(({ preview, title, description, rating, _id }) => `
         <div class="resipes-card">
       <img src="${preview}" alt="" />
