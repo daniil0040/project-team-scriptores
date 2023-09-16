@@ -1,25 +1,32 @@
 import { getAllSomething } from "../service-api";
 
-
 // Це не потрібні імпорти
 // import axios from 'axios';
 // import Notiflix from 'notiflix';
 
-console.log(getAllSomething);
+
+getAllSomething("categories").then(data => {
+  console.log(data);
+})
+
+function createCategMarkup() {
+}
+
+// Цей код,що нижче видали
 
 //const category_url = 'https://tasty-treats-backend.p.goit.global/api/categories';
-getAllSomething('categories').then(response => {
-  const recipes = document.querySelector('.category-list');
-  const recipes_markup = response.data
-    .map(
-      category => `<li>
-      <button class="category-button" href="#">${category.name}</button>
-      </li>`
-    )
-    .join('');
-  recipes.innerHTML = recipes_markup;
+// getAllSomething('categories').then(response => {
+//   const recipes = document.querySelector('.category-list');
+//   const recipes_markup = response.data
+//     .map(
+//       category => `<li>
+//       <button class="category-button" href="#">${category.name}</button>
+//       </li>`
+//     )
+//     .join('');
+//   recipes.innerHTML = recipes_markup;
 
-});
+// });
 
 
 
