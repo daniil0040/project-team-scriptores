@@ -4,6 +4,9 @@
   | default @import url()
   |============================
 */
+/* UTILS */
+@import url("./utils/basicLightbox.min.css");
+
 /* ROOT */
 @import url("./base/root.css");
 
