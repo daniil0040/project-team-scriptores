@@ -1,9 +1,8 @@
-//import axios from 'axios';
 import { getAllSomething } from "../service-api"
 const recipes = document.querySelector('.category-list-js');
 getAllSomething('categories').then(data => {
-    recipes.insertAdjacentHTML('beforeend', recipesMarkup(data))
-    function recipesMarkup() {
+    recipes.insertAdjacentHTML('beforeend', createCategoriesMarkup(data))
+    function createCategoriesMarkup() {
         return data.map(({ _id, name }) =>
             `<li>
             <button id="${_id}" class="category-button">${name}</button>
