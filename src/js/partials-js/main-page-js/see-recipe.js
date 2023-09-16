@@ -24,7 +24,7 @@ async function getCard(id) {
         const card = await getRecipeById(id);
         console.log(card);
 
-        const { thumb, title, rating, time, instructions, ingredients, tags, youtube } = card;
+        const { thumb, title, rating, time, instructions, ingredients, tags, youtube, } = card;
         const ingMark = ingredients.map(({ name, measure }) => `<li class="ing-item">
     <p class="ing-name">${name}</p>
     <p class="ing-measure">${measure}</p>
@@ -36,9 +36,9 @@ async function getCard(id) {
        
 
 
-        const instance = basicLightbox.create(`<div class="modal"><iframe  height="315" src="${youtube}" frameborder="0" allowfullscreen></iframe>
+        const instance = basicLightbox.create(`<div class="modal"><div class="img-title-box"><img src="${thumb}" alt="${title}" class="modal-img">
 
-    <h1 class="modal-title">${title}</h1>
+    <h1 class="modal-title">${title}</h1></div>
     <div class="raiting-time-box">
     <p class="raiting">${rating}</p>
     <p class="time">${time} min</p>
@@ -50,11 +50,11 @@ async function getCard(id) {
     <svg class="modal-close" width="20" height="20">
         <use href="img/sprite/icons.svg#icon-close-x"></use>
     </svg>
-</button>
-<div class="button-block">
-<button class="btn add-to-favorite" type="button">Add to favorite</button>
-<button class="btn order-now" type="button">Give a rating</button>
-</div>
+    </button>
+    <div class="button-block">
+    <button class="btn add-to-favorite" type="button">Add to favorite</button>
+    <button class="btn order-now js-rating-btn" type="button">Give a rating</button>
+    </div>
     </div>`);
         instance.show();
         
@@ -70,12 +70,10 @@ async function getCard(id) {
   }
 
 }
-
     function clickClose(){
         instance.close();
         document.removeEventListener('click', clickClose);
     }
-
 
     } catch (error) {
         console.log(error);
