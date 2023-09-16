@@ -1,7 +1,11 @@
-import axios from 'axios';
-import {getAllSomething} from "../service-api"
+import { getAllSomething } from "../service-api";
 
 
+// Це не потрібні імпорти
+// import axios from 'axios';
+// import Notiflix from 'notiflix';
+
+console.log(getAllSomething);
 
 //const category_url = 'https://tasty-treats-backend.p.goit.global/api/categories';
 getAllSomething('categories').then(response => {

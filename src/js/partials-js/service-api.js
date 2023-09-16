@@ -1,22 +1,27 @@
 // НЕ ЗАБУДЬ ЗРОБИТИ ІМЕНОВАНИЙ ІМПОРТ ТА ЕКСПОРТ Ф-ЦІЇ ДО ФАЙЛУ main.js!!!!
 // Створи обʼєкт з усіма ендпоінтами для використання в ф-ції
 import axios from "axios";
-
 const BASE_URL = "https://tasty-treats-backend.p.goit.global/api"
 let url
 let pageNumber = 0
 //////////// Базовый fetch запрос //////////////
 
- const fetchBaseFuction = async (url) => {
-    try {
-        const response = await fetch(url)
-        if(!response.ok) throw new Error(response.statusText)
-        const recipes = await response.json();
-        console.log(recipes);
-    }
-    catch (error) {
+const fetchBaseFuction = async (url) => {
+    try {  
+        if (url === undefined) {
+            throw new Error(`Bad Request`)
+        }
+        let response = await axios.get(url);
+        if (response.status !== 200) {
+            throw new Error(`Запрос неудачен с HTTP статусом ${response.status}`);
+        }
+        return response.data;
+    } catch (error) {
         console.log(error);
+
     }
+
+    // let response = await fetch(url)
 }
 
 
@@ -25,19 +30,25 @@ let pageNumber = 0
 export const getAllRecipes = async (category) => {
     pageNumber += 1
     if (!category) {
-         url = `${BASE_URL}/recipes&page=${pageNumber}&limit=9`
-    } else {
+         url = `${BASE_URL}/recipes?page=${pageNumber}&limit=9`
+    }
+    else {
         url = `${BASE_URL}/recipes?category=${category}&limit=9&page=${pageNumber}`
         if(category === "Popular")   url = `${BASE_URL}/recipes/popular`
     }
 
-    await fetchBaseFuction(url)
+    const answer = await fetchBaseFuction(url)
+    return answer
 }
 
-// getAllRecipes("Dessert")
+// getAllRecipes("Popular").then(data => {
+//     console.log(data);
+// })
+
+// getAllRecipes("Popular")
 
 
-//////////// Запрос на мастер-классы для Swiper, на все ингридиенты для select и на все регионы для select //////////////
+//////////// Запрос на мастер-классы для Swiper, на все категории, на все ингридиенты для select и на все регионы для select //////////////
 
 // 'events'
 // 'ingredients'
@@ -49,21 +60,21 @@ export const getAllSomething = async (point) => {
     if (point === "events") {
         url = `${BASE_URL}/events`
     }
-    if (point === "ingredients") {
+    else if (point === "ingredients") {
         url = `${BASE_URL}/ingredients`
     }
-    if (point === "areas") {
+    else if (point === "areas") {
         url = `${BASE_URL}/areas`
     }
-    if (point === "categories") {
+    else if (point === "categories") {
         url = `${BASE_URL}/categories`
     }
 
-    
-    await fetchBaseFuction(url)
+    const answer = await fetchBaseFuction(url)
+    return answer
+
 }
 
-// getAllSomething("events")
 
 
 
@@ -72,10 +83,12 @@ export const getAllSomething = async (point) => {
 
 export const getRecipeById = async (id) => {
     url = `${BASE_URL}/recipes/${id}`
+
+     const answer = await fetchBaseFuction(url)
+    return answer
     
-    await fetchBaseFuction(url)
+
 }
 
 // getRecipeById("6462a8f74c3d0ddd28897fc1")
-
 
