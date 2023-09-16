@@ -1,26 +1,33 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, Mousewheel, Pagination, Scrollbar } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import { fetchBaseFuction } from '../service-api';
 
 const initSwiper = () => {
   const swiper = new Swiper('.swiper', {
-    modules: [Navigation, Pagination],
+    modules: [Pagination, Scrollbar, Autoplay, Mousewheel],
+    speed: 1200,
+    spaceBetween: 30,
+    width: 495,
+    height: 300,
     loop: true,
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
-      dynamicBullets: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      spaceBetween: 50,
+      clickable: true,
     },
     scrollbar: {
       el: '.swiper-scrollbar',
+    },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    mousewheel: {
+      invert: true,
     },
   });
 };
@@ -60,13 +67,15 @@ const createMarkUp = data => {
   data.forEach(({ cook, topic }) => {
     const markUp = `
     <div class="swiper-slide">
-      <div style="background-image: url(${cook.imgWebpUrl})"></div>
-      <div>
-          <img src="${topic.previewWebpUrl}" alt="">
-          <h2>${topic.name}</h2>
-          <p>${topic.area}</p>
+    <div class="swiper-content">
+      <div class="slide-first-img" style="background-image: url(${cook.imgWebpUrl})"></div>
+      <div class="slide-second">
+          <div class="slide-second-img" style="background-image: url(${topic.previewWebpUrl});"></div>
+          <h2 class="slide-second-title">${topic.name}</h2>
+          <p class="slide-second-description">${topic.area}</p>
       </div>
-      <div style="background-image: url(${topic.imgWebpUrl})"></div>
+      <div class="slide-third-img" style="background-image: url(${topic.imgWebpUrl})"></div>
+    </div>  
   </div>`;
 
     swiperWrapper.insertAdjacentHTML('beforeend', markUp);
@@ -76,4 +85,4 @@ const createMarkUp = data => {
 
 getSwiperData();
 
-export default swiper;
+export default initSwiper;
