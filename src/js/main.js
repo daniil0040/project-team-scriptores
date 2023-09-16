@@ -22,6 +22,9 @@ import { } from "./partials-js/main-page-js/order-now"
 // SWIPER
 import { } from "./partials-js/main-page-js/swiper"
 
+// ALL CATEGORIES BUTTON
+import "./partials-js/main-page-js/all-categ-btn"
+
 // CATEGORIES
 import { } from "./partials-js/main-page-js/categories"
 
