@@ -20,7 +20,7 @@ export function createAllCategCardsMarkup(arr) {
       <div class="card-description">
         <button class="like-btn" type="button">
           <svg class="like-logo liked" width="22" height="22">
-            <use href="img/sprite/icons.svg#heart"></use>
+            <use href="/src/img/sprite/icons.svg#heart"></use>
           </svg>
         </button>
         <h2 class="card-heading">${title}</h2>
@@ -35,12 +35,12 @@ export function createAllCategCardsMarkup(arr) {
           <span class="number-rating">${Math.round(rating)}</span>
           <div class="reting-item filled" data-item-value="">
             <svg class="one" width="18" height="18">
-              <use href="img/sprite/icons.svg#icon-star-j"></use>
+              <use href=".img/sprite/icons.svg#icon-star-j"></use>
             </svg>
           </div>
           <div class="reting-item filled" data-item-value="">
             <svg class="" width="18" height="18">
-              <use href="img/sprite/icons.svg#icon-star-j"></use>
+              <use href="./src/img/sprite/icons.svg#icon-star-j"></use>
             </svg>
           </div>
           <div class="reting-item filled" data-item-value="">
