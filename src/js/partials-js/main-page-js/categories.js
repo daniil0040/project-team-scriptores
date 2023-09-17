@@ -59,8 +59,10 @@ recipes.addEventListener("click", categorySelection)
 export let prevCategory = null
 export let isAllCategories = true
 function categorySelection(event) {
-    let category = event.target.closest('button')
-    if (category.textContent !== prevCategory) {       
+    let category = event.target.closest("button")
+    if(category === null) return 
+    if (category.textContent !== prevCategory) {     
+  
         prevCategory = category.textContent
         isAllCategories = false
         buttonAllCategories.classList.remove("all-categories-button-active")
