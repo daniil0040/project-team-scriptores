@@ -56,11 +56,11 @@ function recipesMarkup(data) {
 
 
 recipes.addEventListener("click", categorySelection)
-let prevCategory = ""
+export let prevCategory = null
 export let isAllCategories = true
 function categorySelection(event) {
     let category = event.target.closest('button')
-    if (category.textContent !== prevCategory) {
+    if (category.textContent !== prevCategory) {       
         prevCategory = category.textContent
         isAllCategories = false
         buttonAllCategories.classList.remove("all-categories-button-active")
@@ -77,3 +77,6 @@ function categorySelection(event) {
     }  
 }
 
+export function resetPrev() {
+    prevCategory = null
+}
