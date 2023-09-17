@@ -1,4 +1,4 @@
-import"./main-e049e2f6.js";var ct=typeof globalThis<"u"?globalThis:typeof window<"u"?window:typeof global<"u"?global:typeof self<"u"?self:{};function Ve(i){throw new Error('Could not dynamically require "'+i+'". Please configure the dynamicRequireTargets or/and ignoreDynamicRequires option of @rollup/plugin-commonjs appropriately for this require call to work.')}var kt={},$i={get exports(){return kt},set exports(i){kt=i}};(function(i,e){(function(t){i.exports=t()})(function(){return function t(s,n,a){function r(c,d){if(!n[c]){if(!s[c]){var p=typeof Ve=="function"&&Ve;if(!d&&p)return p(c,!0);if(o)return o(c,!0);var b=new Error("Cannot find module '"+c+"'");throw b.code="MODULE_NOT_FOUND",b}var u=n[c]={exports:{}};s[c][0].call(u.exports,function(x){return r(s[c][1][x]||x)},u,u.exports,t,s,n,a)}return n[c].exports}for(var o=typeof Ve=="function"&&Ve,l=0;l<a.length;l++)r(a[l]);return r}({1:[function(t,s,n){Object.defineProperty(n,"__esModule",{value:!0}),n.create=n.visible=void 0;var a=function(l){var c=arguments.length>1&&arguments[1]!==void 0&&arguments[1],d=document.createElement("div");return d.innerHTML=l.trim(),c===!0?d.children:d.firstChild},r=function(l,c){var d=l.children;return d.length===1&&d[0].tagName===c},o=function(l){return(l=l||document.querySelector(".basicLightbox"))!=null&&l.ownerDocument.body.contains(l)===!0};n.visible=o,n.create=function(l,c){var d=function(u,x){var h=a(`
+import"./main-b57b762d.js";var ct=typeof globalThis<"u"?globalThis:typeof window<"u"?window:typeof global<"u"?global:typeof self<"u"?self:{};function Ve(i){throw new Error('Could not dynamically require "'+i+'". Please configure the dynamicRequireTargets or/and ignoreDynamicRequires option of @rollup/plugin-commonjs appropriately for this require call to work.')}var kt={},$i={get exports(){return kt},set exports(i){kt=i}};(function(i,e){(function(t){i.exports=t()})(function(){return function t(s,n,a){function r(c,d){if(!n[c]){if(!s[c]){var p=typeof Ve=="function"&&Ve;if(!d&&p)return p(c,!0);if(o)return o(c,!0);var b=new Error("Cannot find module '"+c+"'");throw b.code="MODULE_NOT_FOUND",b}var u=n[c]={exports:{}};s[c][0].call(u.exports,function(x){return r(s[c][1][x]||x)},u,u.exports,t,s,n,a)}return n[c].exports}for(var o=typeof Ve=="function"&&Ve,l=0;l<a.length;l++)r(a[l]);return r}({1:[function(t,s,n){Object.defineProperty(n,"__esModule",{value:!0}),n.create=n.visible=void 0;var a=function(l){var c=arguments.length>1&&arguments[1]!==void 0&&arguments[1],d=document.createElement("div");return d.innerHTML=l.trim(),c===!0?d.children:d.firstChild},r=function(l,c){var d=l.children;return d.length===1&&d[0].tagName===c},o=function(l){return(l=l||document.querySelector(".basicLightbox"))!=null&&l.ownerDocument.body.contains(l)===!0};n.visible=o,n.create=function(l,c){var d=function(u,x){var h=a(`
 		<div class="basicLightbox `.concat(x.className,`">
 			<div class="basicLightbox__placeholder" role="dialog"></div>
 		</div>
@@ -51,12 +51,11 @@ Notiflix needs to be appended to the "<`+f+'>" element, but you called it before
           </div>
           <div class="reting-item" data-item-value="">
             <svg class="" width="18" height="18">
-              <use href="img/sprite/icons.svg#icon-star-grey"></use>
+              <use href="img/sprite/icons.svg#icon-star-j"></use>
             </svg>
           </div>
-          
-           <button class="btn-see-recipe btn-see-recipe-js" type="button" data-id= "${a}">See recipe</button>
-         
+     <button class="btn-see-recipe btn-see-recipe-js" type="button" data-id= "${a}">See recipe</button>
+
           </div
        
       
