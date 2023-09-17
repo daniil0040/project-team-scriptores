@@ -3,8 +3,6 @@ const cardsContainer = document.querySelector('.cards-container-js');
 
 getAllRecipes()
   .then(data => {
-    // console.log(data.results);
-    // console.log(createAllCategCardsMarkup(data.results));
     cardsContainer.innerHTML = createAllCategCardsMarkup(data.results);
   })
   .catch(err => {
@@ -14,10 +12,10 @@ getAllRecipes()
 export function createAllCategCardsMarkup(arr) {
   return arr
     .map(
-      ({ preview, title, description, rating, _id }) => `
-    <li class="recipes-card" >
+      ({ preview, title, description, rating, _id, tags }) => `
+    <li class="recipes-card" data-tags="${tags}" >
         
-      <img class="recipes-img" src="${preview}" alt="" />
+      <img class="recipes-img" src="${preview}" alt="${title}" />
       <div class="card-description">
         <button class="like-btn" type="button">
           <svg class="like-logo liked" width="22" height="22">
