@@ -150,5 +150,5 @@ span.swiper-pagination-bullet-active {
 
 /* TABLET 768px */
 
-@media screen {
+@media screen and (max-width: 767px) {
 }

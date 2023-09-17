@@ -18,10 +18,10 @@ import './partials-js/menu';
 import {} from './partials-js/main-page-js/order-now';
 
 // SWIPER
-import swiper from './partials-js/main-page-js/swiper';
+import './partials-js/main-page-js/swiper';
 
 // ALL CATEGORIES BUTTON
-import "./partials-js/main-page-js/all-categ-btn"
+import './partials-js/main-page-js/all-categ-btn';
 
 // CATEGORIES
 import {} from './partials-js/main-page-js/categories';
@@ -39,7 +39,7 @@ import {} from './partials-js/main-page-js/categ-cards';
 import {} from './partials-js/main-page-js/search-filter';
 
 // SELECT
-import "./partials-js/main-page-js/select"
+import './partials-js/main-page-js/select';
 
 // SEE RECIPE
 import {} from './partials-js/main-page-js/see-recipe';
