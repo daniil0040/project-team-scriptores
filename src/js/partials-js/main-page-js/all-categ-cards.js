@@ -54,12 +54,11 @@ export function createAllCategCardsMarkup(arr) {
           </div>
           <div class="reting-item" data-item-value="">
             <svg class="" width="18" height="18">
-              <use href="img/sprite/icons.svg#icon-star-grey"></use>
+              <use href="img/sprite/icons.svg#icon-star-j"></use>
             </svg>
           </div>
-          
-           <button class="btn-see-recipe btn-see-recipe-js" type="button" data-id= "${_id}">See recipe</button>
-         
+     <button class="btn-see-recipe btn-see-recipe-js" type="button" data-id= "${_id}">See recipe</button>
+
           </div
        
       
