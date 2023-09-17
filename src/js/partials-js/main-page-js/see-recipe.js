@@ -42,18 +42,8 @@ function loadBasicLightbox(card) {
 
     const video = document.querySelector('.js-modal-video');
     const image = document.querySelector('.js-modal-img');
-    console.log(video)
 
-    video.addEventListener('error', function() {
-  // Приховати відео
-        video.style.display = "none";
-        
-  
-  // Показати картинку-запаску
-  image.style.display = "block";
-});
-
-    // checkVideo(card.youtube, video, image);
+    checkVideo(card.youtube, video, image);
 
     const favorite = document.querySelector('.js-favorite-btn');
     favorite.addEventListener('click', () => addFavorite(card));
@@ -72,6 +62,7 @@ function loadBasicLightbox(card) {
 function createMurkUpModal(card) {
     let markUP;
     const { thumb, title, rating, time, instructions, ingredients, tags, youtube, } = card;
+    const fixRating = rating.toFixed(1);
     const ingMark = ingredients.map(({ name, measure }) => `<li class="ing-item">
     <p class="ing-name">${name}</p>
     <p class="ing-measure">${measure}</p>
@@ -87,7 +78,7 @@ function createMurkUpModal(card) {
     <h1 class="modal-title">${title}</h1></div>
     <div class="desc-box">
     <div class="raiting-time-box">
-    <p class="raiting-text">${rating}</p>
+    <p class="raiting-text">${fixRating}</p>
     <ul class="star-list list">${ratingStar}</ul>
     <p class="time">${time} min</p>
     </div>
