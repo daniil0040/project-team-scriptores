@@ -28,7 +28,7 @@ button {
   overflow: hidden;
   overflow-y: auto;}
 
-@media only screen and (min-width: 680px) {
+@media only screen and (min-width: 768px) {
   .categories-block{
       margin-top: 30px;
     width: 176px;
@@ -37,7 +37,7 @@ button {
   
   }
 
-@media only screen and (min-width: 1200px){
+@media only screen and (min-width: 1280px){
 .categories-block{
     margin-top: 42px;
     width: 235px;
@@ -58,7 +58,7 @@ button {
   border-radius: 5px;
   transition: all .25s cubic-bezier(.4,0,.2,1);}
 
-@media only screen and (min-width: 680px){
+@media only screen and (min-width: 768px){
       .category-button{
     padding-top: 12px;
     padding-bottom: 12px;
