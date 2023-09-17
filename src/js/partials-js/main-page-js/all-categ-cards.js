@@ -3,9 +3,10 @@ const cardsContainer = document.querySelector('.cards-container-js');
 
 getAllRecipes()
   .then(data => {
-    // console.log(data.results);
-    // console.log(createAllCategCardsMarkup(data.results));
-    cardsContainer.innerHTML = createAllCategCardsMarkup(data.results);
+    const recipes = createAllCategCardsMarkup(data.results);
+    const pagination = addPagination(data);
+    const cardsContainerHtml = recipes + pagination;
+    cardsContainer.innerHTML = cardsContainerHtml;
   })
   .catch(err => {
     console.log(err);
@@ -70,4 +71,125 @@ export function createAllCategCardsMarkup(arr) {
     `
     )
     .join('');
+}
+
+export function addPagination(results, pageNumber = 1) {
+  const totalPages = results.totalPages;
+
+  let previousButtons = '';
+  previousButtons += `<button
+      id="pag-btn-start"
+      class="gag-btn-black pag-btn-number"
+      type="button"
+      aria-label="first page"
+      page-number="1"
+    >
+      <span class="icon-wrap">
+        <svg class="pag-btn-left-icon" width="20" height="20">
+          <use href="img/sprite/icons.svg#icon-left-two"></use>
+        </svg>
+      </span>
+    </button>`;
+
+  if (Number(results.page) !== 1) {
+    const previousPageNumber = results.page - 1;
+    previousButtons += `<button
+      id="pag-btn-prev"
+      class="gag-btn-black pag-btn-number"
+      type="button"
+      aria-label="previous page"
+      page-number="${previousPageNumber}"
+    >
+      <svg class="pag-btn-left-icon" width="20" height="20">
+        <use href="img/sprite/icons.svg#icon-left-one"></use>
+      </svg>
+    </button>`;
+  }
+
+  let buttons = '';
+
+  if (pageNumber > 1) {
+    buttons += `<button
+          id="pag-btn-dots-left"
+          class="pag-btn-white"
+          aria-label="more pages"
+        >
+          ...
+        </button>`;
+  }
+
+  const currentPage = results.page ?? 1;
+  const lastPage = Number(results.page) + 2;
+
+  for (let i = currentPage; i <= lastPage; i++) {
+    if (i > results.totalPages) {
+      continue;
+    }
+
+    let clickableClass = 'pag-btn-number';
+    let active = '';
+
+    if (i == Number(pageNumber)) {
+      clickableClass = '';
+      active = 'active';
+    }
+
+    buttons += `<button
+          id="pag-btn-${i}"
+          class="pag-btn-white ${clickableClass} ${active}"
+          type="button"
+          aria-label="page ${i}"
+          page-number="${i}"
+        >
+          ${i}
+        </button>`;
+  }
+
+  if (pageNumber < totalPages) {
+    buttons += `<button
+          id="pag-btn-dots-left"
+          class="pag-btn-white"
+          aria-label="more pages"
+        >
+          ...
+        </button>`;
+  }
+
+  let nextButtons = '';
+  if (Number(results.page) < Number(totalPages)) {
+    const nextPageNumber = lastPage + 1;
+    nextButtons += `<button
+          id="pag-btn-next"
+          class="pag-btn-green pag-btn-number"
+          type="button"
+          aria-label="next page"
+          page-number="${nextPageNumber}"
+        >
+          <svg class="pag-btn-right-icon-next" width="20" height="20">
+            <use href="img/sprite/icons.svg#icon-arrow"></use>
+          </svg>
+        </button>`;
+  }
+
+  nextButtons += `<button
+          id="pag-btn-last"
+          class="pag-btn-green pag-btn-number"
+          type="button"
+          aria-label="last page"
+          page-number="${totalPages}"
+        >
+          <span class="icon-container">
+            <span class="icon-wrap-right">
+              <svg class="pag-btn-right-icon" width="20" height="20">
+                <use href="img/sprite/icons.svg#icon-right-two"></use>
+              </svg>
+
+          </span>
+        </button>`;
+
+  return `<div class="pagination-bar">
+    <div class="pag-btn-block">${previousButtons}</div>
+    <div class="pag-btn-block">${buttons}</div>
+    <div class="pag-btn-block">${nextButtons}</div>
+  </div>`;
 }
