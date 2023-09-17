@@ -6,7 +6,7 @@ import 'swiper/css/pagination';
 import { getAllSomething } from '../service-api';
 
 const initSwiper = () => {
-  const swiper = new Swiper('.swiper', {
+  new Swiper('.swiper', {
     modules: [Pagination, Scrollbar, Autoplay, Mousewheel],
     speed: 1200,
     spaceBetween: 30,
@@ -33,16 +33,17 @@ const initSwiper = () => {
 };
 
 const getSwiperData = async () => {
-  const data = await getAllSomething('events');
-  if (!data.length || !data) {
-    return null;
+  const response = await getAllSomething('events');
+  if (!response.length || !response) {
+    return;
   }
 
-  createMarkUp(data);
+  createMarkUp(response);
 };
 
 const createMarkUp = data => {
   const swiperWrapper = document.querySelector('.swiper-wrapper');
+
   data.forEach(({ cook, topic }) => {
     const markUp = `
     <div class="swiper-slide">
@@ -59,6 +60,7 @@ const createMarkUp = data => {
 
     swiperWrapper.insertAdjacentHTML('beforeend', markUp);
   });
+
   initSwiper();
 };
 
