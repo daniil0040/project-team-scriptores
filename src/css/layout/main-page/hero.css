@@ -235,11 +235,13 @@ span.swiper-pagination-bullet-active {
 
 @media screen and (min-width: 1280px) {
   .hero-section {
+    overflow: hidden;
     position: relative;
     display: flex;
     margin-top: 100px;
     margin-bottom: 100px;
     padding-right: 100px;
+    height: 500px;
   }
   .hero-title {
     margin-bottom: 16px;
