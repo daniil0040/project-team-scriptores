@@ -1,3 +1,4 @@
+
 import { getAllRecipes } from '../service-api';
 const cardsContainer = document.querySelector('.cards-container-js');
 
