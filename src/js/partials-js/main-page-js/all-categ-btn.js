@@ -1,13 +1,13 @@
 import { createAllCategCardsMarkup } from "./all-categ-cards"
 import { isAllCategories } from "./categories"
 import { getAllRecipes } from "../service-api";
-import { cardsContainer } from './categories';
+import { cardsContainer } from './all-categ-cards';
 export const buttonAllCategories = document.querySelector(".all-categories")
 
 
 
 const auditAllCateg = function () {
-    if (!isAllCategories) {
+    if (!isAllCategories || buttonAllCategories.classList.contains("all-categories-button-active")) {
         getAllRecipes()
         .then(data => {
             console.log(data)
@@ -18,7 +18,10 @@ const auditAllCateg = function () {
         .catch(error => {
             console.log(error);
         })
-    }return
+    } else {
+        buttonAllCategories.classList.add("all-categories-button-active");
+        return
+    }
 }
 
 buttonAllCategories.addEventListener('click', auditAllCateg);
