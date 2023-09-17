@@ -1,5 +1,5 @@
 import * as basicLightbox from 'basiclightbox';
-import "basicLightbox/dist/basicLightbox.min.css";
+// import "basicLightbox/dist/basicLightbox.min.css";
 import { getRecipeById } from '../service-api';
 
 const seeRecipe = document.querySelector('.cards-container-js');
