@@ -205,8 +205,13 @@
 .wrapper-reset {
   display: flex;
   justify-content: flex-end;
+  margin-bottom: 20px;
 }
-
+@media screen and (min-width: 768px) {
+  .wrapper-reset {
+    margin-bottom: 14px;
+  }
+}
 .button-reset {
   display: flex;
   justify-content: flex-end;
