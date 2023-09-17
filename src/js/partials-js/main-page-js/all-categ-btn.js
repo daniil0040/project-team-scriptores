@@ -22,5 +22,3 @@ const auditAllCateg = function () {
 }
 
 buttonAllCategories.addEventListener('click', auditAllCateg);
-
-
