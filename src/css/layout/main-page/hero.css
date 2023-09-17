@@ -239,6 +239,7 @@ span.swiper-pagination-bullet-active {
     display: flex;
     margin-top: 100px;
     margin-bottom: 100px;
+    padding-right: 100px;
   }
   .hero-title {
     margin-bottom: 16px;
