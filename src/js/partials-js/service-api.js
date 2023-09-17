@@ -6,7 +6,7 @@ let url;
 let pageNumber = 0;
 //////////// Базовый fetch запрос //////////////
 
-export const fetchBaseFuction = async url => {
+const fetchBaseFuction = async url => {
   try {
     if (url === undefined) {
       throw new Error(`Bad Request`);
@@ -25,6 +25,7 @@ export const fetchBaseFuction = async url => {
 
 //////////// Запрос на Popular Recipes, на рецепты из всех категорий или из конкретной категории(В параметре нужно передать название категории с большой буквы!) //////////////
 
+
 export const getAllRecipes = async category => {
   pageNumber += 1;
   if (!category) {
@@ -33,6 +34,7 @@ export const getAllRecipes = async category => {
     url = `${BASE_URL}/recipes?category=${category}&limit=9&page=${pageNumber}`;
     if (category === 'Popular') url = `${BASE_URL}/recipes/popular`;
   }
+
 
   const answer = await fetchBaseFuction(url);
   return answer;
@@ -75,4 +77,6 @@ export const getRecipeById = async id => {
   return answer;
 };
 
+
 // getRecipeById("6462a8f74c3d0ddd28897fc1")
+

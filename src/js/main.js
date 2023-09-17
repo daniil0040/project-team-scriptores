@@ -46,3 +46,7 @@ import {} from './partials-js/main-page-js/see-recipe';
 
 // PAGINATION
 import {} from './partials-js/main-page-js/pagination';
+
+// SCROLL UP
+import "./partials-js/components/scroll-up";
+
