@@ -150,4 +150,20 @@
         line-height: 122.222%;
         margin-bottom: 16px;
     }
+
+    /* .raiting-time-box{
+        justify-content: end;
+        gap: 108px;
+    } */
+
+    /* .modal-lists{
+        display: flex;
+        flex-direction: column-reverse;
+    } */
+
+    /* .modal-info-box{
+        display: flex;
+        justify-content: flex-end; 
+    } */
+
 }

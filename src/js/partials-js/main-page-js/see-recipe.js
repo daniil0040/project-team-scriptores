@@ -29,9 +29,13 @@ async function getCard(id) {
     <p class="ing-name">${name}</p>
     <p class="ing-measure">${measure}</p>
     </li>`).join('');
-        const tagMark = tags.map((tag) => `<li class="tags-item">
+        let tagMark = tags.map((tag) => `<li class="tags-item">
     <p class="tags-name">#${tag}</p>
-    </li>`).join('');
+    </li>`);
+        if (tagMark.length > 3) {
+            tagMark.length = 3;
+        };
+        tagMark = tagMark.join('');
         console.log(tagMark)
        
 
@@ -40,11 +44,11 @@ async function getCard(id) {
 
     <h1 class="modal-title">${title}</h1></div>
     <div class="raiting-time-box">
+    <ul class="tags-list list">${tagMark}</ul>
     <p class="raiting">${rating}</p>
     <p class="time">${time} min</p>
     </div>
     <ul class="ing-list list">${ingMark}</ul>
-    <ul class="tags-list list">${tagMark}</ul>
     <p class="instruction">${instructions}</p>
     <button type="button" class="modal-close-btn js-modal-close">
     <svg class="modal-close" width="20" height="20">
