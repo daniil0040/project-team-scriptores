@@ -8,10 +8,8 @@ import { getAllSomething } from '../service-api';
 const initSwiper = () => {
   new Swiper('.swiper', {
     modules: [Pagination, Scrollbar, Autoplay, Mousewheel],
-    speed: 1200,
+    speed: 800,
     spaceBetween: 30,
-    width: 495,
-    height: 300,
     loop: true,
     pagination: {
       el: '.swiper-pagination',
@@ -23,7 +21,7 @@ const initSwiper = () => {
       el: '.swiper-scrollbar',
     },
     autoplay: {
-      delay: 3000,
+      delay: 6000,
       disableOnInteraction: false,
     },
     mousewheel: {
