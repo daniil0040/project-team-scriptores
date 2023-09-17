@@ -8,6 +8,10 @@
     
 }
 
+.is-none {
+    display: none;
+}
+
 
 .modal-img {
     width: 295px;
@@ -28,12 +32,15 @@
 
 .raiting-time-box {
     display: flex;
-    gap: 116px;
     color: rgba(5, 5, 5, 0.50);
     font-size: 14px;
     font-weight: 500;
     line-height: 128.571%;
     margin-bottom: 33px;
+}
+
+.raiting-text{
+    margin-right: 6px;
 }
 
 .ing-list {
@@ -77,7 +84,7 @@
 }
 
 .tags-name {
-    color: #050505;
+    color: var(--text-color-white-theme);
     font-size: 12px;
     font-weight: 500;
     line-height: 116.667%;
@@ -119,10 +126,51 @@
 .order-now {
     height: 41px;
     padding: 12px 0;
-    color: #050505;
+    color: var(--text-color-white-theme);
     font-size: 14px;
     font-weight: 500;
     line-height: normal;
+}
+
+.star-list{
+    display: flex;
+    margin-right: 16px;
+}
+
+.categories-block-modal::-webkit-scrollbar {
+    width: 8px;
+    height: 201px;
+    border-radius: 12px;
+
+}
+
+.categories-block-modal::-webkit-scrollbar-track {
+    background-color: #F8F8F8;
+    ;
+}
+
+.categories-block-modal::-webkit-scrollbar-thumb {
+    background: rgba(5, 5, 5, 0.18);
+    border-radius: 12px;
+}
+
+.categories-block-modal::-webkit-scrollbar-thumb:hover {
+    background-color: #9bb537;
+}
+
+
+.categories-block-modal::-webkit-scrollbar-track {
+    background-color: #F8F8F8;
+    ;
+}
+
+.categories-block-modal::-webkit-scrollbar-thumb {
+    background: rgba(5, 5, 5, 0.18);
+    border-radius: 12px;
+}
+
+.categories-block-modal::-webkit-scrollbar-thumb:hover {
+    background-color: #9bb537;
 }
 
 @media screen and (min-width: 768px){
@@ -141,6 +189,15 @@
     
     }
 
+    .desc-box{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ing-box{
+        order: 2;
+    }
+
     .img-title-box{
         display: flex;
         flex-direction: column-reverse;
@@ -150,4 +207,28 @@
         line-height: 122.222%;
         margin-bottom: 16px;
     }
+
+    .raiting-time-box{
+        order: 1;
+        justify-content: end;
+    }
+
+    .star-list{
+        margin-right: 8px;
+    }
+
+    .instruction{
+        margin-bottom: 32px;
+    }
+
+    .add-to-favorite {
+        height: 45px;
+        padding: 14px 28px;
+    }
+
+    .order-now {
+        height: 45px;
+        padding: 14px 28px;
+    }
+
 }
