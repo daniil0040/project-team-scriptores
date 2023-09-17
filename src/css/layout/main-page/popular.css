@@ -9,17 +9,17 @@
 .popular-recipes-wrap:focus {
       filter: drop-shadow(4px 4px 12px rgba(0, 0, 0, 0.3));
     }
-@media only screen and (max-width: 680px) {.popular-recipes-wrap:nth-last-child(-n + 2) {
+@media only screen and (max-width: 768px) {.popular-recipes-wrap:nth-last-child(-n + 2) {
     display: none;}
 }
   
-@media only screen and (min-width: 680px) {
+@media only screen and (min-width: 768px) {
     .popular-recipes-wrap{ 
       display: flex;
       gap: 8px;
       margin-bottom: 16px;
     }}
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1280px) {
     .popular-recipes-wrap{
     margin-bottom: 32px;
       gap: 16px;}
@@ -27,7 +27,7 @@
   
 
   
-@media only screen and (min-width: 680px) {.popular-recipes {
+@media only screen and (min-width: 768px) {.popular-recipes {
    
       display: block;
     }
@@ -39,22 +39,22 @@
     line-height: 1.33;
     text-transform: uppercase;}
   
-@media only screen and (min-width: 680px) {.popular-recipes-title{
+@media only screen and (min-width: 768px) {.popular-recipes-title{
       margin-bottom: 32px;}
     }
   
-@media only screen and (min-width: 1200px) {.popular-recipes-title{
+@media only screen and (min-width: 1280px) {.popular-recipes-title{
       font-size: 24px;
       line-height: 1.17;
     }
 }
 
-@media only screen and (min-width: 680px) {.popular-recipes-container {
+@media only screen and (min-width: 768px) {.popular-recipes-container {
      max-width: 176px;
     }
 }
   
-@media only screen and (min-width: 1200px) {.popular-recipes-container {
+@media only screen and (min-width: 1280px) {.popular-recipes-container {
       max-width: 235px;
     }
   }
@@ -63,14 +63,14 @@
     max-height: 64px;
     border-radius: 8px;}
   
-@media only screen and (min-width: 680px){
+@media only screen and (min-width: 768px){
         .popular-recipes-img{
       max-width: 48px;
       max-height: 48px;
     }
 }
   
-@media only screen and (min-width: 1200px){
+@media only screen and (min-width: 1280px){
      .popular-recipes-img{    
       max-width: 64px;
       max-height: 64px;
@@ -102,7 +102,7 @@
   
 
   
-@media only screen and (min-width: 680px){.popular-recipes-text {
+@media only screen and (min-width: 768px){.popular-recipes-text {
       font-size: 10px;
       line-height: 1.4;
     }
