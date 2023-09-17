@@ -1,46 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TastyTreats</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+      integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/slim-select@latest/dist/slimselect.css"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TastyTreats</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
-    integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://unpkg.com/slim-select@latest/dist/slimselect.css" />
-  <link rel="stylesheet" href="./css/main.css" />
-</head>
+  <body>
+    <!-- HEADER -->
+    <load src="./partials/header.html" />
 
-<body>
+    <!-- HERO -->
+    <load src="./partials/main-page/hero.html" />
+    <div class="container recipe-wrapper">
+      <div class="category-container">
+        <!-- CATEGORIES -->
+        <load src="./partials/main-page/categories.html" />
 
-  <!-- HEADER -->
-  <load src="./partials/header.html" />
+        <!-- POPULAR -->
+        <load src="./partials/main-page/popular.html" />
+      </div>
+      <div class="section-container">
+        <!-- FILTERS -->
+        <load src="./partials/main-page/filters.html" />
 
-  <!-- HERO -->
-  <load src="./partials/main-page/hero.html" />
-
-  <!-- CATEGORIES -->
-  <load src="./partials/main-page/categories.html" />
-
-  <!-- POPULAR -->
-  <load src="./partials/main-page/popular.html" />
-
-  <!-- FILTERS -->
-  <load src="./partials/main-page/filters.html" />
-
-  <!-- CARDS -->
-  <load src="./partials/main-page/cards.html" />
-
-  <!-- SEE RECIPE MODAL -->
-  <load src="./partials/main-page/see-recipe-modal.html" />
-
-  <!-- FAVORITES-PAGE-BTN -->
-  <!-- <button type="button">
+        <!-- CARDS -->
+        <load src="./partials/main-page/cards.html" />
+      </div>
+    </div>
+    <!-- FAVORITES-PAGE-BTN -->
+    <!-- <button type="button">
     <a href="./favorites.html">Favorites</a>
   </button> -->
 
-  <script type="module" src="./js/main.js"></script>
-</body>
-
+    <script type="module" src="./js/main.js"></script>
+  </body>
 </html>
