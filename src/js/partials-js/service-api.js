@@ -28,12 +28,11 @@ const fetchBaseFuction = async (url) => {
 //////////// Запрос на Popular Recipes, на рецепты из всех категорий или из конкретной категории(В параметре нужно передать название категории с большой буквы!) //////////////
 
 export const getAllRecipes = async (category) => {
-    pageNumber += 1
     if (!category) {
-         url = `${BASE_URL}/recipes?page=${pageNumber}&limit=9`
+         url = `${BASE_URL}/recipes?limit=9`
     }
     else {
-        url = `${BASE_URL}/recipes?category=${category}&limit=9&page=${pageNumber}`
+        url = `${BASE_URL}/recipes?category=${category}&limit=9`
         if(category === "Popular")   url = `${BASE_URL}/recipes/popular`
     }
 
@@ -91,4 +90,3 @@ export const getRecipeById = async (id) => {
 }
 
 // getRecipeById("6462a8f74c3d0ddd28897fc1")
-
