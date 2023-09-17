@@ -34,34 +34,37 @@ const initSwiper = () => {
 
 const getSwiperData = async () => {
   const response = await getAllSomething('events');
-  if (!response.length || !response) {
+  if (!response || !response.length) {
     return;
   }
 
   createMarkUp(response);
+
+  initSwiper();
 };
 
 const createMarkUp = data => {
   const swiperWrapper = document.querySelector('.swiper-wrapper');
 
-  data.forEach(({ cook, topic }) => {
-    const markUp = `
-    <div class="swiper-slide">
-    <div class="swiper-content">
-      <div class="slide-first-img" style="background-image: url(${cook.imgWebpUrl})"></div>
-      <div class="slide-second">
-          <div class="slide-second-img" style="background-image: url(${topic.previewWebpUrl});"></div>
-          <h2 class="slide-second-title">${topic.name}</h2>
-          <p class="slide-second-description">${topic.area}</p>
-      </div>
-      <div class="slide-third-img" style="background-image: url(${topic.imgWebpUrl})"></div>
-    </div>  
-  </div>`;
+  const markUp = data
+    .map(({ cook, topic }) => {
+      return `
+        <div class="swiper-slide">
+          <div class="swiper-content">
+            <div class="slide-first-img" style="background-image: url(${cook.imgWebpUrl})"></div>
+            <div class="slide-second">
+              <div class="slide-second-img" style="background-image: url(${topic.previewWebpUrl});"></div>
+              <h2 class="slide-second-title">${topic.name}</h2>
+              <p class="slide-second-description">${topic.area}</p>
+            </div>
+            <div class="slide-third-img" style="background-image: url(${topic.imgWebpUrl})"></div>
+          </div>
+        </div>
+      `;
+    })
+    .join(' ');
 
-    swiperWrapper.insertAdjacentHTML('beforeend', markUp);
-  });
-
-  initSwiper();
+  swiperWrapper.insertAdjacentHTML('beforeend', markUp);
 };
 
 getSwiperData();
