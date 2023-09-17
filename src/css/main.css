@@ -40,6 +40,8 @@
 
 @import url('./layout/main-page/see-recipe.css');
 
+@import url('./layout/footer.css');
+
 /* favorites-page */
 @import url('./layout/header.css');
 
