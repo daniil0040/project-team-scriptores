@@ -8,6 +8,10 @@
     
 }
 
+.is-none {
+    display: none;
+}
+
 
 .modal-img {
     width: 295px;

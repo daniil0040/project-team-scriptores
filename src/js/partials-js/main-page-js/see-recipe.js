@@ -40,6 +40,21 @@ function loadBasicLightbox(card) {
     const instance = basicLightbox.create(createMurkUpModal(card));
     instance.show();
 
+    const video = document.querySelector('.js-modal-video');
+    const image = document.querySelector('.js-modal-img');
+    console.log(video)
+
+    video.addEventListener('error', function() {
+  // Приховати відео
+        video.style.display = "none";
+        
+  
+  // Показати картинку-запаску
+  image.style.display = "block";
+});
+
+    // checkVideo(card.youtube, video, image);
+
     const favorite = document.querySelector('.js-favorite-btn');
     favorite.addEventListener('click', () => addFavorite(card));
 
@@ -66,9 +81,9 @@ function createMurkUpModal(card) {
     </li>`).join('');
     let ratingStar = createRatingStar(rating);
     let youtubeLink = createYoutubeLink(youtube);
-    console.log(youtubeLink)
 
-     markUP = (`<div class="modal categories-block-modal"><div class="img-title-box"><iframe class="modal-img" width="295" height="295" src="https://www.youtube.com/embed/${youtubeLink}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    markUP = (`<div class="modal categories-block-modal"><div class="img-title-box"><iframe class="modal-img js-modal-video"  width="295" height="295" src="https://www.youtube.com/embed/${youtubeLink}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+     <img src="${thumb}" alt="${title}" class="modal-img js-modal-img is-none" id="fallback-image" width="295" height="295">
     <h1 class="modal-title">${title}</h1></div>
     <div class="desc-box">
     <div class="raiting-time-box">
@@ -131,6 +146,15 @@ function createYoutubeLink(youtube) {
     } else return;
 }
 
+function checkVideo(tubeLink, video, image) {
+    if (!tubeLink) {
+        video.classList.add('is-none');
+        image.classList.remove('is-none');
+    }
+    return
+}
+
+
 
 function addFavorite(card) {
     let existingData = localStorage.getItem("cardData");
@@ -145,7 +169,5 @@ function addFavorite(card) {
     } 
     let jsonData = JSON.stringify(arrFavorite)
             localStorage.setItem("cardData", jsonData);
-            console.log(localStorage);
-
 }
 
