@@ -4,8 +4,6 @@ import Notiflix from 'notiflix';
 import axios from "axios";
 import SlimSelect from 'slim-select';
 // import "slim-select/dist/slimselect.css"; 
-import Swiper from 'swiper';
-import 'swiper/css';
 
 // SERVICE-API
 import { } from "./partials-js/service-api"
