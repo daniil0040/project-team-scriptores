@@ -13,7 +13,6 @@ const auditAllCateg = function () {
         buttonAllCategories.classList.remove("all-categories-button-active");
         getAllRecipes()
         .then(data => {
-            console.log(data)
             cardsContainer.innerHTML = createAllCategCardsMarkup(data.results);
             
             
