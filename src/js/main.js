@@ -14,9 +14,6 @@ import './partials-js/menu';
 // PARTIALS
 ////////////////////////////
 
-// ORDER NOW
-import {} from './partials-js/main-page-js/order-now';
-
 // SWIPER
 import './partials-js/main-page-js/swiper';
 
@@ -52,4 +49,7 @@ import {} from './partials-js/main-page-js/pagination';
 
 // SCROLL UP
 import "./partials-js/components/scroll-up";
+
+// // ORDER NOW
+// import {} from './partials-js/main-page-js/order-now';
 
