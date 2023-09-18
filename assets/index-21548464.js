@@ -1,4 +1,4 @@
-import{g as vt,a as st,c as wt,b as Gt}from"./all-categ-cards-26b50551.js";var Ne=typeof globalThis<"u"?globalThis:typeof window<"u"?window:typeof global<"u"?global:typeof self<"u"?self:{};function Ie(s){throw new Error('Could not dynamically require "'+s+'". Please configure the dynamicRequireTargets or/and ignoreDynamicRequires option of @rollup/plugin-commonjs appropriately for this require call to work.')}var Qe={},jt={get exports(){return Qe},set exports(s){Qe=s}};(function(s,e){(function(t){s.exports=t()})(function(){return function t(i,n,a){function o(d,m){if(!n[d]){if(!i[d]){var h=typeof Ie=="function"&&Ie;if(!m&&h)return h(d,!0);if(l)return l(d,!0);var w=new Error("Cannot find module '"+d+"'");throw w.code="MODULE_NOT_FOUND",w}var p=n[d]={exports:{}};i[d][0].call(p.exports,function(L){return o(i[d][1][L]||L)},p,p.exports,t,i,n,a)}return n[d].exports}for(var l=typeof Ie=="function"&&Ie,r=0;r<a.length;r++)o(a[r]);return o}({1:[function(t,i,n){Object.defineProperty(n,"__esModule",{value:!0}),n.create=n.visible=void 0;var a=function(r){var d=arguments.length>1&&arguments[1]!==void 0&&arguments[1],m=document.createElement("div");return m.innerHTML=r.trim(),d===!0?m.children:m.firstChild},o=function(r,d){var m=r.children;return m.length===1&&m[0].tagName===d},l=function(r){return(r=r||document.querySelector(".basicLightbox"))!=null&&r.ownerDocument.body.contains(r)===!0};n.visible=l,n.create=function(r,d){var m=function(p,L){var v=a(`
+import{g as vt,a as st,c as wt,b as Gt}from"./all-categ-cards-4cd3b1e3.js";var Ne=typeof globalThis<"u"?globalThis:typeof window<"u"?window:typeof global<"u"?global:typeof self<"u"?self:{};function Ie(s){throw new Error('Could not dynamically require "'+s+'". Please configure the dynamicRequireTargets or/and ignoreDynamicRequires option of @rollup/plugin-commonjs appropriately for this require call to work.')}var Qe={},jt={get exports(){return Qe},set exports(s){Qe=s}};(function(s,e){(function(t){s.exports=t()})(function(){return function t(i,n,a){function o(d,m){if(!n[d]){if(!i[d]){var h=typeof Ie=="function"&&Ie;if(!m&&h)return h(d,!0);if(l)return l(d,!0);var w=new Error("Cannot find module '"+d+"'");throw w.code="MODULE_NOT_FOUND",w}var p=n[d]={exports:{}};i[d][0].call(p.exports,function(L){return o(i[d][1][L]||L)},p,p.exports,t,i,n,a)}return n[d].exports}for(var l=typeof Ie=="function"&&Ie,r=0;r<a.length;r++)o(a[r]);return o}({1:[function(t,i,n){Object.defineProperty(n,"__esModule",{value:!0}),n.create=n.visible=void 0;var a=function(r){var d=arguments.length>1&&arguments[1]!==void 0&&arguments[1],m=document.createElement("div");return m.innerHTML=r.trim(),d===!0?m.children:m.firstChild},o=function(r,d){var m=r.children;return m.length===1&&m[0].tagName===d},l=function(r){return(r=r||document.querySelector(".basicLightbox"))!=null&&r.ownerDocument.body.contains(r)===!0};n.visible=l,n.create=function(r,d){var m=function(p,L){var v=a(`
 		<div class="basicLightbox `.concat(L.className,`">
 			<div class="basicLightbox__placeholder" role="dialog"></div>
 		</div>
@@ -59,13 +59,11 @@ Notiflix needs to be appended to the "<`+b+'>" element, but you called it before
     </div>
     <p class="instruction">${o}</p>
     <button type="button" class="modal-close-btn js-modal-close">
-    <svg class="modal-close" width="20" height="20">
-        <use href="img/sprite/icons.svg#icon-close-x"></use>
-    </svg>
-    </button>
+    <img src="img/sprite/icon-close-x.svg" alt="icon" class="icon-x" width="24" height="24">
+     </button>
     <div class="button-block">
     <button class="btn add-to-favorite js-favorite-btn" type="button">Add to favorite</button>
-    <button class="btn order-now js-rating-btn" type="button">Give a rating</button>
+    <button class="btn order-now js-rating" type="button">Give a rating</button>
     </div>
     </div>`,e}function Ws(s){const e=` <li class="item-star-icon">
         <button class="yellow-star"></button>
