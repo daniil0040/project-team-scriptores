@@ -1,44 +1,55 @@
-import * as basicLightbox from 'basiclightbox'
-// import "basicLightbox/dist/basicLightbox.min.css" 
+import * as basicLightbox from 'basiclightbox';
+// import "basicLightbox/dist/basicLightbox.min.css"
 import Notiflix from 'notiflix';
-import axios from "axios";
+import axios from 'axios';
 import SlimSelect from 'slim-select';
-// import "slim-select/dist/slimselect.css"; 
-import Swiper from 'swiper';
-import 'swiper/css';
+// import "slim-select/dist/slimselect.css";
 
 // SERVICE-API
-import { } from "./partials-js/service-api"
+import {} from './partials-js/service-api';
 
 // MENU-MODAL
-import "./partials-js/menu"
+import './partials-js/menu';
 
 // PARTIALS
 ////////////////////////////
 
 // ORDER NOW
-import { } from "./partials-js/main-page-js/order-now"
+import {} from './partials-js/main-page-js/order-now';
 
 // SWIPER
-import { } from "./partials-js/main-page-js/swiper"
+import './partials-js/main-page-js/swiper';
+
+// ALL CATEGORIES BUTTON
+import './partials-js/main-page-js/all-categ-btn';
 
 // CATEGORIES
-import { } from "./partials-js/main-page-js/categories"
+import {} from './partials-js/main-page-js/categories';
 
 // POPULAR
-import { } from "./partials-js/main-page-js/popular"
+import {} from './partials-js/main-page-js/popular';
 
 // ALL CATEGORIES CARDS
-import { } from "./partials-js/main-page-js/all-categ-cards"
+import {} from './partials-js/main-page-js/all-categ-cards';
 
 // CATEGORIES CARDS
-import { } from "./partials-js/main-page-js/categ-cards"
+import {} from './partials-js/main-page-js/categ-cards';
 
 // SEARCH FILTER
-import { } from "./partials-js/main-page-js/search-filter"
+import {} from './partials-js/main-page-js/search-filter';
+
+// SELECT
+import './partials-js/main-page-js/select';
 
 // SEE RECIPE
-import { } from "./partials-js/main-page-js/see-recipe"
+import { } from './partials-js/main-page-js/see-recipe';
+
+// GIVE A RATING
+import './partials-js/main-page-js/give-rating';
 
 // PAGINATION
-import { } from "./partials-js/main-page-js/pagination"
+import {} from './partials-js/main-page-js/pagination';
+
+// SCROLL UP
+import "./partials-js/components/scroll-up";
+
