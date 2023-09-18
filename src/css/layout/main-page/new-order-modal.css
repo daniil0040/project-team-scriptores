@@ -1,0 +1,84 @@
+/* Стилі для модального вікна */
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    width: 440px;
+    height: 632px;
+    padding: 40px;
+    border-radius: 15px;
+    z-index: 10000;
+}
+
+.icon-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+}
+
+.form-title {
+    text-align: left;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.input-field,
+.textarea-field {
+    width: 360px;
+    height: 48px;
+    padding: 18px;
+    border: 1px solid #05050520;
+    border-radius: 15px;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+.textarea-field {
+    height: 100px;
+    resize: none;
+}
+
+.submit-button {
+    width: 360px;
+    height: 48px;
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    color: black;
+}
+
+.icon-close {
+    fill: black;
+}
+
+.form-label {
+    font-size: 14px;
+    color: #0505057d;
+}
