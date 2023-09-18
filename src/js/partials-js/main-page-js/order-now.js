@@ -1,9 +1,10 @@
-const openModalButton = document.getElementById('openModalBtn');
-const closeModalButton = document.getElementById('closeModalBtn');
-const modal = document.getElementById('modal');
-const overlay = document.getElementById('overlay');
-const orderForm = document.getElementById('orderForm');
+	const openModalButton = document.getElementById('openModalBtn');
+	const closeModalButton = document.getElementById('closeModalBtn');
+	const modal = document.getElementById('modal');
+	const overlay = document.getElementById('overlay');
+	const orderForm = document.getElementById('orderForm');
 
+// Функція відериття модального вікна
 openModalBtn.addEventListener('click', () => {
     overlay.style.display = 'block';
     orderModal.style.display = 'block';
@@ -12,6 +13,7 @@ openModalBtn.addEventListener('click', () => {
     }, 10);
 });
 
+// Функція закриття модального вікна
 closeModalBtn.addEventListener('click', () => {
     orderModal.style.opacity = '0';
     setTimeout(() => {
@@ -33,13 +35,13 @@ orderForm.addEventListener('submit', (e) => {
 });
 
 // Заборона взаємодії з іншими елементами сайту коли модальне вікно відкрите
-modal.addEventListener('click', (e) => {
+orderModal.addEventListener('click', (e) => {
     e.stopPropagation();
 });
 
-overlay.addEventListener('click', closeModal);
+// overlay.addEventListener('click', closeModal);
 
 // Заборонити прокрутку в модальному вікні
-modal.addEventListener('scroll', (e) => {
+orderModal.addEventListener('scroll', (e) => {
     e.preventDefault();
 });
