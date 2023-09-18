@@ -33,6 +33,9 @@ body.light-theme .all-categories:focus {
 @media only screen and (min-width: 680px) {
   .categories-block {
     margin-top: 30px;
+@media only screen and (min-width: 768px) {
+  .categories-block{
+      margin-top: 30px;
     width: 176px;
     max-height: 416px;
   }
@@ -40,6 +43,8 @@ body.light-theme .all-categories:focus {
 
 @media only screen and (min-width: 1200px) {
   .categories-block {
+@media only screen and (min-width: 1280px){
+.categories-block{
     margin-top: 42px;
     width: 235px;
   }
@@ -62,6 +67,8 @@ body.light-theme .all-categories:focus {
 
 @media only screen and (min-width: 680px) {
   .category-button {
+@media only screen and (min-width: 768px){
+      .category-button{
     padding-top: 12px;
     padding-bottom: 12px;
   }
