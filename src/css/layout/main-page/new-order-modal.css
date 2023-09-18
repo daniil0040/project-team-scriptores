@@ -1,6 +1,6 @@
 /* Стилі для модального вікна */
 
-.overlay {
+.new-order-overlay {
     display: none;
     position: fixed;
     top: 0;
@@ -11,7 +11,7 @@
     z-index: 9999;
 }
 
-.modal {
+.new-order-modal {
     display: none;
     position: fixed;
     top: 50%;
@@ -23,28 +23,38 @@
     padding: 40px;
     border-radius: 15px;
     z-index: 10000;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.4s ease-in-out;
 }
 
-.icon-close {
+.new-order-modal.active {
+    overflow: hidden;
+}
+
+.new-order-icon-close {
     position: absolute;
     top: 16px;
     right: 16px;
     cursor: pointer;
 }
 
-.form-title {
+.new-order-icon-close {
+    fill: black;
+}
+
+.new-order-form-title {
     text-align: left;
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 40px;
 }
 
-.form-group {
+.new-order-form-group {
     margin-bottom: 18px;
 }
 
-.input-field,
-.textarea-field {
+.new-order-input-field,
+.new-order-textarea-field {
     width: 360px;
     height: 48px;
     padding: 18px;
@@ -54,12 +64,12 @@
     margin-top: 8px;
 }
 
-.textarea-field {
+.new-order-textarea-field {
     height: 100px;
     resize: none;
 }
 
-.submit-button {
+.new-order-submit-button {
     width: 360px;
     height: 48px;
     background-color: var(--accent-color);
@@ -70,15 +80,33 @@
     cursor: pointer;
 }
 
-.submit-button:hover {
+.new-order-submit-button:hover {
     color: black;
 }
 
-.icon-close {
-    fill: black;
-}
-
-.form-label {
+.new-order-form-label {
     font-size: 14px;
     color: #0505057d;
+}
+
+@media (max-width: 480px) {
+    .new-order-modal {
+        width: 335px;
+        height: 582px;
+        padding: 20px;
+    }
+
+    .new-order-input-field {
+        width: 295px;
+        height: 46px;
+    }
+
+    .new-order-textarea-field {
+        width: 295px;
+    }
+
+    .new-order-submit-button {
+        width: 295px;
+        height: 46px;
+    }
 }
