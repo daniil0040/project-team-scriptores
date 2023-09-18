@@ -252,6 +252,7 @@ span.swiper-pagination-bullet-active {
   }
 
   .flex-container {
+    overflow: hidden;
     padding: 0 100px 0 100px;
   }
   .swiper {
@@ -263,7 +264,7 @@ span.swiper-pagination-bullet-active {
     margin-left: 0;
   }
   .swiper-content {
-    width: 700px;
+    width: 840px;
     gap: 16px;
   }
 
@@ -302,5 +303,14 @@ span.swiper-pagination-bullet-active {
     height: 442px;
     width: 350px;
     background-size: 600px 600px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .flex-container {
+    padding-left: 150px;
+  }
+  .swiper {
+    left: 50%;
   }
 }
