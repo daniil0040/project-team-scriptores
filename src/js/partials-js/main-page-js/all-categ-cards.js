@@ -1,6 +1,6 @@
 
 import { getAllRecipes } from '../service-api';
-const cardsContainer = document.querySelector('.cards-container-js');
+export const cardsContainer = document.querySelector('.cards-container-js');
 
 getAllRecipes()
   .then(data => {
