@@ -31,3 +31,8 @@
   visibility: hidden;
   pointer-events: none;
 }
+
+.is-none {
+  display: none;
+}
+
