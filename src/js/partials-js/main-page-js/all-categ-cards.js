@@ -3,10 +3,10 @@ const cardsContainer = document.querySelector('.cards-container-js');
 
 getAllRecipes()
   .then(data => {
+    cardsContainer.innerHTML = createAllCategCardsMarkup(data.results);
     const recipes = createAllCategCardsMarkup(data.results);
-    const pagination = addPagination(data);
-    const cardsContainerHtml = recipes + pagination;
-    cardsContainer.innerHTML = cardsContainerHtml;
+    cardsContainer.innerHTML = recipes;
+    addPagination(data);
   })
   .catch(err => {
     console.log(err);
@@ -15,10 +15,10 @@ getAllRecipes()
 export function createAllCategCardsMarkup(arr) {
   return arr
     .map(
-      ({ preview, title, description, rating, _id }) => `
-    <li class="recipes-card" >
+      ({ preview, title, description, rating, _id, tags }) => `
+    <li class="recipes-card" data-tags="${tags}" >
         
-      <img class="recipes-img" src="${preview}" alt="" />
+      <img class="recipes-img" src="${preview}" alt="${title}" />
       <div class="card-description">
         <button class="like-btn" type="button">
           <svg class="like-logo liked" width="22" height="22">
@@ -57,13 +57,12 @@ export function createAllCategCardsMarkup(arr) {
           </div>
           <div class="reting-item" data-item-value="">
             <svg class="" width="18" height="18">
-              <use href="img/sprite/icons.svg#icon-star-grey"></use>
+              <use href="img/sprite/icons.svg#icon-star-j"></use>
             </svg>
           </div>
-          
-           <button class="btn-see-recipe btn-see-recipe-js" type="button" data-id= "${_id}">See recipe</button>
-         
-          </div
+     <button class="btn-see-recipe btn-see-recipe-js" type="button" data-id= "${_id}">See recipe</button>
+
+          </div>
        
       
    
@@ -75,7 +74,6 @@ export function createAllCategCardsMarkup(arr) {
 
 export function addPagination(results, pageNumber = 1) {
   const totalPages = results.totalPages;
-
   let previousButtons = '';
   previousButtons += `<button
       id="pag-btn-start"
@@ -157,7 +155,7 @@ export function addPagination(results, pageNumber = 1) {
 
   let nextButtons = '';
   if (Number(results.page) < Number(totalPages)) {
-    const nextPageNumber = lastPage + 1;
+    const nextPageNumber = Number(pageNumber) + 1;
     nextButtons += `<button
           id="pag-btn-next"
           class="pag-btn-green pag-btn-number"
@@ -187,9 +185,11 @@ export function addPagination(results, pageNumber = 1) {
           </span>
         </button>`;
 
-  return `<div class="pagination-bar">
+  const paginationHtml = `<div class="pagination-bar">
     <div class="pag-btn-block">${previousButtons}</div>
     <div class="pag-btn-block">${buttons}</div>
     <div class="pag-btn-block">${nextButtons}</div>
   </div>`;
+
+  document.getElementById('pagination').innerHTML = paginationHtml;
 }

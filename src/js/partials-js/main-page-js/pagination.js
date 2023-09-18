@@ -10,6 +10,7 @@ document.addEventListener('click', async e => {
     const data = await getAllRecipes(null, pageNumber);
     const recipes = createAllCategCardsMarkup(data.results);
     const pagination = addPagination(data, pageNumber);
+
     const cardsContainerHtml = recipes + pagination;
 
     document.querySelector('.cards-container-js').innerHTML =

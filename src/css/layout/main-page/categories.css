@@ -109,7 +109,6 @@ body.light-theme .all-categories:focus {
   gap: 4px;
 
   justify-content: center;
-  padding-top: 40px;
   padding-bottom: 80px;
   margin-top: 32px;
 }
@@ -262,12 +261,6 @@ body.light-theme .all-categories:focus {
   .pag-btn-white {
     width: 44px;
     height: 44px;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .pagination-bar {
-    padding-top: 64px;
   }
 }
 
