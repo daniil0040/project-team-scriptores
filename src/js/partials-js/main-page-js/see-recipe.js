@@ -109,9 +109,7 @@ function createRatingStar(rating) {
         <button class="yellow-star" data-icon="icon-star"></button>
     </li>`
     const grayStar = `<li class="item-star-icon" >
-        <svg width="18" height="18">
-            <use href="img/sprite/icons.svg#icon-star-j"></use>
-        </svg>
+        <button class="gray-star" data-icon="icon-star"></button>
     </li>`
     const newRating = Math.round(rating);
     let arrStars = [];

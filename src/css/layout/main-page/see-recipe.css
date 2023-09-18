@@ -178,22 +178,19 @@
     height: 18px;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url('../img/sprite/icons.svg');
+    background-image: url('/img/sprite/star-yellow.svg');
+    fill: #0505051a;
 }
 
-.yellow-star[data-icon="icon-star"] {
-    background-position: 0 0;
-    
+
+.gray-star{
+    width: 18px;
+    height: 18px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('/img/sprite/star-gray.svg');
 }
 
-/* .yellow-star::before {
-    content: "";
-    background-image: url('../img/sprite/icons.svg#icon-star');
-    width: 24px;
-    height: 24px;
-    display: inline-block;
-    vertical-align: middle;
-}  */
 
 @media screen and (min-width: 768px){
     .modal{
