@@ -6,8 +6,13 @@ document.addEventListener('click', async e => {
 
   if (button) {
     const pageNumber = button.getAttribute('page-number');
-
-    const data = await getAllRecipes(null, pageNumber);
+    let category = document.querySelector('[active="true"]');
+    let categoryValue;
+    if (category) {
+      categoryValue = category.textContent;
+    }
+    const data = await getAllRecipes(categoryValue, pageNumber);
+    console.log(data);
     const recipes = createAllCategCardsMarkup(data.results);
     const pagination = addPagination(data, pageNumber);
 

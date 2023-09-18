@@ -1,4 +1,3 @@
-
 import { getAllRecipes } from '../service-api';
 const cardsContainer = document.querySelector('.cards-container-js');
 
@@ -75,7 +74,13 @@ export function createAllCategCardsMarkup(arr) {
 
 export function addPagination(results, pageNumber = 1) {
   const totalPages = results.totalPages;
+
+  if (Number(totalPages) === 1) {
+    return (document.getElementById('pagination').innerHTML = '');
+  }
+
   let previousButtons = '';
+
   previousButtons += `<button
       id="pag-btn-start"
       class="gag-btn-black pag-btn-number"
