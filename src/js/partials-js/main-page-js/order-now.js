@@ -1,9 +1,10 @@
-const openModalBtn = document.getElementById('openModalBtn');
-const closeModalBtn = document.getElementById('closeModalBtn');
-const overlay = document.getElementById('overlay');
-const orderModal = document.getElementById('orderModal');
-const orderForm = document.getElementById('orderForm');
+	const openModalButton = document.getElementById('openModalBtn');
+	const closeModalButton = document.getElementById('closeModalBtn');
+	const modal = document.getElementById('modal');
+	const overlay = document.getElementById('overlay');
+	const orderForm = document.getElementById('orderForm');
 
+// Функція відериття модального вікна
 openModalBtn.addEventListener('click', () => {
     overlay.style.display = 'block';
     orderModal.style.display = 'block';
@@ -12,6 +13,7 @@ openModalBtn.addEventListener('click', () => {
     }, 10);
 });
 
+// Функція закриття модального вікна
 closeModalBtn.addEventListener('click', () => {
     orderModal.style.opacity = '0';
     setTimeout(() => {
@@ -26,9 +28,20 @@ overlay.addEventListener('click', (e) => {
     }
 });
 
+// Очищення полів форми при натисканні кнопки "Send"
 orderForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    // Додайте код для обробки відправки форми тут
-    // Наприклад, відправка даних на сервер або інші дії.
-    closeModalBtn.click();
+    orderForm.reset();
+});
+
+// Заборона взаємодії з іншими елементами сайту коли модальне вікно відкрите
+orderModal.addEventListener('click', (e) => {
+    e.stopPropagation();
+});
+
+// overlay.addEventListener('click', closeModal);
+
+// Заборонити прокрутку в модальному вікні
+orderModal.addEventListener('scroll', (e) => {
+    e.preventDefault();
 });
