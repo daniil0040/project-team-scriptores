@@ -1,4 +1,4 @@
-import{g as bt,a as it,c as yt,b as Vt}from"./all-categ-cards-5ea06185.js";var Ne=typeof globalThis<"u"?globalThis:typeof window<"u"?window:typeof global<"u"?global:typeof self<"u"?self:{};function Ie(s){throw new Error('Could not dynamically require "'+s+'". Please configure the dynamicRequireTargets or/and ignoreDynamicRequires option of @rollup/plugin-commonjs appropriately for this require call to work.')}var Ue={},$t={get exports(){return Ue},set exports(s){Ue=s}};(function(s,e){(function(t){s.exports=t()})(function(){return function t(i,n,a){function o(d,m){if(!n[d]){if(!i[d]){var h=typeof Ie=="function"&&Ie;if(!m&&h)return h(d,!0);if(l)return l(d,!0);var w=new Error("Cannot find module '"+d+"'");throw w.code="MODULE_NOT_FOUND",w}var p=n[d]={exports:{}};i[d][0].call(p.exports,function(L){return o(i[d][1][L]||L)},p,p.exports,t,i,n,a)}return n[d].exports}for(var l=typeof Ie=="function"&&Ie,r=0;r<a.length;r++)o(a[r]);return o}({1:[function(t,i,n){Object.defineProperty(n,"__esModule",{value:!0}),n.create=n.visible=void 0;var a=function(r){var d=arguments.length>1&&arguments[1]!==void 0&&arguments[1],m=document.createElement("div");return m.innerHTML=r.trim(),d===!0?m.children:m.firstChild},o=function(r,d){var m=r.children;return m.length===1&&m[0].tagName===d},l=function(r){return(r=r||document.querySelector(".basicLightbox"))!=null&&r.ownerDocument.body.contains(r)===!0};n.visible=l,n.create=function(r,d){var m=function(p,L){var v=a(`
+import{g as bt,a as it,c as yt,b as Vt}from"./all-categ-cards-40038313.js";var Ne=typeof globalThis<"u"?globalThis:typeof window<"u"?window:typeof global<"u"?global:typeof self<"u"?self:{};function Ie(s){throw new Error('Could not dynamically require "'+s+'". Please configure the dynamicRequireTargets or/and ignoreDynamicRequires option of @rollup/plugin-commonjs appropriately for this require call to work.')}var Ue={},$t={get exports(){return Ue},set exports(s){Ue=s}};(function(s,e){(function(t){s.exports=t()})(function(){return function t(i,n,a){function o(d,m){if(!n[d]){if(!i[d]){var h=typeof Ie=="function"&&Ie;if(!m&&h)return h(d,!0);if(l)return l(d,!0);var w=new Error("Cannot find module '"+d+"'");throw w.code="MODULE_NOT_FOUND",w}var p=n[d]={exports:{}};i[d][0].call(p.exports,function(L){return o(i[d][1][L]||L)},p,p.exports,t,i,n,a)}return n[d].exports}for(var l=typeof Ie=="function"&&Ie,r=0;r<a.length;r++)o(a[r]);return o}({1:[function(t,i,n){Object.defineProperty(n,"__esModule",{value:!0}),n.create=n.visible=void 0;var a=function(r){var d=arguments.length>1&&arguments[1]!==void 0&&arguments[1],m=document.createElement("div");return m.innerHTML=r.trim(),d===!0?m.children:m.firstChild},o=function(r,d){var m=r.children;return m.length===1&&m[0].tagName===d},l=function(r){return(r=r||document.querySelector(".basicLightbox"))!=null&&r.ownerDocument.body.contains(r)===!0};n.visible=l,n.create=function(r,d){var m=function(p,L){var v=a(`
 		<div class="basicLightbox `.concat(L.className,`">
 			<div class="basicLightbox__placeholder" role="dialog"></div>
 		</div>
@@ -41,7 +41,7 @@ Notiflix needs to be appended to the "<`+b+'>" element, but you called it before
     <p class="ing-measure">${A}</p>
     </li>`).join("");let w=r.map(v=>`<li class="tags-item">
     <p class="tags-name">#${v}</p>
-    </li>`).join(""),p=Ps(n);return e=`<div class="modal categories-block-modal"><div class="img-title-box"><iframe class="modal-img js-modal-video"  width="295" height="295" src="https://www.youtube.com/embed/${Bs(d)}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </li>`).join(""),p=Ps(n);return e=`<div class="modal-box categories-block-modal"><div class="img-title-box"><iframe class="modal-img js-modal-video"  width="295" height="295" src="https://www.youtube.com/embed/${Bs(d)}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
      <img src="${t}" alt="${i}" class="modal-img js-modal-img is-none" id="fallback-image" width="295" height="295">
     <h1 class="modal-title">${i}</h1></div>
     <div class="desc-box">
@@ -68,11 +68,7 @@ Notiflix needs to be appended to the "<`+b+'>" element, but you called it before
     <button class="btn order-now js-rating-btn" type="button">Give a rating</button>
     </div>
     </div>`,e}function Ps(s){const e=` <li class="item-star-icon">
-        <svg width="18" height="18">
-            <use href="img/sprite/icons.svg#icon-star"></use>
-        </svg>
+        <button class="yellow-star"></button>
     </li>`,t=`<li class="item-star-icon" >
-        <svg width="18" height="18">
-            <use href="img/sprite/icons.svg#icon-star-j"></use>
-        </svg>
+        <button class="gray-star"></button>
     </li>`,i=Math.round(s);let n=[];for(let a=0;a<5;a++)a+1>i?n.push(t):n.push(e);return n.join("")}function Bs(s){let e=s,t=e.indexOf("=");if(t!==-1)return e.substring(t+1)}function Ws(s,e,t){s||(e.classList.add("is-none"),t.classList.remove("is-none"))}function Rs(s){let e=localStorage.getItem("cardData"),t=e?JSON.parse(e):[];if(!t.find(({_id:a})=>a===s._id))t.push(s);else{Ze.Notify.failure("This recipe has already been added to your favorites");return}let n=JSON.stringify(t);localStorage.setItem("cardData",n)}const et=document.querySelector(".btn_scroll");let tt=!1;et.addEventListener("click",Hs);window.addEventListener("scroll",Fs);function Fs(){window.scrollY<=200&&window.scrollY>=0?et.style.opacity="0":et.style.opacity="1"}function Hs(){tt||(tt=!0,zt())}function zt(){window.scrollY>0?(window.scrollBy(0,-100),requestAnimationFrame(zt)):tt=!1}
