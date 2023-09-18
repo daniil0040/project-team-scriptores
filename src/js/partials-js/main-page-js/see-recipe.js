@@ -106,9 +106,7 @@ function createMurkUpModal(card) {
 
 function createRatingStar(rating) {
     const yellowStar = ` <li class="item-star-icon">
-        <svg width="18" height="18">
-            <use href="img/sprite/icons.svg#icon-star"></use>
-        </svg>
+        <button class="yellow-star" data-icon="icon-star"></button>
     </li>`
     const grayStar = `<li class="item-star-icon" >
         <svg width="18" height="18">
