@@ -42,7 +42,7 @@
 
 @import url('./layout/main-page/give-rating-modal.css');
 
-/* @import url('./layout/main-page/new-order-modal.css'); */
+@import url('./layout/main-page/new-order-modal.css');
 
 @import url('./layout/footer.css');
 
