@@ -30,21 +30,16 @@ body.light-theme .all-categories:focus {
   overflow-y: auto;
 }
 
-@media only screen and (min-width: 680px) {
+@media only screen and (min-width: 768px) {
   .categories-block {
     margin-top: 30px;
-@media only screen and (min-width: 768px) {
-  .categories-block{
-      margin-top: 30px;
     width: 176px;
     max-height: 416px;
   }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1280px) {
   .categories-block {
-@media only screen and (min-width: 1280px){
-.categories-block{
     margin-top: 42px;
     width: 235px;
   }
@@ -65,14 +60,18 @@ body.light-theme .all-categories:focus {
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@media only screen and (min-width: 680px) {
+@media only screen and (min-width: 768px) {
   .category-button {
-@media only screen and (min-width: 768px){
-      .category-button{
     padding-top: 12px;
     padding-bottom: 12px;
   }
 }
+
+.category-button:hover,
+.category-button:focus {
+  color: #9bb537;
+}
+
 .category-button:hover,
 .category-button:focus {
   color: #9bb537;
