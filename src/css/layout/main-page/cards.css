@@ -92,15 +92,22 @@
   right: 16px;
   top: 16px;
 
+  width: 22px;
+  height: 22px;
+
   border: none;
   background: transparent;
+}
+.icon-heart {
+  background-image: url('/img/sprite/heart.svg');
+  background-repeat: no-repeat;
 }
 
 .like-logo {
   fill: transparent;
 }
-/* .like-btn .liked {
-  fill: #f8f8f8;
+/* .like-btn.liked {
+  background-image: url('/img/sprite/liked-heart.svg');
 } */
 .card-heading {
   font-weight: 600;
@@ -178,12 +185,17 @@
   margin-top: 23px;
 }
 
-.reting-item {
-  fill: #f8f8f81a;
-}
+/* .reting-item {
+  width: 18px;
+  height: 18px;
+  background-image: url('/img/sprite/star-gray.svg');
+  background-repeat: no-repeat;
+} */
 .reting-item.filled {
-  fill: var(--star-color);
-  opacity: 1;
+  width: 18px;
+  height: 18px;
+  background-image: url('/img/sprite/star-yellow.svg');
+  background-repeat: no-repeat;
 }
 
 /* кнопка */
