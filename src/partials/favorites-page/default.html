@@ -18,14 +18,24 @@
                  media="(max-width: 767px)"
                 />
                 
-                <img class="fav-img" src="./img/images/cardcard335.jpg" alt="favourite dish" />
+                <img src="./img/images/cardcard-desk1080.jpg" alt="favourite dish" />
             </picture>
         </div>  
 
         <div class="fav-empty">
-            <svg class="fav-icon" width="68" height="58">
-                <use href="img/sprite/icons.svg#icon-heart"></use>
-            </svg>
+            <picture class="fav-icon">
+                <source srcset="
+                            ./img/images/favorite-icon-desk.png 1x, 
+                            ./img/images/favorite-icon-desk@2x.png 2x" media="(min-width:1280px)" />
+                <source srcset="
+                             ./img/images/favorite-icon-tab.png 1x,
+                             ./img/images/favorite-icon-tab@2x.png 2x" media="(min-width:768px)" />
+                <source srcset="
+                            ./img/images/favorite-icon-tel.png 1x, 
+                            ./img/images/favorite-icon-tel@2x.png 2x" media="(max-width: 767px)" />
+            
+                <img src="./img/images/favorite-icon-tel.png" alt="favourite dish" />
+            </picture>
             <p class="fav__text">
                 It appears that you haven't added any recipes to your favorites yet. To
                 get started, you can add recipes that you like to your favorites for
