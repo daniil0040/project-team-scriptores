@@ -91,13 +91,11 @@ function createMurkUpModal(card) {
     </div>
     <p class="instruction">${instructions}</p>
     <button type="button" class="modal-close-btn js-modal-close">
-    <svg class="modal-close" width="20" height="20">
-        <use href="img/sprite/icons.svg#icon-close-x"></use>
-    </svg>
-    </button>
+    <img src="img/sprite/icon-close-x.svg" alt="icon" class="icon-x" width="24" height="24">
+     </button>
     <div class="button-block">
     <button class="btn add-to-favorite js-favorite-btn" type="button">Add to favorite</button>
-    <button class="btn order-now js-rating-btn" type="button">Give a rating</button>
+    <button class="btn order-now js-rating" type="button">Give a rating</button>
     </div>
     </div>`);
     
