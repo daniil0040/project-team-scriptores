@@ -1,4 +1,4 @@
-.modal {
+.modal-box {
     width: 335px;
     background-color: #FFF;
     height: 95vh;
@@ -172,6 +172,24 @@
 .categories-block-modal::-webkit-scrollbar-thumb:hover {
     background-color: #9bb537;
 }
+
+.yellow-star{
+    width: 18px;
+    height: 18px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('/img/sprite/star-yellow.svg');
+}
+
+
+.gray-star{
+    width: 18px;
+    height: 18px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('/img/sprite/star-modal.svg');
+}
+
 
 @media screen and (min-width: 768px){
     .modal{
