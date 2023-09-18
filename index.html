@@ -16,9 +16,9 @@
       href="https://unpkg.com/slim-select@latest/dist/slimselect.css"
     />
     
-    <script type="module" crossorigin src="/project-team-scriptores/assets/index-162c9d93.js"></script>
-    <link rel="modulepreload" crossorigin href="/project-team-scriptores/assets/menu-9d1337f9.js">
-    <link rel="stylesheet" href="/project-team-scriptores/assets/menu-7bdb6a52.css">
+    <script type="module" crossorigin src="/project-team-scriptores/assets/index-0f41859e.js"></script>
+    <link rel="modulepreload" crossorigin href="/project-team-scriptores/assets/menu-1c0f6f4d.js">
+    <link rel="stylesheet" href="/project-team-scriptores/assets/menu-983f1016.css">
     <link rel="stylesheet" href="/project-team-scriptores/assets/index-5e371f8a.css">
   </head>
 
@@ -78,7 +78,7 @@
         <p class="hero-paragraph">
             TastyTreats - Customize Your Meal with Ingredient Options and Step-by-Step Video Guides.
         </p>
-        <button class="hero-button" id="js-hero-button" type="button">Order now</button>
+        <button class="hero-button" id="openModalBtn" type="button">Order now</button>
     </div>
     <div class="swiper">
         <div class="swiper-wrapper"></div>
@@ -202,6 +202,37 @@
 
     <!-- GIVE A RATING -->
 
+
+  <!-- NEW ORDER MODAL -->
+  <div id="overlay" class="overlay">
+    <div id="orderModal" class="modal">
+        <button type="button" class="close-btn" id="closeModalBtn">
+            <svg class="icon-close" width="24px" height="24px">
+                <use href="/project-team-scriptores/assets/icons-a37bb55c.svg#icon-close-x"></use>
+            </svg>
+        </button>
+        <h2 class="form-title">ORDER NOW</h2>
+        <form id="orderForm">
+            <div class="form-group">
+                <label class="form-label" for="name">Name</label>
+                <input type="text" id="name" name="name" class="input-field" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="phone">Phone number</label>
+                <input type="tel" id="phone" name="phone" class="input-field" placeholder="+38 073 0000000" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="email">Email</label>
+                <input type="email" id="email" name="email" class="input-field" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="comment">Comment</label>
+                <textarea id="comment" name="comment" class="textarea-field" rows="4"></textarea>
+            </div>
+            <button type="submit" class="submit-button">Send</button>
+        </form>
+    </div>
+</div>
 
     <!-- FOOTER -->
     
