@@ -1,0 +1,30 @@
+<div id="overlay" class="new-order-overlay">
+    <div id="orderModal" class="new-order-modal">
+        <button type="button" class="new-order-close-btn" id="closeModalBtn">
+            <svg class="new-order-icon-close" width="24px" height="24px">
+                <use href="img/sprite/icons.svg#icon-close-x"></use>
+            </svg>
+        </button>
+        <h2 class="new-order-form-title">ORDER NOW</h2>
+        <form id="orderForm">
+            <div class="new-order-form-group">
+                <label class="new-order-form-label" for="name">Name</label>
+                <input type="text" id="name" name="name" class="new-order-input-field" required>
+            </div>
+            <div class="new-order-form-group">
+                <label class="new-order-form-label" for="phone">Phone number</label>
+                <input type="tel" id="phone" name="phone" class="new-order-input-field" placeholder="+38 073 0000000"
+                    required>
+            </div>
+            <div class="new-order-form-group">
+                <label class="new-order-form-label" for="email">Email</label>
+                <input type="email" id="email" name="email" class="new-order-input-field" required>
+            </div>
+            <div class="new-order-form-group">
+                <label class="new-order-form-label" for="comment">Comment</label>
+                <textarea id="comment" name="comment" class="new-order-textarea-field" rows="4"></textarea>
+            </div>
+            <button type="submit" class="new-order-submit-button">Send</button>
+        </form>
+    </div>
+</div>
