@@ -1,4 +1,4 @@
-.modal {
+.modal-box {
     width: 335px;
     background-color: #FFF;
     height: 95vh;
@@ -179,7 +179,6 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url('/img/sprite/star-yellow.svg');
-    fill: #0505051a;
 }
 
 
@@ -188,7 +187,7 @@
     height: 18px;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url('/img/sprite/star-gray.svg');
+    background-image: url('/img/sprite/star-modal.svg');
 }
 
 

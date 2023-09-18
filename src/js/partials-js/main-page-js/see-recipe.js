@@ -73,7 +73,7 @@ function createMurkUpModal(card) {
     let ratingStar = createRatingStar(rating);
     let youtubeLink = createYoutubeLink(youtube);
 
-    markUP = (`<div class="modal categories-block-modal"><div class="img-title-box"><iframe class="modal-img js-modal-video"  width="295" height="295" src="https://www.youtube.com/embed/${youtubeLink}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    markUP = (`<div class="modal-box categories-block-modal"><div class="img-title-box"><iframe class="modal-img js-modal-video"  width="295" height="295" src="https://www.youtube.com/embed/${youtubeLink}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
      <img src="${thumb}" alt="${title}" class="modal-img js-modal-img is-none" id="fallback-image" width="295" height="295">
     <h1 class="modal-title">${title}</h1></div>
     <div class="desc-box">
@@ -106,10 +106,10 @@ function createMurkUpModal(card) {
 
 function createRatingStar(rating) {
     const yellowStar = ` <li class="item-star-icon">
-        <button class="yellow-star" data-icon="icon-star"></button>
+        <button class="yellow-star"></button>
     </li>`
     const grayStar = `<li class="item-star-icon" >
-        <button class="gray-star" data-icon="icon-star"></button>
+        <button class="gray-star"></button>
     </li>`
     const newRating = Math.round(rating);
     let arrStars = [];
