@@ -42,7 +42,10 @@ import {} from './partials-js/main-page-js/search-filter';
 import './partials-js/main-page-js/select';
 
 // SEE RECIPE
-import {} from './partials-js/main-page-js/see-recipe';
+import { } from './partials-js/main-page-js/see-recipe';
+
+// GIVE A RATING
+import './partials-js/main-page-js/give-rating';
 
 // PAGINATION
 import {} from './partials-js/main-page-js/pagination';
