@@ -9,7 +9,7 @@ const initSwiper = () => {
   new Swiper('.swiper', {
     modules: [Pagination, Scrollbar, Autoplay, Mousewheel],
     speed: 800,
-    spaceBetween: 30,
+    spaceBetween: 90,
     loop: true,
     pagination: {
       el: '.swiper-pagination',

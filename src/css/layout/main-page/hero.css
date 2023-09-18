@@ -76,6 +76,7 @@
 .slide-first-img {
   height: 280px;
   width: 80px;
+  background-color: #050505;
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -86,7 +87,11 @@
 
 .slide-second {
   width: 200px;
-  background-color: #050505;
+  background: radial-gradient(
+    circle,
+    rgba(155, 181, 55, 0.7) 0%,
+    rgba(5, 5, 5, 1) 65%
+  );
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -184,7 +189,7 @@ span.swiper-pagination-bullet-active {
     justify-content: flex-start;
   }
   .swiper {
-    max-width: 871px;
+    max-width: 768px;
     margin-bottom: 106px;
   }
   .swiper-wrapper {
@@ -200,7 +205,7 @@ span.swiper-pagination-bullet-active {
   }
 
   .slide-second {
-    width: 450px;
+    width: 350px;
     height: 442px;
   }
 
@@ -230,23 +235,25 @@ span.swiper-pagination-bullet-active {
     background-size: 600px 600px;
   }
 }
-
 /* DESKTOP 1280px */
 
 @media screen and (min-width: 1280px) {
   .hero-section {
+    overflow: hidden;
     position: relative;
     display: flex;
     margin-top: 100px;
     margin-bottom: 100px;
     padding-right: 100px;
+    height: 500px;
   }
   .hero-title {
     margin-bottom: 16px;
   }
 
   .flex-container {
-    padding: 0 0 0 100px;
+    overflow: hidden;
+    padding: 0 100px 0 100px;
   }
   .swiper {
     position: absolute !important;
@@ -257,6 +264,7 @@ span.swiper-pagination-bullet-active {
     margin-left: 0;
   }
   .swiper-content {
+    width: 840px;
     gap: 16px;
   }
 
@@ -272,7 +280,7 @@ span.swiper-pagination-bullet-active {
 
   .slide-second-img {
     height: 100%;
-    width: 350px;
+    width: 300px;
     background-size: contain;
     margin-bottom: 32px;
     margin-top: 76px;
@@ -295,5 +303,14 @@ span.swiper-pagination-bullet-active {
     height: 442px;
     width: 350px;
     background-size: 600px 600px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .flex-container {
+    padding-left: 150px;
+  }
+  .swiper {
+    left: 50%;
   }
 }
