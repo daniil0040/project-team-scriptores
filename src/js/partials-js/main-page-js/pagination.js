@@ -8,17 +8,15 @@ document.addEventListener('click', async e => {
     const pageNumber = button.getAttribute('page-number');
     let category = document.querySelector('[active="true"]');
     let categoryValue;
+
     if (category) {
       categoryValue = category.textContent;
     }
+
     const data = await getAllRecipes(categoryValue, pageNumber);
-    console.log(data);
     const recipes = createAllCategCardsMarkup(data.results);
-    const pagination = addPagination(data, pageNumber);
+    addPagination(data, pageNumber);
 
-    const cardsContainerHtml = recipes + pagination;
-
-    document.querySelector('.cards-container-js').innerHTML =
-      cardsContainerHtml;
+    document.querySelector('.cards-container-js').innerHTML = recipes;
   }
 });

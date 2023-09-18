@@ -14,8 +14,8 @@ getAllRecipes()
 
 export function createAllCategCardsMarkup(arr) {
   return arr
-    .map(
-      ({ preview, title, description, rating, _id, tags }) => `
+    .map(({ preview, title, description, rating, _id, tags }) => {
+      return `
     <li class="recipes-card" data-tags="${tags}" >
         
       <img class="recipes-img" src="${preview}" alt="${title}" />
@@ -63,25 +63,44 @@ export function createAllCategCardsMarkup(arr) {
      <button class="btn-see-recipe btn-see-recipe-js" type="button" data-id= "${_id}">See recipe</button>
 
           </div>
-       
-      
-   
     </li>
-    `
-    )
+    `;
+    })
     .join('');
 }
 
 export function addPagination(results, pageNumber = 1) {
-  const totalPages = results.totalPages;
+  const totalPages = Number(results.totalPages);
+  const currentPage = Number(results.page);
+  const firstPage = getFirstPage(totalPages, currentPage);
+  const lastPage = Number(firstPage) + 2;
 
-  if (Number(totalPages) === 1) {
+  if (totalPages === 1) {
     return (document.getElementById('pagination').innerHTML = '');
   }
 
-  let previousButtons = '';
+  const previousButtons = renderPreviousButtons(currentPage);
+  const buttons = mainButtons(firstPage, lastPage, totalPages, pageNumber);
+  const nextButtons = renderNextButtons(currentPage, totalPages);
 
-  previousButtons += `<button
+  const paginationHtml = `<div class="pagination-bar">
+    <div class="pag-btn-block">${previousButtons}</div>
+    <div class="pag-btn-block">${buttons}</div>
+    <div class="pag-btn-block">${nextButtons}</div>
+  </div>`;
+
+  document.getElementById('pagination').innerHTML = paginationHtml;
+}
+
+function renderPreviousButtons(currentPage) {
+  const previousPageNumber = currentPage - 1;
+  let clickableClass = 'pag-btn-number';
+
+  if (currentPage === 1) {
+    clickableClass = '';
+  }
+
+  return `<button
       id="pag-btn-start"
       class="gag-btn-black pag-btn-number"
       type="button"
@@ -93,13 +112,10 @@ export function addPagination(results, pageNumber = 1) {
           <use href="img/sprite/icons.svg#icon-left-two"></use>
         </svg>
       </span>
-    </button>`;
-
-  if (Number(results.page) !== 1) {
-    const previousPageNumber = results.page - 1;
-    previousButtons += `<button
+    </button>
+    <button
       id="pag-btn-prev"
-      class="gag-btn-black pag-btn-number"
+      class="gag-btn-black ${clickableClass}"
       type="button"
       aria-label="previous page"
       page-number="${previousPageNumber}"
@@ -108,32 +124,86 @@ export function addPagination(results, pageNumber = 1) {
         <use href="img/sprite/icons.svg#icon-left-one"></use>
       </svg>
     </button>`;
+}
+
+function renderNextButtons(currentPage, totalPages) {
+  const nextPageNumber = currentPage + 1;
+  let clickableClass = 'pag-btn-number';
+
+  if (currentPage === totalPages) {
+    clickableClass = '';
   }
 
-  let buttons = '';
+  return `<button
+          id="pag-btn-next"
+          class="pag-btn-green ${clickableClass}"
+          type="button"
+          aria-label="next page"
+          page-number="${nextPageNumber}"
+        >
+          <svg class="pag-btn-right-icon-next" width="20" height="20">
+            <use href="img/sprite/icons.svg#icon-arrow"></use>
+          </svg>
+        </button>
+        
+        <button
+          id="pag-btn-last"
+          class="pag-btn-green pag-btn-number"
+          type="button"
+          aria-label="last page"
+          page-number="${totalPages}"
+        >
+          <span class="icon-container">
+            <span class="icon-wrap-right">
+              <svg class="pag-btn-right-icon" width="20" height="20">
+                <use href="img/sprite/icons.svg#icon-right-two"></use>
+              </svg>
 
-  if (pageNumber > 1) {
+          </span>
+        </button>`;
+}
+
+function getFirstPage(totalPages, currentPage) {
+  let firstPage = 1;
+
+  if (currentPage > 1) {
+    firstPage = currentPage - 1;
+  }
+
+  if (currentPage === totalPages) {
+    firstPage = totalPages - 2;
+  }
+
+  if (firstPage === 0) {
+    firstPage = 1;
+  }
+  return firstPage;
+}
+
+function mainButtons(firstPage, lastPage, totalPages, pageNumber) {
+  let buttons = '';
+  pageNumber = Number(pageNumber);
+
+  if (pageNumber > 2) {
     buttons += `<button
           id="pag-btn-dots-left"
-          class="pag-btn-white"
+          class="pag-btn-white pag-btn-number"
           aria-label="more pages"
+          page-number="${pageNumber - 2}"
         >
           ...
         </button>`;
   }
 
-  const currentPage = results.page ?? 1;
-  const lastPage = Number(results.page) + 2;
-
-  for (let i = currentPage; i <= lastPage; i++) {
-    if (i > results.totalPages) {
+  for (let i = firstPage; i <= lastPage; i++) {
+    if (i > totalPages) {
       continue;
     }
 
     let clickableClass = 'pag-btn-number';
     let active = '';
 
-    if (i == Number(pageNumber)) {
+    if (i == pageNumber) {
       clickableClass = '';
       active = 'active';
     }
@@ -149,53 +219,16 @@ export function addPagination(results, pageNumber = 1) {
         </button>`;
   }
 
-  if (pageNumber < totalPages) {
+  if (pageNumber + 2 <= totalPages) {
     buttons += `<button
           id="pag-btn-dots-left"
-          class="pag-btn-white"
+          class="pag-btn-white pag-btn-number"
           aria-label="more pages"
+          page-number="${pageNumber + 2}"
         >
           ...
         </button>`;
   }
 
-  let nextButtons = '';
-  if (Number(results.page) < Number(totalPages)) {
-    const nextPageNumber = Number(pageNumber) + 1;
-    nextButtons += `<button
-          id="pag-btn-next"
-          class="pag-btn-green pag-btn-number"
-          type="button"
-          aria-label="next page"
-          page-number="${nextPageNumber}"
-        >
-          <svg class="pag-btn-right-icon-next" width="20" height="20">
-            <use href="img/sprite/icons.svg#icon-arrow"></use>
-          </svg>
-        </button>`;
-  }
-
-  nextButtons += `<button
-          id="pag-btn-last"
-          class="pag-btn-green pag-btn-number"
-          type="button"
-          aria-label="last page"
-          page-number="${totalPages}"
-        >
-          <span class="icon-container">
-            <span class="icon-wrap-right">
-              <svg class="pag-btn-right-icon" width="20" height="20">
-                <use href="img/sprite/icons.svg#icon-right-two"></use>
-              </svg>
-
-          </span>
-        </button>`;
-
-  const paginationHtml = `<div class="pagination-bar">
-    <div class="pag-btn-block">${previousButtons}</div>
-    <div class="pag-btn-block">${buttons}</div>
-    <div class="pag-btn-block">${nextButtons}</div>
-  </div>`;
-
-  document.getElementById('pagination').innerHTML = paginationHtml;
+  return buttons;
 }
