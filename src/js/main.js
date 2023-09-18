@@ -51,5 +51,5 @@ import {} from './partials-js/main-page-js/pagination';
 import "./partials-js/components/scroll-up";
 
 // // ORDER NOW
-// import {} from './partials-js/main-page-js/order-now';
+import {} from './partials-js/main-page-js/order-now';
 
