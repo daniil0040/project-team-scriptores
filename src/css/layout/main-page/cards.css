@@ -106,9 +106,9 @@
 .like-logo {
   fill: transparent;
 }
-/* .like-btn.liked {
+.like-btn.liked {
   background-image: url('/img/sprite/liked-heart.svg');
-} */
+}
 .card-heading {
   font-weight: 600;
   font-size: 14px;

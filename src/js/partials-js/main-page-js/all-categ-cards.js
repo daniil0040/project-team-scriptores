@@ -1,5 +1,5 @@
 import { getAllRecipes } from '../service-api';
-const cardsContainer = document.querySelector('.cards-container-js');
+export const cardsContainer = document.querySelector('.cards-container-js');
 
 getAllRecipes()
   .then(data => {
@@ -17,7 +17,7 @@ export function createAllCategCardsMarkup(arr) {
         
       <img class="recipes-img" src="${preview}" alt="${title}" />
       <div class="card-description">
-        <button class="like-btn icon-heart liked" type="button"></button>
+        <button class="like-btn icon-heart  js-add" data-id="${_id}" type="button"></button>
         <h2 class="card-heading">${title}</h2>
         <div class="text-container">
           <p class="card-text">
