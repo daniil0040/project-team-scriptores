@@ -1,19 +1,8 @@
 import axios from "axios";
 import Notiflix from 'notiflix';
 import {createAllCategCardsMarkup} from "./all-categ-cards"
-import { getAllRecipes } from "../service-api"
 import debounce from "lodash.debounce";
 
-// console.log(selectors.searchInput);
-// getAllSomething("areas")
-//     .then(data =>
-//         selectors.areaSelect.insertAdjacentHTML("beforeend",createAreasSelectMarkup(data))
-// )
-// function createAreasSelectMarkup(arr){
-//     return arr.map(({name})=> `<option value="${name}">${name}</option>`).join("")
-// }
-
-const cardsContainer = document.querySelector('.cards-container-js');
 
 const selectors = {
     areaSelect: document.querySelector(".js-area-select"),
