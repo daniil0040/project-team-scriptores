@@ -70,6 +70,7 @@ async function handlerIngridientsSelect(evt) {
     if (evt.target.value === "") {
         return
     }
+    console.log(evt.target.value);
     currentIngridient = evt.target.value
     try {
     const data = await serviceGetByKeyWord(currentCategory,currentCookingTime,currentArea,currentIngridient);
