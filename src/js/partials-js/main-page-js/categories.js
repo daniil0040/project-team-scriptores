@@ -6,12 +6,10 @@ import { buttonAllCategories } from './all-categ-btn';
 const recipes = document.querySelector('.category-list-js');
 export const cardsContainer = document.querySelector('.cards-container-js');
 getAllSomething('categories').then(data => {
-  recipes.insertAdjacentHTML('beforeend', createCategoriesMarkup(data));
-  function createCategoriesMarkup() {
-    return data
-      .map(
-        ({ _id, name }) =>
-          `<li>
+    recipes.insertAdjacentHTML('beforeend', createCategoriesMarkup(data))
+    function createCategoriesMarkup() {
+        return data.map(({ _id, name }) =>
+            `<li>
             <button id="${_id}" class="category-button category-button-js">${name}</button>
             </li>`
       )

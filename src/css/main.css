@@ -40,14 +40,14 @@
 
 @import url('./layout/main-page/see-recipe.css');
 
+@import url('./layout/main-page/give-rating-modal.css');
+
+@import url('./layout/main-page/new-order-modal.css');
+
 @import url('./layout/footer.css');
 
 /* favorites-page */
 @import url('./layout/header.css');
 
 @import url('./layout/favorites-page/default.css');
-
-
-
-
 

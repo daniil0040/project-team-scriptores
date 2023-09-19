@@ -14,11 +14,11 @@ import './partials-js/menu';
 // PARTIALS
 ////////////////////////////
 
-// ORDER NOW
-import {} from './partials-js/main-page-js/order-now';
-
 // SWIPER
 import './partials-js/main-page-js/swiper';
+
+// SWItCHER
+import './partials-js/main-page-js/switcher-theme';
 
 // ALL CATEGORIES BUTTON
 import './partials-js/main-page-js/all-categ-btn';
@@ -44,9 +44,17 @@ import './partials-js/main-page-js/select';
 // SEE RECIPE
 import {} from './partials-js/main-page-js/see-recipe';
 
+// GIVE A RATING
+import './partials-js/main-page-js/give-rating';
+
 // PAGINATION
 import {} from './partials-js/main-page-js/pagination';
 
 // SCROLL UP
-import "./partials-js/components/scroll-up";
+import './partials-js/components/scroll-up';
 
+// // ORDER NOW
+import {} from './partials-js/main-page-js/order-now';
+
+// LIKED RECIPE
+import './partials-js/main-page-js/liked-recipe';
