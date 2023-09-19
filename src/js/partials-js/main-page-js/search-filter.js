@@ -2,6 +2,7 @@ import axios from "axios";
 import Notiflix from 'notiflix';
 import {createAllCategCardsMarkup} from "./all-categ-cards"
 import { getAllRecipes } from "../service-api"
+import debounce from "lodash.debounce";
 
 // console.log(selectors.searchInput);
 // getAllSomething("areas")
@@ -26,7 +27,7 @@ let currentCategory = ""
 
 selectors.categoryList.addEventListener("click", hendlerClickCategories)
 
-selectors.searchInput.addEventListener("input", handlerInput)
+selectors.searchInput.addEventListener("input", debounce(handlerInput, 300))
 
 selectors.allCategoryBtn.addEventListener("click", hendlerClickAllCategBtn)
 
