@@ -2,6 +2,8 @@ import * as basicLightbox from 'basiclightbox';
 // import "basicLightbox/dist/basicLightbox.min.css";
 import { getRecipeById } from '../service-api';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import common from '../components/common.json';
+
 
 const seeRecipe = document.querySelector('.cards-container-js');
 const seeRecipePopular = document.querySelector('.popular-recipes-container');
@@ -46,8 +48,16 @@ function loadBasicLightbox(card) {
     checkVideo(card.youtube, video, image);
 
     const favorite = document.querySelector('.js-favorite-btn');
-    favorite.addEventListener('click', () => addFavorite(card));
-
+    const arrFavorite = JSON.parse(localStorage.getItem(common.LS_RECIPES)) ?? [];
+    const result = arrFavorite.find(({ _id }) => _id === card._id);
+    
+        if (!result) {
+            favorite.textContent = "Add to favorite"
+        } else {
+            favorite.textContent = "Remove"
+    };
+    
+    favorite.addEventListener('click', () => favorite.textContent = addFavorite(card))
     const closeModal = document.querySelector('.js-modal-close');
 
     closeModal.addEventListener('click', () => instance.close());
@@ -91,7 +101,7 @@ function createMurkUpModal(card) {
     </div>
     <p class="instruction">${instructions}</p>
     <button type="button" class="modal-close-btn js-modal-close">
-    <img src="img/sprite/icon-close-x.svg" alt="icon" class="icon-x" width="24" height="24">
+    
      </button>
     <div class="button-block">
     <button class="btn add-to-favorite js-favorite-btn" type="button">Add to favorite</button>
@@ -142,17 +152,23 @@ function checkVideo(tubeLink, video, image) {
 
 
 function addFavorite(card) {
-    let existingData = localStorage.getItem("cardData");
-    let arrFavorite = existingData ? JSON.parse(existingData) : [];
-        const result = arrFavorite.find(({ _id }) => _id === card._id);
+    const arrFavorite = JSON.parse(localStorage.getItem(common.LS_RECIPES)) ?? [];
+    const result = arrFavorite.find(({ _id }) => _id === card._id);
+    const idx = arrFavorite.findIndex(({ _id }) => _id === card._id);
+
         if (!result) {
             arrFavorite.push(card);
+            localStorage.setItem(common.LS_RECIPES, JSON.stringify(arrFavorite));
+            let textBtn = "Remove";
+            Notify.success('The recipe is added to favorites');
+            return textBtn;
             
         } else {
-            Notify.failure('This recipe has already been added to your favorites');
-            return
+            arrFavorite.splice(idx, 1)
+            localStorage.setItem(common.LS_RECIPES, JSON.stringify(arrFavorite));
+            let textBtn = "Add to favorite";
+            Notify.warning('The recipe removed from favorites');
+            return textBtn;
     } 
-    let jsonData = JSON.stringify(arrFavorite)
-            localStorage.setItem("cardData", jsonData);
 }
 

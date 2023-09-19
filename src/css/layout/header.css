@@ -233,6 +233,7 @@
     display: block;
   }
 
+
   .menu-list {
     display: flex;
     gap: 16px;
@@ -244,26 +245,27 @@
   @media (hover: hover) {
     .header-link:hover,
     .header-link:focus {
-      color: #9bb537;
+      color: var(--accent-color);
     }
   }
 
+
   @media not (hover: hover) {
     .header-link:active {
-      color: #9bb537;
+      color: var(--accent-color);
     }
   }
 
   .mob-menu {
     display: none;
   }
+    .menu-item{
+        color: var(--text-color-white-theme);
+        font-size: 12px;
+        font-weight: 400;
+        line-height: normal;
+    }
 
-  .menu-item {
-    color: #050505;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: normal;
-  }
 
   .logo {
     font-size: 18px;
