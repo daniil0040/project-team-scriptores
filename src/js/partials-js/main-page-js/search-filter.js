@@ -112,7 +112,10 @@ async function handlerInput(evt) {
       createAllCategCardsMarkup(defaultData));
   }
   try {
-    const data = await serviceGetByKeyWord(currentCategory,currentCookingTime,currentArea,currentIngridient, keyWord);
+      const data = await serviceGetByKeyWord(currentCategory, currentCookingTime, currentArea, currentIngridient, keyWord);
+        if (!data) {
+            return
+        }
     selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(data);
   } catch (error) {
     console.log(error);
@@ -134,11 +137,9 @@ async function serviceGetByKeyWord(currentCategory = '',currentCookingTime = "",
   const recipes = response.data.results;
   if (recipes.length === 0) {
     selectors.cardsContainer.innerHTML = '';
-    throw Error(
-      Notiflix.Notify.failure(
+    return Notiflix.Notify.failure(
         'Sorry, there are no recipes matching your search query. Please try again.'
-      )
-    );
+        )
   }
   return recipes.map(({ preview, title, description, rating, _id, tags }) => {
     return { preview, title, description, rating, _id, tags };
