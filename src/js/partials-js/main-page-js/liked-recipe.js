@@ -6,7 +6,7 @@ const like = document.querySelector('like-btn');
 
 const recipes = JSON.parse(localStorage.getItem(common.LS_RECIPES)) ?? [];
 cardsContainer.addEventListener('click', handlerAdd);
-console.log(recipes);
+
 let arrRecipe;
 
 getAllRecipes()

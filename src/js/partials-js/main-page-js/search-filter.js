@@ -15,7 +15,7 @@ let currentCategory = '';
 
 selectors.categoryList.addEventListener('click', hendlerClickCategories);
 
-selectors.searchInput.addEventListener('input', debounce(handlerInput, 300));
+// selectors.searchInput.addEventListener('input', debounce(handlerInput, 300));
 
 selectors.allCategoryBtn.addEventListener('click', hendlerClickAllCategBtn);
 
