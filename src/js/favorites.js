@@ -21,17 +21,17 @@ function startFavorite() {
 };
 
 function creatCategoriesList() {
-    const targetKey = 'category';
-    const newArray = cardArr.map((obj) => obj[targetKey]);
-    const categoriesSet = new Set(newArray);
-    const categoriesArr = [...categoriesSet];
-    categoriesArr.unshift("All categories");
-    pullOutCategories(categoriesArr);
+  const targetKey = 'category';
+  const newArray = cardArr.map(obj => obj[targetKey]);
+  const categoriesSet = new Set(newArray);
+  const categoriesArr = [...categoriesSet];
+  categoriesArr.unshift('All categories');
+  pullOutCategories(categoriesArr);
 }
 
 function pullOutCategories(categoriesArr) {
-    favCategories.innerHTML = markUpCategoriesBtn(categoriesArr);
-    const categoriesBtn = document.querySelectorAll('.js-category-btn');
+  favCategories.innerHTML = markUpCategoriesBtn(categoriesArr);
+  const categoriesBtn = document.querySelectorAll('.js-category-btn');
 
     categoriesBtn.forEach(button => {
         button.addEventListener('click', function (event) {
@@ -45,12 +45,17 @@ function pullOutCategories(categoriesArr) {
 };
 
 function createCardsCategory(category) {
-    const newCardArr = cardArr.filter(obj => obj.category === category);
-    favContainer.innerHTML = createAllCategCardsMarkup(newCardArr);
+  const newCardArr = cardArr.filter(obj => obj.category === category);
+  favContainer.innerHTML = createAllCategCardsMarkup(newCardArr);
 }
 
 function markUpCategoriesBtn(arr) {
-    return arr.map((el) => `<button class="category-btn js-category-btn" data-button="${el}">${el}</button>`).join('');
+  return arr
+    .map(
+      el =>
+        `<button class="category-btn js-category-btn" data-button="${el}">${el}</button>`
+    )
+    .join('');
 }
 
 function createFavoriteMarkUP() {
@@ -75,8 +80,4 @@ function removeCard() {
         }
     }); 
 }
-
-
-
-
 
