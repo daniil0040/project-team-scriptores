@@ -93,13 +93,14 @@
   border: none;
   background-color: transparent;
   padding: 0;
+
 }
 
 .basket-icon {
   fill: var(--black-bg-color);
 }
 
-@media (hover: hover) {
+@media (hover:hover) {
 
   .basket-icon:hover,
   .basket-icon:focus {
@@ -107,7 +108,7 @@
   }
 }
 
-@media not (hover: hover) {
+@media not (hover:hover) {
   .basket-btn:active {
     fill: var(--accent-color);
   }
@@ -121,7 +122,7 @@
   height: 32px;
 }
 
-@media (hover: hover) {
+@media (hover:hover) {
 
   .burger-icon:hover,
   .burger-icon:focus {
@@ -129,7 +130,7 @@
   }
 }
 
-@media not (hover: hover) {
+@media not (hover:hover) {
   .burger-btn:active {
     fill: var(--accent-color);
   }
@@ -192,6 +193,7 @@
   fill: var(--cards-text-color-white-theme);
 }
 
+
 .mob-menu-nav {
   padding-top: 200px;
   text-align: center;
@@ -204,7 +206,7 @@
 }
 
 .mob-menu-item {
-  color: #fff;
+  color: #FFF;
   font-size: 12px;
   font-weight: 500;
   line-height: normal;
@@ -222,7 +224,8 @@
     visibility var(--transition-dur-and-func);
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width:768px) {
+
   .header-flex {
     padding-top: 28px;
   }
@@ -240,10 +243,6 @@
     gap: 16px;
   }
 
-  .main {
-    display: block;
-  }
-
   @media(hover:hover) {
 
     .header-link:hover,
@@ -251,33 +250,33 @@
       color: var(--accent-color);
     }
   }
-}
 
-@media not (hover:hover) {
-  .header-link:active {
-    color: var(--accent-color);
+  @media not (hover:hover) {
+    .header-link:active {
+      color: var(--accent-color);
+    }
+  }
+
+  .mob-menu {
+    display: none;
+  }
+
+  .menu-item {
+    color: var(--text-color-white-theme);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .logo {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 111.11%;
+    letter-spacing: -0.72px;
   }
 }
 
-.mob-menu {
-  display: none;
-}
-
-.menu-item {
-  color: var(--text-color-white-theme);
-  font-size: 12px;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.logo {
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 111.11%;
-  letter-spacing: -0.72px;
-}
-
-@media screen and (min-width: 1280px) {
+@media screen and (min-width:1280px) {
   .header-flex {
     padding-top: 40px;
   }
