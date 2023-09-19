@@ -242,7 +242,9 @@
     display: flex;
     gap: 16px;
   }
-
+  .main {
+  display: block;
+}
   @media(hover:hover) {
 
     .header-link:hover,
