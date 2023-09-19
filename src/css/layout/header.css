@@ -34,11 +34,11 @@
   transition: 0.3s;
 }
 
-.input-switcher:checked + .input-label {
+.input-switcher:checked+.input-label {
   background: #cecdcd;
 }
 
-.input-switcher:checked + .input-label:after {
+.input-switcher:checked+.input-label:after {
   left: calc(100% - 1px);
   transform: translateX(-100%);
 }
@@ -100,6 +100,7 @@
 }
 
 @media (hover: hover) {
+
   .basket-icon:hover,
   .basket-icon:focus {
     fill: var(--accent-color);
@@ -121,6 +122,7 @@
 }
 
 @media (hover: hover) {
+
   .burger-icon:hover,
   .burger-icon:focus {
     fill: var(--accent-color);
@@ -241,36 +243,38 @@
   .main {
     display: block;
   }
-  @media (hover: hover) {
+
+  @media(hover:hover) {
+
     .header-link:hover,
     .header-link:focus {
-      color: #9bb537;
+      color: var(--accent-color);
     }
   }
+}
 
-  @media not (hover: hover) {
-    .header-link:active {
-      color: #9bb537;
-    }
+@media not (hover:hover) {
+  .header-link:active {
+    color: var(--accent-color);
   }
+}
 
-  .mob-menu {
-    display: none;
-  }
+.mob-menu {
+  display: none;
+}
 
-  .menu-item {
-    color: #050505;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: normal;
-  }
+.menu-item {
+  color: var(--text-color-white-theme);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+}
 
-  .logo {
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 111.11%;
-    letter-spacing: -0.72px;
-  }
+.logo {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 111.11%;
+  letter-spacing: -0.72px;
 }
 
 @media screen and (min-width: 1280px) {
