@@ -6,7 +6,7 @@ import { getAllSomething } from "../service-api"
 const arr = []
 for (let i = 5; i <= 120; i+= 5) {
   arr.push({
-        html: `<p>${i}</p>`,
+        html: `<p>${i} min</p>`,
         text: `${i}`,
         value: `${i}`
       })
@@ -21,7 +21,7 @@ const search = new SlimSelect({
     searchText: 'Sorry nothing to see here',
     searchHighlight: true,
     selected: true,
-    placeholderText: 'Time',
+    placeholderText: 'Time (min)',
   },
   data: arr
 });
