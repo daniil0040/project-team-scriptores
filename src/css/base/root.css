@@ -1,8 +1,22 @@
 :root[data-theme='light'] {
-  --test-background: f8f8f8;
+  --primary-brand-color: #050505;
+  --secondary-brand-color: #9bb537;
+  --background-color: #f8f8f8;
+  --filter-input-pagination-color: rgba(5, 5, 5, 0.5);
+  --switcher-theme-background: #cecdcd;
+  --modal-background: #9bb537;
+  --modal-text-color: #ffffff;
+  --modal-hover: #050505;
 }
 :root[data-theme='dark'] {
-  --test-background: #9bb537;
+  --primary-brand-color: #ffffff;
+  --secondary-brand-color: #9bb537;
+  --background-color: #161616;
+  --filter-input-pagination-color: rgba(255, 255, 255, 0.5);
+  --switcher-theme-background: #9bb537;
+  --modal-background: #050505;
+  --modal-text-color: #f8f8f8;
+  --modal-hover: #9bb537;
 }
 
 :root {
