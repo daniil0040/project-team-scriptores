@@ -38,7 +38,7 @@
 .recipes-card {
   position: relative;
   overflow: hidden;
-
+height: 348px;
   border-radius: 15px;
 }
 
