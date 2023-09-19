@@ -10,7 +10,7 @@ getAllSomething('categories').then(data => {
     function createCategoriesMarkup() {
         return data.map(({ _id, name }) =>
             `<li>
-            <button id="${_id}" class="category-button">${name}</button>
+            <button id="${_id}" class="category-button category-button-js">${name}</button>
             </li>`
         )
             .join('');

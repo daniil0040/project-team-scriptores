@@ -73,7 +73,7 @@ function createMurkUpModal(card) {
     let ratingStar = createRatingStar(rating);
     let youtubeLink = createYoutubeLink(youtube);
 
-    markUP = (`<div class="modal categories-block-modal"><div class="img-title-box"><iframe class="modal-img js-modal-video"  width="295" height="295" src="https://www.youtube.com/embed/${youtubeLink}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    markUP = (`<div class="modal-box categories-block-modal"><div class="img-title-box"><iframe class="modal-img js-modal-video"  width="295" height="295" src="https://www.youtube.com/embed/${youtubeLink}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
      <img src="${thumb}" alt="${title}" class="modal-img js-modal-img is-none" id="fallback-image" width="295" height="295">
     <h1 class="modal-title">${title}</h1></div>
     <div class="desc-box">
@@ -91,13 +91,11 @@ function createMurkUpModal(card) {
     </div>
     <p class="instruction">${instructions}</p>
     <button type="button" class="modal-close-btn js-modal-close">
-    <svg class="modal-close" width="20" height="20">
-        <use href="img/sprite/icons.svg#icon-close-x"></use>
-    </svg>
-    </button>
+    <img src="img/sprite/icon-close-x.svg" alt="icon" class="icon-x" width="24" height="24">
+     </button>
     <div class="button-block">
     <button class="btn add-to-favorite js-favorite-btn" type="button">Add to favorite</button>
-    <button class="btn order-now js-rating-btn" type="button">Give a rating</button>
+    <button class="btn order-now js-rating" type="button">Give a rating</button>
     </div>
     </div>`);
     
@@ -106,14 +104,10 @@ function createMurkUpModal(card) {
 
 function createRatingStar(rating) {
     const yellowStar = ` <li class="item-star-icon">
-        <svg width="18" height="18">
-            <use href="img/sprite/icons.svg#icon-star"></use>
-        </svg>
+        <button class="yellow-star"></button>
     </li>`
     const grayStar = `<li class="item-star-icon" >
-        <svg width="18" height="18">
-            <use href="img/sprite/icons.svg#icon-star-j"></use>
-        </svg>
+        <button class="gray-star"></button>
     </li>`
     const newRating = Math.round(rating);
     let arrStars = [];
