@@ -110,4 +110,4 @@
           page-number="${r+2}"
         >
           ...
-        </button>`),s}export{ge as a,nn as b,un as c,rn as d,fn as e,ln as g};
+        </button>`),s}export{ge as a,nn as b,un as c,rn as d,tn as e,fn as f,ln as g};
