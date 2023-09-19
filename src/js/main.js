@@ -20,6 +20,9 @@ import {} from './partials-js/main-page-js/order-now';
 // SWIPER
 import './partials-js/main-page-js/swiper';
 
+// SWItCHER
+import './partials-js/main-page-js/switcher-theme';
+
 // ALL CATEGORIES BUTTON
 import './partials-js/main-page-js/all-categ-btn';
 
@@ -51,5 +54,4 @@ import './partials-js/main-page-js/give-rating';
 import {} from './partials-js/main-page-js/pagination';
 
 // SCROLL UP
-import "./partials-js/components/scroll-up";
-
+import './partials-js/components/scroll-up';
