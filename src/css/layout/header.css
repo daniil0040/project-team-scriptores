@@ -177,13 +177,13 @@
     @media(hover:hover){
         .header-link:hover,
         .header-link:focus{
-            color: #9BB537;
+            color: var(--accent-color);
         }
     }
 
     @media not (hover:hover){
         .header-link:active{
-            color: #9BB537;
+            color: var(--accent-color);
         }
     }
 
@@ -192,7 +192,7 @@
     }
 
     .menu-item{
-        color: #050505;
+        color: var(--text-color-white-theme);
         font-size: 12px;
         font-weight: 400;
         line-height: normal;
