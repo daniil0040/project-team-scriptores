@@ -2,6 +2,8 @@ import * as basicLightbox from 'basiclightbox';
 // import "basicLightbox/dist/basicLightbox.min.css";
 import { getRecipeById } from '../service-api';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import common from '../components/common.json';
+
 
 const seeRecipe = document.querySelector('.cards-container-js');
 const seeRecipePopular = document.querySelector('.popular-recipes-container');
@@ -46,8 +48,7 @@ function loadBasicLightbox(card) {
     checkVideo(card.youtube, video, image);
 
     const favorite = document.querySelector('.js-favorite-btn');
-    let existingData = localStorage.getItem("cardData");
-    let arrFavorite = existingData ? JSON.parse(existingData) : [];
+    const arrFavorite = JSON.parse(localStorage.getItem(common.LS_RECIPES)) ?? [];
     const result = arrFavorite.find(({ _id }) => _id === card._id);
     
         if (!result) {
@@ -57,7 +58,6 @@ function loadBasicLightbox(card) {
     };
     
     favorite.addEventListener('click', () => favorite.textContent = addFavorite(card))
-
     const closeModal = document.querySelector('.js-modal-close');
 
     closeModal.addEventListener('click', () => instance.close());
@@ -152,23 +152,20 @@ function checkVideo(tubeLink, video, image) {
 
 
 function addFavorite(card) {
-    let existingData = localStorage.getItem("cardData");
-    let arrFavorite = existingData ? JSON.parse(existingData) : [];
+    const arrFavorite = JSON.parse(localStorage.getItem(common.LS_RECIPES)) ?? [];
     const result = arrFavorite.find(({ _id }) => _id === card._id);
     const idx = arrFavorite.findIndex(({ _id }) => _id === card._id);
 
         if (!result) {
             arrFavorite.push(card);
-            let jsonData = JSON.stringify(arrFavorite)
-            localStorage.setItem("cardData", jsonData);
+            localStorage.setItem(common.LS_RECIPES, JSON.stringify(arrFavorite));
             let textBtn = "Remove";
             Notify.success('The recipe is added to favorites');
             return textBtn;
             
         } else {
             arrFavorite.splice(idx, 1)
-            let jsonData = JSON.stringify(arrFavorite)
-            localStorage.setItem("cardData", jsonData);
+            localStorage.setItem(common.LS_RECIPES, JSON.stringify(arrFavorite));
             let textBtn = "Add to favorite";
             Notify.warning('The recipe removed from favorites');
             return textBtn;
