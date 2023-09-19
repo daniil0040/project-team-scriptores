@@ -104,6 +104,10 @@
     right: 14px;
     width: 24px;
     height: 24px;
+    background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url('/img/sprite/icon-close-x.svg');
+
 }
 
 .modal-close {
