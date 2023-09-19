@@ -102,6 +102,8 @@
     position: absolute;
     top: 14px;
     right: 14px;
+    width: 24px;
+    height: 24px;
 }
 
 .modal-close {
@@ -192,7 +194,7 @@
 
 
 @media screen and (min-width: 768px){
-    .modal{
+    .modal-box{
         width: 531px;
         overflow: auto;
         padding: 32px;
