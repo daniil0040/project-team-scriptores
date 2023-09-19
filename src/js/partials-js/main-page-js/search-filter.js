@@ -38,12 +38,15 @@ async function handlerReset() {
     // AREA RESET
 selectors.areaSelect.selectedIndex = 0;
     searchArea.setSelected("")
+    currentArea = ""
     // TIME RESET
     selectors.timeSelect.selectedIndex = 0;
     searchTime.setSelected("")
+    currentCookingTime = ""
     // INGREDIENTS RESET
     selectors.ingredientsSelect.selectedIndex = 0;
     searchIngredients.setSelected("")
+    currentIngridient = ""
     
     const defaultData = await serviceGetByKeyWord(currentCategory);
     return (selectors.cardsContainer.innerHTML =
