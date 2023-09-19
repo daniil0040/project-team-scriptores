@@ -21,7 +21,7 @@ const search = new SlimSelect({
     searchText: 'Sorry nothing to see here',
     searchHighlight: true,
     selected: true,
-    placeholderText: 'Time (min)',
+    placeholderText: 'Time',
   },
   data: arr
 });
