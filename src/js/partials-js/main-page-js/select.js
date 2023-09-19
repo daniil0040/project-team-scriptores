@@ -57,7 +57,7 @@ getAllSomething("areas")
     .then(data => {
       let arr = data.map(({name,_id}) => ({
         html: `<p>${name}</p>`,
-        text: `${name}`,
+        text: `${_id}`,
         value: `${_id}`
       }))
       arr.unshift({ text: '', placeholder: true });
