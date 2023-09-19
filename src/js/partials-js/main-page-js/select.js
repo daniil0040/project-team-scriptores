@@ -1,6 +1,9 @@
 import SlimSelect from 'slim-select';
 import { getAllSomething } from "../service-api"
 
+export let searchTime = null
+export let searchArea = null
+export let searchIngredients = null
 
 // TIME
 const arr = []
@@ -13,7 +16,7 @@ for (let i = 5; i <= 120; i+= 5) {
 }
 arr.unshift({ text: '', placeholder: true })
 
-const search = new SlimSelect({
+searchTime = new SlimSelect({
   select: '.js-time-select',
   settings: {
     showSearch: true,
@@ -22,6 +25,7 @@ const search = new SlimSelect({
     searchHighlight: true,
     selected: true,
     placeholderText: 'Time',
+    allowDeselect: true
   },
   data: arr
 });
@@ -37,7 +41,7 @@ getAllSomething("areas")
       }
     ))
     arr.unshift({ text: '', placeholder: true })
-    return new SlimSelect({
+    searchArea = new SlimSelect({
   select: '.js-area-select',
 
   settings: {
@@ -47,12 +51,14 @@ getAllSomething("areas")
     searchHighlight: true,
     selected: true,
     placeholderText: 'Country',
+    allowDeselect: true
   },
     data: arr
-})
+    })
+    return searchArea
   }).catch(err => {console.log(err)})
 
-  // INGRIDIENTS
+  // INGREDIENTS
   getAllSomething("ingredients")
     .then(data => {
       let arr = data.map(({name,_id}) => ({
@@ -61,7 +67,7 @@ getAllSomething("areas")
         value: `${_id}`
       }))
       arr.unshift({ text: '', placeholder: true });
-      return new SlimSelect({
+      searchIngredients = new SlimSelect({
   select: '.js-ingredients-select',
 
   settings: {
@@ -71,7 +77,9 @@ getAllSomething("areas")
     searchHighlight: true,
     selected: true,
     placeholderText: 'Ingridient',
+    allowDeselect: true
         },
   data: arr
-});
+      })
+      return searchIngredients
     })

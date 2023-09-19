@@ -2,6 +2,7 @@ import axios from 'axios';
 import Notiflix from 'notiflix';
 import { createAllCategCardsMarkup } from './all-categ-cards';
 import debounce from "lodash.debounce";
+import {searchTime,searchArea,searchIngredients} from "./select"
 
 const selectors = {
   areaSelect: document.querySelector('.js-area-select'),
@@ -32,10 +33,18 @@ selectors.timeSelect.addEventListener('change', handlerTimeSelect)
 
 selectors.resetBtn.addEventListener("click", handlerReset)
 
-async function handlerReset(evt) {
+async function handlerReset() {
     selectors.searchInput.value = "";
-    console.log(currentCategory);
-// selectors.areaSelect.value =
+    // AREA RESET
+selectors.areaSelect.selectedIndex = 0;
+    searchArea.setSelected("")
+    // TIME RESET
+    selectors.timeSelect.selectedIndex = 0;
+    searchTime.setSelected("")
+    // INGREDIENTS RESET
+    selectors.ingredientsSelect.selectedIndex = 0;
+    searchIngredients.setSelected("")
+    
     const defaultData = await serviceGetByKeyWord(currentCategory);
     return (selectors.cardsContainer.innerHTML =
       createAllCategCardsMarkup(defaultData));
