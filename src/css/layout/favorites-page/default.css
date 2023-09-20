@@ -1,21 +1,20 @@
 .favorite {
   width: 100%;
   margin: 0 auto;
-  padding-top: 50px;
-  padding-bottom: 80px;
 }
 
-.fav-hero {
-  flex-direction: column;
-  gap: 40px;
-  display: flex;
+.fav-phantom{
+
+  display: none;
 }
+
 .fav__text {
   color: var(----primary-brand-color);
   text-align: center;
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
+  padding-top: 25px;
 }
 
 .fav-empty {
@@ -23,7 +22,8 @@
   flex-direction: column;
   margin: 0 auto;
   align-items: center;
-  gap: 24px;
+  padding-top: 280px;
+  padding-bottom: 330px;
 }
 
 .is-hidden {
@@ -34,4 +34,105 @@
 
 .is-none {
   display: none;
+}
+
+.fav-img{
+  width: 100%;
+  height: auto;
+  display: block;
+  padding-top: 50px;
+  padding-bottom: 40px;
+}
+
+.fav-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding-top: 25px;
+  padding-bottom: 80px;
+}
+
+.fav-hero .fav-style-reset{
+  padding: 0;
+  margin: 0;
+}
+
+.fav-container .recipes-card{
+  width: calc(100%);
+}
+
+.fav-categories{
+  display: flex;
+  gap: 20px;
+}
+
+.fav-categories .category-btn{
+  color: rgba(5, 5, 5, 0.30);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.25;
+
+    padding: 14px 18px;
+
+    border-radius: 15px;
+      border: 1px solid rgba(5, 5, 5, 0.20);
+  
+}
+
+.fav-categories .category-btn:hover{
+  background: var(--accent-color);
+  color: var(--cards-text-color-white-theme);
+  border-color: var(--accent-color);
+}
+
+.fav-categories .category-btn:focus {
+  background: var(--accent-color);
+  color: var(--cards-text-color-white-theme);
+  border-color: var(--accent-color);
+}
+
+@media screen and (min-width: 768px) {
+  .fav-container{
+    gap: 15px;
+    padding-top: 30px;
+  }
+
+  .fav-container .recipes-card{
+    width: calc((100% - 30px)/3);
+  }
+
+  .fav-img{
+    padding-bottom: 65px;
+  }
+
+  .fav-phantom{
+    display: block;
+  }
+
+  .fav__text{
+    padding-top: 30px;
+  }
+
+  .fav-empty{
+    padding-top: 0;
+    padding-bottom: 320px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .fav-container{
+    row-gap: 30px;
+    column-gap: 15px;
+    padding-bottom: 100px;
+  }
+  .fav-container .recipes-card {
+    width: calc((100% - 45px)/4);
+  }
+  .fav-img{
+    padding-top: 40px;
+  }
+  .fav-empty{
+    padding-bottom: 64px;
+  }
 }
