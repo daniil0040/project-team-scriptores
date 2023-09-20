@@ -25,7 +25,6 @@ searchTime = new SlimSelect({
     searchHighlight: true,
     selected: true,
     placeholderText: 'Time',
-    allowDeselect: true,
   },
   data: arr,
 });
@@ -49,7 +48,6 @@ getAllSomething('areas')
         searchHighlight: true,
         selected: true,
         placeholderText: 'Country',
-        allowDeselect: true,
       },
       data: arr,
     });
@@ -77,7 +75,6 @@ getAllSomething('ingredients').then(data => {
       searchHighlight: true,
       selected: true,
       placeholderText: 'Ingridient',
-      allowDeselect: true,
     },
     data: arr,
   });
