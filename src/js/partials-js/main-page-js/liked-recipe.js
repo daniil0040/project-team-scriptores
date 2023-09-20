@@ -6,8 +6,6 @@ const cardsContainer = document.querySelector('.cards-container-js');
 let recipesFavorite = JSON.parse(localStorage.getItem(common.LS_RECIPES)) ?? [];
 cardsContainer.addEventListener('click', onClickHeart);
 
-console.log(recipesFavorite);
-
 async function getCard(id, recipeLikeBtn) {
   try {
     const data = await getRecipeById(id);
