@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Notiflix from 'notiflix';
-import { createAllCategCardsMarkup } from './all-categ-cards';
+import { addPagination, createAllCategCardsMarkup } from './all-categ-cards';
 import debounce from 'lodash.debounce';
 import { searchTime, searchArea, searchIngredients } from './select';
 
@@ -22,7 +22,7 @@ let currentIngridient = '';
 
 selectors.categoryList.addEventListener('click', hendlerClickCategories);
 
-// selectors.searchInput.addEventListener('input', debounce(handlerInput, 300));
+selectors.searchInput.addEventListener('input', debounce(handlerInput, 300));
 
 selectors.allCategoryBtn.addEventListener('click', hendlerClickAllCategBtn);
 
@@ -74,6 +74,11 @@ async function handlerAreaSelect(evt) {
       currentIngridient,
       keyWord
     );
+
+    if (!data || !data.results) {
+      return;
+    }
+
     selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(
       data.results
     );
@@ -95,7 +100,10 @@ async function handlerIngridientsSelect(evt) {
       currentArea,
       currentIngridient
     );
-    selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(data);
+    selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(
+      data.results
+    );
+    addPagination(data);
   } catch (error) {
     console.log(error);
   }
@@ -160,7 +168,14 @@ async function handlerInput(evt) {
       currentIngridient,
       keyWord
     );
-    selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(data);
+
+    if (!data || !data.results) {
+      return;
+    }
+    selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(
+      data.results
+    );
+    addPagination(data);
   } catch (error) {
     console.log(error);
   }

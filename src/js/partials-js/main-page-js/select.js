@@ -69,17 +69,6 @@ getAllSomething('ingredients').then(data => {
   arr.unshift({ text: '', placeholder: true });
   searchIngredients = new SlimSelect({
     select: '.js-ingredients-select',
-  // INGREDIENTS
-  getAllSomething("ingredients")
-    .then(data => {
-      let arr = data.map(({name,_id}) => ({
-        html: `<p>${name}</p>`,
-        text: `${name}`,
-        value: `${_id}`
-      }))
-      arr.unshift({ text: '', placeholder: true });
-      searchIngredients = new SlimSelect({
-  select: '.js-ingredients-select',
 
     settings: {
       showSearch: true,
