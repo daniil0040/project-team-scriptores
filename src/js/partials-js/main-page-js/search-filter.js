@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Notiflix from 'notiflix';
 import { createAllCategCardsMarkup } from './all-categ-cards';
-import debounce from "lodash.debounce";
+// import debounce from "lodash.debounce";
 import {searchTime,searchArea,searchIngredients} from "./select"
 
 const selectors = {
@@ -21,7 +21,7 @@ let currentIngridient = ""
 
 selectors.categoryList.addEventListener('click', hendlerClickCategories);
 
-selectors.searchInput.addEventListener('input', debounce(handlerInput, 300));
+// selectors.searchInput.addEventListener('input', debounce(handlerInput, 300));
 
 selectors.allCategoryBtn.addEventListener('click', hendlerClickAllCategBtn);
 
