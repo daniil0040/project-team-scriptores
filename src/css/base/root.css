@@ -11,6 +11,8 @@
   --modal-background: #9bb537;
   --modal-text-color: #ffffff;
   --modal-hover: #050505;
+  --category-button: rgba(5, 5, 5, 0.3);
+  --all-categories: rgba(5, 5, 5, 0.2);
 }
 :root[data-theme='dark'] {
   --primary-brand-color: #ffffff;
@@ -24,6 +26,8 @@
   --modal-background: #050505;
   --modal-text-color: #f8f8f8;
   --modal-hover: #9bb537;
+  --category-button: rgba(255, 255, 255, 0.3);
+  --all-categories: rgba(255, 255, 255, 0.2);
 }
 
 :root {
