@@ -16,10 +16,11 @@
   text-indent: -9999px;
   width: 46px;
   height: 20px;
-  background: #cecdcd;
+  background: var(--switcher-theme-background);
   display: block;
   border-radius: 18px;
   position: relative;
+  transition: var(--transition);
 }
 
 .input-label:after {
@@ -35,7 +36,7 @@
 }
 
 .input-switcher:checked+.input-label {
-  background: #cecdcd;
+  background: var(--switcher-theme-background);
 }
 
 .input-switcher:checked+.input-label:after {
@@ -97,20 +98,21 @@
 }
 
 .basket-icon {
-  fill: var(--black-bg-color);
+  fill: var(--primary-brand-color);
+  transition: var(--transition);
 }
 
 @media (hover:hover) {
 
   .basket-icon:hover,
   .basket-icon:focus {
-    fill: var(--accent-color);
+    fill: var(--secondary-brand-color);
   }
 }
 
 @media not (hover:hover) {
   .basket-btn:active {
-    fill: var(--accent-color);
+    fill: var(--secondary-brand-color);
   }
 }
 
@@ -120,28 +122,30 @@
   padding: 0;
   width: 32px;
   height: 32px;
+  
 }
 
 @media (hover:hover) {
 
   .burger-icon:hover,
   .burger-icon:focus {
-    fill: var(--accent-color);
+    fill: var(--secondary-brand-color);
   }
 }
 
 @media not (hover:hover) {
   .burger-btn:active {
-    fill: var(--accent-color);
+    fill: var(--secondary-brand-color);
   }
 }
 
 .header-link:active {
-  color: var(--accent-color);
+  color: var(--secondary-brand-color);
 }
 
 .burger-icon {
-  fill: var(--black-bg-color);
+  fill: var(--primary-brand-color);
+  transition: var(--transition);
 }
 
 .logo {
@@ -150,11 +154,13 @@
   font-weight: 600;
   line-height: 112.5%;
   letter-spacing: -0.64px;
-  color: var(--black-bg-color);
+  color: var(--primary-brand-color);
+  
 }
 
 .logo-color {
-  color: var(--accent-color);
+  color: var(--secondary-brand-color);
+  transition: var(--transition);
 }
 
 .buttons {
@@ -171,9 +177,9 @@
   height: 100%;
   overflow: scroll;
   z-index: 100;
-  background-color: var(--accent-color);
+  background-color: var(--modal-background);
   transform: translateX(100%);
-  transition: var(--transition-dur-and-func);
+  transition: var(--transition);
 }
 
 .mob-menu.is-open {
@@ -190,7 +196,7 @@
 }
 
 .close-icon {
-  fill: var(--cards-text-color-white-theme);
+  fill: var(--modal-text-color);
 }
 
 
@@ -206,7 +212,7 @@
 }
 
 .mob-menu-item {
-  color: #FFF;
+  color: var(--modal-text-color);
   font-size: 12px;
   font-weight: 500;
   line-height: normal;
@@ -220,8 +226,8 @@
   top: 0;
   overflow: auto;
   z-index: 99;
-  transition: opacity var(--transition-dur-and-func),
-    visibility var(--transition-dur-and-func);
+  transition: opacity var(--transition),
+    visibility var(--transition);
 }
 
 @media screen and (min-width:768px) {
@@ -249,13 +255,13 @@
 
     .header-link:hover,
     .header-link:focus {
-      color: var(--accent-color);
+      color: var(--secondary-brand-color);
     }
   }
 
   @media not (hover:hover) {
     .header-link:active {
-      color: var(--accent-color);
+      color: var(--secondary-brand-color);
     }
   }
 
@@ -263,12 +269,21 @@
     display: none;
   }
 
-  .menu-item {
-    color: var(--text-color-white-theme);
+  .header-link {
+    color: var(--primary-brand-color);
     font-size: 12px;
     font-weight: 400;
     line-height: normal;
+    transition: var(--transition);
   }
+
+  @media(hover:hover) {
+  
+    .header-link:hover,
+    .header-link:focus {
+         color: var(--secondary-brand-color);
+       }
+     }
 
   .logo {
     font-size: 18px;
