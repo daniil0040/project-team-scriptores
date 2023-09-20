@@ -64,6 +64,11 @@
 .fav-categories{
   display: flex;
   gap: 20px;
+  overflow: scroll;
+}
+
+.fav-categories::-webkit-scrollbar {
+  display: none;
 }
 
 .fav-categories .category-btn{
