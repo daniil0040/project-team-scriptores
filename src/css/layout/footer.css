@@ -1,6 +1,8 @@
 .footer {
   background-color: var(--not-active-btn-color-black);
   padding: 50px 0;
+  background-color: var(--cards-text-color-white-theme);
+  border-top: 2px solid rgba(151, 177, 52, 0.5);
 }
 
 .footer-all {
@@ -98,12 +100,12 @@
 }
 .footer-social-list-link:hover,
 .footer-social-list-link:focus {
-  background-color: var(--accent-color);
+  background-color: var(--cards-text-color-white-theme);
 }
 
 .footer-social-list-link:hover .footer-social-list-icon,
 .footer-social-list-link:focus .footer-social-list-icon {
-  fill: var(--not-active-btn-color-white);
+  fill: var(--accent-color);
 }
 
 @media screen and (min-width: 768px) {
