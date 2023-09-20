@@ -4,6 +4,7 @@
   --background-color: #f8f8f8;
   --filter-input-pagination-color: rgba(5, 5, 5, 0.5);
   --switcher-theme-background: #cecdcd;
+  --see-recipe-text-color: rgba(5, 5, 5, 0.80);
   --modal-background: #9bb537;
   --modal-text-color: #ffffff;
   --modal-hover: #050505;
@@ -12,7 +13,8 @@
   --primary-brand-color: #ffffff;
   --secondary-brand-color: #9bb537;
   --background-color: #161616;
-  --filter-input-pagination-color: rgba(255, 255, 255, 0.5);
+  --filter-input-pagination-color: #ffffff80;
+  --see-recipe-text-color:#ffffffcc;
   --switcher-theme-background: #9bb537;
   --modal-background: #050505;
   --modal-text-color: #f8f8f8;
