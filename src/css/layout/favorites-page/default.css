@@ -9,7 +9,7 @@
 }
 
 .fav__text {
-  color: #050505;
+  color: var(----primary-brand-color);
   text-align: center;
   font-size: 14px;
   font-weight: 400;

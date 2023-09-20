@@ -2,24 +2,36 @@
   --primary-brand-color: #050505;
   --secondary-brand-color: #9bb537;
   --background-color: #f8f8f8;
-  --filter-input-pagination-color: rgba(5, 5, 5, 0.5);
+
+  --filter-input-pagination-color: #05050533;
+  --placeholder: #05050580;
+  --select-open: #ffffff;
+  --select-open-text: #0505054d;
   --switcher-theme-background: #cecdcd;
   --modal-background: #9bb537;
   --modal-text-color: #ffffff;
   --modal-hover: #050505;
+  --category-button: rgba(5, 5, 5, 0.3);
+  --all-categories: rgba(5, 5, 5, 0.2);
 }
 :root[data-theme='dark'] {
   --primary-brand-color: #ffffff;
   --secondary-brand-color: #9bb537;
   --background-color: #161616;
-  --filter-input-pagination-color: rgba(255, 255, 255, 0.5);
+  --filter-input-pagination-color: #ffffff33;
+  --placeholder: #ffffff80;
+  --select-open: #050505;
+  --select-open-text: #ffffff4d;
   --switcher-theme-background: #9bb537;
   --modal-background: #050505;
   --modal-text-color: #f8f8f8;
   --modal-hover: #9bb537;
+  --category-button: rgba(255, 255, 255, 0.3);
+  --all-categories: rgba(255, 255, 255, 0.2);
 }
 
 :root {
+  --transition: 750ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   --text-color-white-theme: #050505;
   --text-color-black-theme: #ffffffcc;
   --not-active-btn-color-white: #0505054d;
