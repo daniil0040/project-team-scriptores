@@ -1,0 +1,112 @@
+/* Стилі для модального вікна */
+
+.new-order-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.new-order-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    width: 440px;
+    height: 632px;
+    padding: 40px;
+    border-radius: 15px;
+    z-index: 10000;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.4s ease-in-out;
+}
+
+.new-order-modal.active {
+    overflow: hidden;
+}
+
+.new-order-icon-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+}
+
+.new-order-icon-close {
+    fill: black;
+}
+
+.new-order-form-title {
+    text-align: left;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.new-order-form-group {
+    margin-bottom: 18px;
+}
+
+.new-order-input-field,
+.new-order-textarea-field {
+    width: 360px;
+    height: 48px;
+    padding: 18px;
+    border: 1px solid #05050520;
+    border-radius: 15px;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+.new-order-textarea-field {
+    height: 100px;
+    resize: none;
+}
+
+.new-order-submit-button {
+    width: 360px;
+    height: 48px;
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.new-order-submit-button:hover {
+    color: black;
+}
+
+.new-order-form-label {
+    font-size: 14px;
+    color: #0505057d;
+}
+
+@media (max-width: 480px) {
+    .new-order-modal {
+        width: 335px;
+        height: 582px;
+        padding: 20px;
+    }
+
+    .new-order-input-field {
+        width: 295px;
+        height: 46px;
+    }
+
+    .new-order-textarea-field {
+        width: 295px;
+    }
+
+    .new-order-submit-button {
+        width: 295px;
+        height: 46px;
+    }
+}

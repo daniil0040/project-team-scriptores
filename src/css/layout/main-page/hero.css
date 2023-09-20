@@ -8,21 +8,22 @@
   align-items: center;
   border-radius: 12px;
   border: 1px solid #9bb537;
-  background-color: #fff;
-  color: #050505;
+  background-color: var(--background-color);
+  color: var(--primary-brand-color);
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   margin-bottom: 48px;
-  transition: 350ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: var(--transition);
 }
 
 .hero-button:hover,
 .hero-button:active,
 .hero-button:focus {
   background-color: #9bb537;
-  color: #fff;
+  color: var(--background-color);
+  transition: var(--transition);
 }
 
 /*  MOBILE CSS 375px */
@@ -30,30 +31,33 @@
   margin-top: 89px;
   margin-bottom: 14px;
   max-width: 335px;
-  color: #050505;
+  color: var(--primary-brand-color);
   font-size: 26px;
   font-style: normal;
   font-weight: 600;
   line-height: 1.2;
   text-transform: uppercase;
+  transition: var(--transition);
 }
 
 .hero-title-italy {
-  color: #9bb537;
+  color: var(--secondary-brand-color);
   font-size: 26px;
   font-style: italic;
   font-weight: 400;
   line-height: 1.2;
   text-transform: uppercase;
+  transition: var(--transition);
 }
 
 .hero-paragraph {
   margin-bottom: 28px;
-  color: #050505;
+  color: var(--primary-brand-color);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 1.28;
+  transition: var(--transition);
 }
 
 .swiper {
@@ -147,8 +151,9 @@
 span.swiper-pagination-bullet {
   width: 4px;
   height: 4px;
-  background-color: #050505;
+  background-color: var(--primary-brand-color);
   opacity: 1;
+  transition: var(--transition);
 }
 
 span.swiper-pagination-bullet-active {

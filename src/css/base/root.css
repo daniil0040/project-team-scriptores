@@ -1,13 +1,35 @@
-:root{
-    --text-color-white-theme: #050505;
-    --text-color-black-theme: #FFFFFFCC;
-    --not-active-btn-color-white: #0505054D;
-    --not-active-btn-color-black: #FFFFFF80;
-    /* --thirdly-text-color: #05050580; */
-    --cards-text-color-white-theme: #F8F8F8;
-    --gray-cards-text-color-black-theme: #FFFFFFCC;
-    --accent-color: #9BB537;
-    --form-border-color: #05050533;
-    --star-color: #EEA10C;
-    --black-bg-color: #050505;
+:root[data-theme='light'] {
+  --primary-brand-color: #050505;
+  --secondary-brand-color: #9bb537;
+  --background-color: #f8f8f8;
+  --filter-input-pagination-color: rgba(5, 5, 5, 0.5);
+  --switcher-theme-background: #cecdcd;
+  --modal-background: #9bb537;
+  --modal-text-color: #ffffff;
+  --modal-hover: #050505;
+}
+:root[data-theme='dark'] {
+  --primary-brand-color: #ffffff;
+  --secondary-brand-color: #9bb537;
+  --background-color: #161616;
+  --filter-input-pagination-color: rgba(255, 255, 255, 0.5);
+  --switcher-theme-background: #9bb537;
+  --modal-background: #050505;
+  --modal-text-color: #f8f8f8;
+  --modal-hover: #9bb537;
+}
+
+:root {
+  --transition: 750ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  --text-color-white-theme: #050505;
+  --text-color-black-theme: #ffffffcc;
+  --not-active-btn-color-white: #0505054d;
+  --not-active-btn-color-black: #ffffff80;
+  --thirdly-text-color: #05050580;
+  --cards-text-color-white-theme: #f8f8f8;
+  --gray-cards-text-color-black-theme: #ffffffcc;
+  --accent-color: #9bb537;
+  --form-border-color: #05050533;
+  --star-color: #eea10c;
+  --black-bg-color: #050505;
 }
