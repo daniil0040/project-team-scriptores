@@ -38,7 +38,7 @@ selectors.timeSelect.addEventListener('change', handlerTimeSelect);
 selectors.resetBtn.addEventListener('click', handlerReset);
 
 async function handlerReset() {
-    resetFilters();
+  resetFilters();
   const defaultData = await serviceGetByKeyWord(currentCategory);
   selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(
     defaultData.results
@@ -127,16 +127,17 @@ async function handlerTimeSelect(evt) {
 }
 
 function hendlerClickAllCategBtn(evt) {
-    currentCategory = '';
-    resetFilters()
+  document.querySelector('[active="true"]').removeAttribute('active');
+  currentCategory = '';
+  resetFilters();
 }
 
 function hendlerClickCategories(evt) {
   if (!evt.target.classList.contains('category-button-js')) {
     return;
   }
-    currentCategory = evt.target.textContent;
-    resetFilters()
+  currentCategory = evt.target.textContent;
+  resetFilters();
 }
 
 async function handlerInput(evt) {
@@ -205,8 +206,8 @@ export async function serviceGetByKeyWord(
 }
 
 function resetFilters() {
-    // SEARCH RESET
-    selectors.searchInput.value = '';
+  // SEARCH RESET
+  selectors.searchInput.value = '';
   // AREA RESET
   selectors.areaSelect.selectedIndex = 0;
   searchArea.setSelected('');
@@ -218,8 +219,8 @@ function resetFilters() {
   // INGREDIENTS RESET
   selectors.ingredientsSelect.selectedIndex = 0;
   searchIngredients.setSelected('');
-    currentIngridient = '';
-    // 
+  currentIngridient = '';
+  //
 }
 export async function getRecipesByFilters(
   pageNumber = 1,
