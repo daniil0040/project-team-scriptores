@@ -44,6 +44,7 @@
   font-size: 14px;
   line-height: 1.1;
   letter-spacing: -0.02em;
+  text-align: center;
 }
 .logo-footer {
   color: var(--primary-brand-color);
@@ -128,6 +129,8 @@
 }
 
 .footer-policy {
+  display: flex;
+  flex-direction: row;
   padding-top: 5px;
   display: flex;
   flex-wrap: wrap;
@@ -144,62 +147,20 @@
 
 .footer-policy-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 10px;
-}
-
-@media only screen and (min-width: 768px) {
-  .footer-policy-list {
-    flex-direction: row;
-    justify-content: center;
-    gap: 24px;
-  }
 }
 
 .footer-policy-link {
   font-style: normal;
   font-weight: 600;
-  line-height: 0.8;
-  align-items: center;
+  font-size: 11px;
+  line-height: 0.3;
   letter-spacing: -0.02em;
-  color: rgba(125, 200, 0, 0.5);
+  color: var(--all-categories);
+  transition: var(--transition);
 }
-
-@media only screen and (min-width: 768px) {
-  .footer-policy-link {
-    transition: var(--transition);
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .footer-policy-link:hover,
-  .footer-policy-link:focus {
-    color: var(--accent-color);
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .footer-policy {
-    flex-direction: row;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .footer-policy-list {
-    flex-direction: row;
-    gap: 24px;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .footer-policy-link {
-    transition: color var(--transition);
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .footer-policy-link:hover,
-  .footer-policy-link:focus {
-    color: var(--accent-color);
-  }
+.footer-policy-link:hover,
+.footer-policy-link:focus {
+  color: var(--accent-color);
 }

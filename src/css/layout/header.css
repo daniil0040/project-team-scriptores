@@ -299,3 +299,9 @@
     padding-top: 40px;
   }
 }
+
+/*////// HEDR MENU ACTIVE /////////*/
+
+.active-page{
+  color: var(--accent-color);
+};

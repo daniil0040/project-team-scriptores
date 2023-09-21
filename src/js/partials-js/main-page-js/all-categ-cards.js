@@ -156,7 +156,7 @@ function renderNextButtons(currentPage, totalPages) {
         
         <button
           id="pag-btn-last"
-          class="pag-btn-green pag-btn-number"
+          class="pag-btn-green ${clickableClass}"
           type="button"
           aria-label="last page"
           page-number="${totalPages}"
@@ -192,7 +192,7 @@ function mainButtons(firstPage, lastPage, totalPages, pageNumber) {
   let buttons = '';
   pageNumber = Number(pageNumber);
 
-  if (pageNumber > 2) {
+  if (pageNumber > 2 && totalPages > 3) {
     buttons += `<button
           id="pag-btn-dots-left"
           class="pag-btn-white pag-btn-number"
@@ -227,7 +227,7 @@ function mainButtons(firstPage, lastPage, totalPages, pageNumber) {
         </button>`;
   }
 
-  if (pageNumber + 2 <= totalPages) {
+  if (pageNumber + 2 <= totalPages && totalPages > 3) {
     buttons += `<button
           id="pag-btn-dots-left"
           class="pag-btn-white pag-btn-number"
