@@ -1,8 +1,9 @@
 
+
 .rating {
     display: flex;
       align-items: center;
-      color: #050505;
+      color: var(--primary-brand-color);
   font-family: 'Inter';
   font-size: 24px;
   font-weight: 600;
@@ -61,7 +62,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(46, 47, 66, 0.4);
-    transition: opacity 250ms;
+    transition: var(--transition);
   }
   
   .rating-modal {
@@ -72,7 +73,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
+    background-color: var(--modal-rating-back);
   max-width: 335px;
     border-radius: 15px;
   }
@@ -81,10 +82,10 @@
     position: absolute;
     top: 14px;
     right: 14px;
-   
+    fill: var(--primary-brand-color);
     &:hover {
-    fill: opacity 250ms;;
-    transition: opacity 250ms;
+    
+    transition: var(--transition);
   }
   }
   
@@ -93,11 +94,11 @@
     font-weight: 600;
     font-size: 14px;
     line-height: 18px;
-    color: #050505;
+    color: var(--primary-brand-color);
   font-family: 'Inter';
   }
   .rating-email {
-    
+    color: var(--primary-brand-color);
     font-weight: 500;
     font-size: 14px;
     line-height: 18px;
@@ -106,21 +107,21 @@
     padding-bottom: 14px;
     padding-left: 18px;
     width: 100%;
+    background:var(--modal-email);
     border-radius: 15px;
-    border: 1px solid rgba(5, 5, 5, 0.2);
+    border: 1px solid var(--all-categories);
     
     &:focus {
     outline: none;
-    border: 1px solid #9bb537;
+    border: 1px solid var(--secondary-brand-color);
+    
   }
   }
   
   .add-rating-submit-btn {
-    
-    width: 100%;
-    margin-top: 14px;
       
- 
+    margin-top: 14px;
+     
   }
   
   @media screen and (min-width: 768px) {
@@ -135,8 +136,7 @@
     }
   
     .add-rating-submit-btn {
-      width: 360px;
-      margin-top: 16px;
+       margin-top: 16px;
   
     }
   
@@ -173,14 +173,11 @@
 .star-rating {
     width: 24px;
     height: 24px;
-    fill: #D9D9D9;
+    fill: var(--star-no-active);
 }
 
-.star-rating.active{
-    fill: #EEA10C;
+.star-rating.activeR{
+    fill: var( --star-color);
 }
-
-
-
 
 
