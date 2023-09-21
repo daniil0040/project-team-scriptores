@@ -38,7 +38,7 @@
 .recipes-card {
   position: relative;
   overflow: hidden;
-height: 348px;
+  height: 348px;
   border-radius: 15px;
 }
 
@@ -113,13 +113,19 @@ height: 348px;
   font-weight: 600;
   font-size: 14px;
   line-height: 18px;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 
   margin-top: 198px;
   margin-bottom: 8px;
 
   user-select: none;
 
-  color: var(--cards-text-color-white-theme);
+  color: var(--modal-text-color);
 }
 @media screen and (min-width: 768px) {
   .card-heading {
@@ -163,7 +169,7 @@ height: 348px;
 
   user-select: none;
 
-  color: var(--cards-text-color-white-theme);
+  color: var(--modal-text-color);
 }
 .card-text::-webkit-scrollbar {
   width: 0px;
@@ -177,7 +183,7 @@ height: 348px;
 
   margin-right: 4px;
 
-  color: var(--cards-text-color-white-theme);
+  color: var(--modal-text-color);
 }
 .rating {
   display: flex;
@@ -203,13 +209,13 @@ height: 348px;
   font-weight: 500;
   font-size: 12px;
   line-height: 14.52px;
-  color: var(--cards-text-color-white-theme);
-  background-color: var(--accent-color);
+  color: var(--modal-text-color);
+  background-color: var(--secondary-brand-color);
   border: none;
 
   min-width: 89px;
   min-height: 31px;
-  padding: 8px, 14px;
+  padding: 8px 14px;
   border-radius: 8px;
 
   position: absolute;

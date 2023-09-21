@@ -20,6 +20,7 @@
     margin-left: 64px;
   }
 }
+
 .search-label {
   user-select: none;
   display: block;
@@ -30,7 +31,7 @@
   line-height: 14px;
   position: absolute;
   top: -22px;
-  color: #05050580;
+  color: var(--placeholder);
 }
 @media screen and (min-width: 768px) {
   .search-label {
@@ -58,15 +59,15 @@
   position: relative;
 }
 .search-field {
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--transition);
   padding: 14px 14px 14px 48px;
   width: 100%;
   height: 46px;
   border-radius: 15px;
   outline: none;
-
-  color: var(--black-bg-color);
-  border: 1px solid var(--form-border-color);
+  background-color: var(--background-color);
+  color: var(--primary-brand-color);
+  border: 1px solid var(--filter-input-pagination-color);
 }
 @media screen and (min-width: 768px) {
   .search-field {
@@ -78,11 +79,12 @@
   font-size: 14px;
   line-height: 18px;
 
-  color: #05050580;
+  color: var(--placeholder);
 }
-.search-field:focus {
-  border: 1px solid var(--accent-color);
-  box-shadow: 0 0 5px var(--accent-color);
+.search-field:focus,
+.search-field:hover {
+  border: 1px solid var(--secondary-brand-color);
+  box-shadow: 0 0 5px var(--secondary-brand-color);
 }
 
 .search-button {
@@ -91,10 +93,13 @@
   left: 18px;
 }
 .search-field-icon {
-  fill: #05050580;
+  transition: var(--transition);
+  fill: var(--primary-brand-color);
 }
 .search-field:focus + .search-button .search-field-icon {
-  fill: var(--accent-color);
+  transition: var(--transition);
+
+  fill: var(--secondary-brand-color);
 }
 
 @media screen and (max-width: 767px) {
@@ -119,11 +124,17 @@
   line-height: 18px;
 
   outline: none;
-
-  border: 1px solid var(--form-border-color);
+  background-color: var(--background-color);
+  border: 1px solid var(--filter-input-pagination-color);
   border-radius: 15px;
-
+  transition: var(--transition);
   padding: 12px 18px;
+}
+.select:hover,
+.select:focus {
+  border: 1px solid var(--secondary-brand-color);
+  box-shadow: 0 0 5px var(--secondary-brand-color);
+  transition: var(--transition);
 }
 @media screen and (min-width: 768px) {
   .select {
@@ -133,12 +144,12 @@
 
 /*time select відкриваюча шторка*/
 .ss-main {
-  color: var(--black-bg-color);
+  color: var(--primary-brand-color);
 }
 .ss-main:focus {
-  border: 1px solid var(--accent-color);
-  box-shadow: 0 0 5px var(--accent-color);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--secondary-brand-color);
+  box-shadow: 0 0 5px var(--secondary-brand-color);
+  transition: var(--transition);
 }
 .ss-main.ss-open-below {
   border-radius: 15px;
@@ -162,7 +173,7 @@
 }
 
 .ss-content .ss-list .ss-option {
-  color: #0505054d;
+  color: var(--select-open-text);
   font-size: 14px;
   font-weight: 500;
   line-height: 18px;
@@ -170,7 +181,7 @@
 }
 /* Ховер селекта */
 .ss-content .ss-list .ss-option:hover {
-  color: #0505054d;
+  color: var(--primary-brand-color);
   background-color: transparent;
 }
 /* При натисканні обирається колір */
@@ -184,11 +195,11 @@
 }
 /* Колір вибраного селекта */
 .ss-content .ss-list .ss-option:not(.ss-disabled).ss-selected {
-  color: var(--black-bg-color);
+  color: var(--primary-brand-color);
 }
-
 /* area search */
 .area-wrapper {
+  position: relative;
   width: 160px;
 }
 @media screen and (min-width: 768px) {
@@ -200,6 +211,7 @@
 /* Пошук інгрідієнтів*/
 .ingredients-wrapper {
   width: 188px;
+  position: relative;
 }
 /* Кнопка reset */
 .wrapper-reset {
@@ -217,7 +229,7 @@
   justify-content: flex-end;
 }
 .reset-icon {
-  fill: var(--accent-color);
+  fill: var(--secondary-brand-color);
   margin-right: 4px;
 }
 .reset-text {
