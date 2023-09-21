@@ -88,3 +88,11 @@ function removeCard() {
     }); 
 }
 
+// SEE RECIPE
+import { } from './partials-js/favorites-page-js/see-recipe-fav';
+
+// SWITCHER
+import './partials-js/main-page-js/switcher-theme';
+
+// SCROLL UP
+import './partials-js/components/scroll-up';
