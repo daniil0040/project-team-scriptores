@@ -63,9 +63,9 @@ function changeColor(starCount) {
  const starLabel = stars[i].nextElementSibling;
  const starSVG = starLabel.querySelector('.star-rating');
   if (i < starCount) {
- starSVG.classList.add('active');
+ starSVG.classList.add('activeR');
   } else {
- starSVG.classList.remove('active');
+ starSVG.classList.remove('activeR');
   }
 }
 ratingValue.textContent = starCount.toFixed(1); 
