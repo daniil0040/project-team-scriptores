@@ -1,6 +1,10 @@
 import axios from 'axios';
 import Notiflix from 'notiflix';
-import { addPagination, createAllCategCardsMarkup, fillStars } from './all-categ-cards';
+import {
+  addPagination,
+  createAllCategCardsMarkup,
+  fillStars,
+} from './all-categ-cards';
 import debounce from 'lodash.debounce';
 import { searchTime, searchArea, searchIngredients } from './select';
 
@@ -43,7 +47,7 @@ async function handlerReset() {
   selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(
     defaultData.results
   );
-  fillStars()
+  fillStars();
   addPagination(defaultData);
   return;
 }
@@ -70,7 +74,7 @@ async function handlerAreaSelect(evt) {
     selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(
       data.results
     );
-    fillStars()
+    fillStars();
     addPagination(data);
   } catch (error) {
     console.log(error);
@@ -131,8 +135,17 @@ async function handlerTimeSelect(evt) {
 }
 
 function hendlerClickAllCategBtn(evt) {
-  document.querySelector('[active="true"]').removeAttribute('active');
+  const category = document.querySelector('[active="true"]');
+
+  if (category) {
+    category.removeAttribute('active');
+  }
+
   currentCategory = '';
+  currentCookingTime = '';
+  currentArea = '';
+  currentIngridient = '';
+  keyWord = '';
   resetFilters();
 }
 
