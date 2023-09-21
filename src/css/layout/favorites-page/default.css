@@ -61,9 +61,14 @@
   width: calc(100%);
 }
 
+.fav-container-categories{
+  height: 50px;
+  position: relative;
+}
+
 .fav-categories{
   display: flex;
-  position: relative;
+  position: absolute;
   gap: 12px;
   overflow: scroll;
   width: calc(100% + 15px);
