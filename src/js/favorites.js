@@ -22,12 +22,12 @@ function startFavorite() {
     } else return;
 };
 
-function creatCategoriesList() {
+ function creatCategoriesList() {
   const targetKey = 'category';
   const newArray = cardArr.map(obj => obj[targetKey]);
   const categoriesSet = new Set(newArray);
   const categoriesArr = [...categoriesSet];
-  categoriesArr.unshift('All categories');
+    categoriesArr.unshift('All categories');
   pullOutCategories(categoriesArr);
 }
 
@@ -54,7 +54,7 @@ function createCardsCategory(category) {
     filledHearts();
 }
 
-function markUpCategoriesBtn(arr) {
+export function markUpCategoriesBtn(arr) {
   return arr
     .map(
       el =>
@@ -90,13 +90,12 @@ function removeCard() {
             favEmpty.classList.remove('is-none');
             favStatic.classList.add('fav-phantom');
             favContainer.classList.add('fav-style-reset')
-            // favCategories.classList.add('is-none');
             favCategories.innerHTML = "";
         }
     }); 
 };
 
-function filledHearts() {
+export function filledHearts() {
     const likes = document.querySelectorAll('.js-add');
     likes.forEach(like => like.classList.add('liked'));
 }
