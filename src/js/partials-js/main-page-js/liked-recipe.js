@@ -1,41 +1,42 @@
-import { getAllRecipes } from '../service-api';
+import { getRecipeById } from '../service-api';
 import common from '../components/common.json';
 
 const cardsContainer = document.querySelector('.cards-container-js');
-const like = document.querySelector('like-btn');
 
-const recipes = JSON.parse(localStorage.getItem(common.LS_RECIPES)) ?? [];
-cardsContainer.addEventListener('click', handlerAdd);
+let recipesFavorite = JSON.parse(localStorage.getItem(common.LS_RECIPES)) ?? [];
+cardsContainer.addEventListener('click', onClickHeart);
 
-let arrRecipe;
+async function getCard(id, recipeLikeBtn) {
+  try {
+    const data = await getRecipeById(id);
 
-getAllRecipes()
-  .then(data => {
-    arrRecipe = data.results;
-  })
-  .catch(err => {
-    console.log(err);
-  });
+    addFavorite(data, recipeLikeBtn);
+  } catch (error) {
+    console.log(error);
+  }
+}
 
-function handlerAdd(evt) {
+function addFavorite(objRecipe, recipeLikeBtn) {
+  const result = recipesFavorite.find(({ _id }) => _id === objRecipe._id);
+  const idx = recipesFavorite.findIndex(({ _id }) => _id === objRecipe._id);
+
+  if (!result) {
+    recipesFavorite.push(objRecipe);
+    recipeLikeBtn.classList.add('liked');
+  } else {
+    recipesFavorite.splice(idx, 1);
+    recipeLikeBtn.classList.remove('liked');
+  }
+  localStorage.setItem(common.LS_RECIPES, JSON.stringify(recipesFavorite));
+}
+
+function onClickHeart(evt) {
   if (!evt.target.classList.contains('js-add')) {
     return;
   }
 
-  const cardId = evt.target.dataset.id;
+  const recipeLikeId = evt.target.dataset.id;
+  const recipeLikeBtn = evt.target;
 
-  const currentRecipe = arrRecipe.find(({ _id }) => _id === cardId);
-
-  const idx = recipes.findIndex(({ _id }) => _id === cardId);
-  console.log(idx);
-
-  // Якщо індекса не знайдено в localStorage
-  if (idx === -1) {
-    recipes.push(currentRecipe);
-    evt.target.classList.add('liked');
-  } else {
-    recipes.splice(idx, 1);
-    evt.target.classList.remove('liked');
-  }
-  localStorage.setItem(common.LS_RECIPES, JSON.stringify(recipes));
+  getCard(recipeLikeId, recipeLikeBtn);
 }

@@ -7,7 +7,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: 9999;
 }
 
@@ -17,13 +17,13 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
+    background-color: var(--background-color);
     width: 440px;
     height: 632px;
     padding: 40px;
     border-radius: 15px;
     z-index: 10000;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 0.5px rgba(0, 0, 0, 0.3);
     transition: opacity 0.4s ease-in-out;
 }
 
@@ -39,7 +39,7 @@
 }
 
 .new-order-icon-close {
-    fill: black;
+    fill: var(--primary-brand-color);
 }
 
 .new-order-form-title {
@@ -47,6 +47,7 @@
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 40px;
+    color: var(--primary-brand-color);
 }
 
 .new-order-form-group {
@@ -58,10 +59,12 @@
     width: 360px;
     height: 48px;
     padding: 18px;
-    border: 1px solid #05050520;
+    color: #ccc;
+    border: 1px solid #7f7f7f;
     border-radius: 15px;
     font-size: 16px;
     margin-top: 8px;
+    background-color: var(--background-color);
 }
 
 .new-order-textarea-field {
@@ -82,11 +85,12 @@
 
 .new-order-submit-button:hover {
     color: black;
+    transition: var(--transition);
 }
 
 .new-order-form-label {
     font-size: 14px;
-    color: #0505057d;
+    color: #7f7f7f;
 }
 
 @media (max-width: 480px) {

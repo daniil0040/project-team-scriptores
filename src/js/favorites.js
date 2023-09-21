@@ -7,6 +7,7 @@ let cardArr = JSON.parse(localStorage.getItem(common.LS_RECIPES)) ?? [];
 const favEmpty = document.querySelector('.fav-empty');
 const favContainer = document.querySelector('.fav-container');
 const favCategories = document.querySelector('.fav-categories');
+const favStatic = document.querySelector('.fav-static')
 
 startFavorite();
 
@@ -60,6 +61,10 @@ function markUpCategoriesBtn(arr) {
 
 function createFavoriteMarkUP() {
     favContainer.innerHTML = createAllCategCardsMarkup(cardArr);
+    if (favStatic.classList.contains('fav-phantom')) {
+        favStatic.classList.remove('fav-phantom');
+        favContainer.classList.remove('fav-style-reset');
+    }
     return;
 };
 
@@ -76,8 +81,18 @@ function removeCard() {
         creatCategoriesList();
         if (!cardArr.length) {
             favEmpty.classList.remove('is-none');
+            favStatic.classList.add('fav-phantom');
+            favContainer.classList.add('fav-style-reset')
             favCategories.classList.add('is-none');
         }
     }); 
 }
 
+// SEE RECIPE
+import { } from './partials-js/favorites-page-js/see-recipe-fav';
+
+// SWITCHER
+import './partials-js/main-page-js/switcher-theme';
+
+// SCROLL UP
+import './partials-js/components/scroll-up';
