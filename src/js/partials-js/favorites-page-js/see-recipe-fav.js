@@ -1,15 +1,12 @@
 import * as basicLightbox from 'basiclightbox';
-// import "basicLightbox/dist/basicLightbox.min.css";
 import { getRecipeById } from '../service-api';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import common from '../components/common.json';
 
 
-const seeRecipe = document.querySelector('.cards-container-js');
-const seeRecipePopular = document.querySelector('.popular-recipes-container');
+const seeRecipe = document.querySelector('.fav-container-js');
 
 seeRecipe.addEventListener('click', onClickRecipe);
-seeRecipePopular.addEventListener('click', onClickPopular);
 
 function onClickRecipe(event) {
     if (!event.target.classList.contains('btn-see-recipe-js')) {
@@ -22,12 +19,6 @@ function onClickRecipe(event) {
     getCard(currentCardId);
 };
 
-function onClickPopular(event) {
-    const currentPopularCard = event.target.closest('.popular-recipes-wrap');
-    const currentPopularCardId = currentPopularCard.dataset.id;
-
-    getCard(currentPopularCardId);
-}
 
 async function getCard(id) {
     try {
@@ -101,7 +92,7 @@ function createMurkUpModal(card) {
     </div>
     <p class="instruction">${instructions}</p>
     <button type="button" class="modal-close-btn js-modal-close">
-    X
+    
      </button>
     <div class="button-block">
     <button class="btn add-to-favorite js-favorite-btn" type="button">Add to favorite</button>

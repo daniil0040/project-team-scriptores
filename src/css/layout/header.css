@@ -155,6 +155,7 @@
   line-height: 112.5%;
   letter-spacing: -0.64px;
   color: var(--primary-brand-color);
+  transition: var(--transition);
   
 }
 
@@ -298,3 +299,9 @@
     padding-top: 40px;
   }
 }
+
+/*////// HEDR MENU ACTIVE /////////*/
+
+.active-page{
+  color: var(--accent-color);
+};

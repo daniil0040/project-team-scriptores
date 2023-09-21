@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Notiflix from 'notiflix';
-import { addPagination, createAllCategCardsMarkup } from './all-categ-cards';
+import { addPagination, createAllCategCardsMarkup, fillStars } from './all-categ-cards';
 import debounce from 'lodash.debounce';
 import { searchTime, searchArea, searchIngredients } from './select';
 
@@ -43,6 +43,7 @@ async function handlerReset() {
   selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(
     defaultData.results
   );
+  fillStars()
   addPagination(defaultData);
   return;
 }
@@ -69,6 +70,7 @@ async function handlerAreaSelect(evt) {
     selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(
       data.results
     );
+    fillStars()
     addPagination(data);
   } catch (error) {
     console.log(error);
@@ -90,6 +92,7 @@ async function handlerIngridientsSelect(evt) {
     selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(
       data.results
     );
+    fillStars();
     addPagination(data);
   } catch (error) {
     console.log(error);
@@ -119,6 +122,7 @@ async function handlerTimeSelect(evt) {
     selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(
       data.results
     );
+    fillStars();
 
     addPagination(data);
   } catch (error) {
@@ -147,6 +151,7 @@ async function handlerInput(evt) {
     selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(
       defaultData.results
     );
+    fillStars();
     addPagination(defaultData);
     return;
   }
@@ -165,6 +170,7 @@ async function handlerInput(evt) {
     selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(
       data.results
     );
+    fillStars();
     addPagination(data);
   } catch (error) {
     console.log(error);
