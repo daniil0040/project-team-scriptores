@@ -1,186 +1,181 @@
-
 .rating {
-    display: flex;
-      align-items: center;
-      color: #050505;
-  font-family: 'Inter';
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 18px;
-  
-  }
+  display: flex;
+    align-items: center;
+    color: var(--primary-brand-color);
+font-family: 'Inter';
+font-size: 24px;
+font-weight: 600;
+line-height: 18px;
+
+}
 
 
-  .rating-body {
-    position: relative;
-  
-  }
+.rating-body {
+  position: relative;
 
-  
-  .rating-active {
-      position:absolute;
-      width: 0%;
-  height: 24px;
-  top:0;
-  left:0;
-  overflow: hidden;
-  
-  
-  }
-  .rating-items {
-      display: flex;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0 ;
-      
-  
-  
-  }
-  .rating-item {
-      flex: 0 0 20%;
-      height: 100%;
-      opacity: 0;
-  
-  }
-  .rating-value {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-  font-family: 'Inter';
-  margin-right: 8px;
-  }
-  
-  .rating-backdrop {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(46, 47, 66, 0.4);
-    transition: opacity 250ms;
-  }
-  
-  .rating-modal {
-    position: relative;
-    display: block;
-    z-index: 9999;
-    padding: 20px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-  max-width: 335px;
-    border-radius: 15px;
-  }
-  
-  .rating-close-icon {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-   
-    &:hover {
-    fill: opacity 250ms;;
-    transition: opacity 250ms;
-  }
-  }
-  
-  .rating-title {
-    margin-bottom: 4px;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 18px;
-    color: #050505;
-  font-family: 'Inter';
-  }
-  .rating-email {
-    
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
-    margin-top: 24px;
-    padding-top: 14px;
-    padding-bottom: 14px;
-    padding-left: 18px;
-    width: 100%;
-    border-radius: 15px;
-    border: 1px solid rgba(5, 5, 5, 0.2);
-    
-    &:focus {
-    outline: none;
-    border: 1px solid #9bb537;
-  }
-  }
-  
-  .add-rating-submit-btn {
-    
-    width: 100%;
-    margin-top: 14px;
-      
- 
-  }
-  
-  @media screen and (min-width: 768px) {
-    .rating-modal {
-      padding: 32px;
-      max-width: 424px;
-    }
-  
-    .rating-email {
-      width: 360px;
-  
-    }
-  
-    .add-rating-submit-btn {
-      width: 360px;
-      margin-top: 16px;
-  
-    }
-  
-    .rating-close-icon {
-      width: 24px;
-      height: 24px;
-      top: 16px;
-      right: 16px;
-    }
-  
-  
-  }
+}
 
- 
+
+.rating-active {
+    position:absolute;
+    width: 0%;
+height: 24px;
+top:0;
+left:0;
+overflow: hidden;
+
+
+}
 .rating-items {
     display: flex;
-    align-items: center;
-    gap: 8px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0 ;
+    
+
+
+}
+.rating-item {
+    flex: 0 0 20%;
+    height: 100%;
+    opacity: 0;
+
+}
+.rating-value {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+font-family: 'Inter';
+margin-right: 8px;
+}
+
+.rating-backdrop {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+  transition: var(--transition);
+}
+
+.rating-modal {
+  position: relative;
+  display: block;
+  z-index: 9999;
+  padding: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--modal-rating-back);
+max-width: 335px;
+  border-radius: 15px;
+}
+
+.rating-close-icon {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  fill: var(--primary-brand-color);
+  &:hover {
+  
+  transition: var(--transition);
+}
+}
+
+.rating-title {
+  margin-bottom: 4px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--primary-brand-color);
+font-family: 'Inter';
+}
+.rating-email {
+  color: var(--primary-brand-color);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  margin-top: 24px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 18px;
+  width: 100%;
+  background:var(--modal-email);
+  border-radius: 15px;
+  border: 1px solid var(--all-categories);
+  
+  &:focus {
+  outline: none;
+  border: 1px solid var(--secondary-brand-color);
+  
+}
+}
+
+.add-rating-submit-btn {
+    
+  margin-top: 14px;
+   
+}
+
+@media screen and (min-width: 768px) {
+  .rating-modal {
+    padding: 32px;
+    max-width: 424px;
+  }
+
+  .rating-email {
+    width: 360px;
+
+  }
+
+  .add-rating-submit-btn {
+     margin-top: 16px;
+
+  }
+
+  .rating-close-icon {
+    width: 24px;
+    height: 24px;
+    top: 16px;
+    right: 16px;
+  }
+
+
+}
+
+
+.rating-items {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .star-input {
-    display: none;
+  display: none;
 }
 
 .star-label {
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    display: inline-block;
-    cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  display: inline-block;
+  cursor: pointer;
 }
 
 .star-rating {
-    width: 24px;
-    height: 24px;
-    fill: #D9D9D9;
+  width: 24px;
+  height: 24px;
+  fill: var(--star-no-active);
 }
 
-.star-rating.active{
-    fill: #EEA10C;
+.star-rating.activeR{
+  fill: var( --star-color);
 }
-
-
-
 
 
