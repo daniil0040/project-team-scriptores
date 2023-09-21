@@ -175,7 +175,7 @@ button {
   height: 35px;
   border-radius: 50%;
   background-color: var(--background-color);
-  border: 1px solid var(----category-button);
+  border: 1px solid var(--category-button);
   font-size: 18px;
   font-weight: 600;
   line-height: 1.23;

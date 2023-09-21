@@ -1,5 +1,9 @@
 import { getAllSomething } from '../service-api';
-import { addPagination, createAllCategCardsMarkup } from './all-categ-cards';
+import {
+  addPagination,
+  createAllCategCardsMarkup,
+  fillStars,
+} from './all-categ-cards';
 import { getAllRecipes } from '../service-api';
 import { buttonAllCategories } from './all-categ-btn';
 import common from '../components/common.json';
@@ -72,6 +76,7 @@ function categorySelection(event) {
           const likeButtons = document.querySelectorAll('.js-add');
           // перед завантаженням перевірка чи лайкнуті картки
           restoreLikeStates(likeButtons);
+          fillStars();
           addPagination(data);
           const prevActiveEl = document.querySelector('[active="true"]');
           if (prevActiveEl) {

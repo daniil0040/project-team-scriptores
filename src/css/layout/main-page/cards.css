@@ -207,12 +207,12 @@
     width: 96px;
   }
 }
-/* .reting-item {
+.reting-item {
   width: 18px;
   height: 18px;
   background-image: url('/img/sprite/star-gray.svg');
   background-repeat: no-repeat;
-} */
+}
 .reting-item.filled {
   width: 18px;
   height: 18px;

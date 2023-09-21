@@ -4,8 +4,10 @@ export const cardsContainer = document.querySelector('.cards-container-js');
 getAllRecipes()
   .then(data => {
     cardsContainer.innerHTML = createAllCategCardsMarkup(data.results);
+    fillStars()
     const recipes = createAllCategCardsMarkup(data.results);
     cardsContainer.innerHTML = recipes;
+    fillStars();
     addPagination(data);
   })
   .catch(err => {
@@ -30,20 +32,20 @@ export function createAllCategCardsMarkup(arr) {
 
         <div class="rating">
         
-          <span class="number-rating">${Math.round(rating)}</span>
-          <div class="reting-item filled" data-item-value="">
+          <span class="number-rating">${rating.toFixed(1)}</span>
+          <div class="reting-item" data-item-value="" id="all-stars">
             
           </div>
-          <div class="reting-item filled" data-item-value="">
+          <div class="reting-item" data-item-value="" id="all-stars">
             
           </div>
-          <div class="reting-item filled" data-item-value="">
+          <div class="reting-item" data-item-value="" id="all-stars">
             
           </div>
-          <div class="reting-item filled" data-item-value="">
+          <div class="reting-item" data-item-value="" id="all-stars">
             
           </div>
-          <div class="reting-item filled"  data-item-value="">
+          <div class="reting-item"  data-item-value="" id="all-stars">
             
           </div>
      <button class="btn-see-recipe btn-see-recipe-js" type="button" data-id= "${_id}">See recipe</button>
@@ -54,6 +56,26 @@ export function createAllCategCardsMarkup(arr) {
     })
     .join('');
 }
+
+export function fillStars() {
+   
+  const starRatings = document.querySelectorAll('.rating');
+    starRatings.forEach(starRating => {
+      
+      const rating = starRating.firstElementChild.innerHTML;
+  
+      const roundedRating = Math.round(rating);
+  
+      const stars = starRating.querySelectorAll('#all-stars');
+  
+      stars.forEach((star, index) => {
+        if (index < roundedRating) {
+          star.classList.add('filled');
+        }
+      });
+    });
+  return;
+  };
 
 export function addPagination(results, pageNumber = 1) {
   const totalPages = Number(results.totalPages);
@@ -134,7 +156,7 @@ function renderNextButtons(currentPage, totalPages) {
         
         <button
           id="pag-btn-last"
-          class="pag-btn-green pag-btn-number"
+          class="pag-btn-green ${clickableClass}"
           type="button"
           aria-label="last page"
           page-number="${totalPages}"
@@ -170,7 +192,7 @@ function mainButtons(firstPage, lastPage, totalPages, pageNumber) {
   let buttons = '';
   pageNumber = Number(pageNumber);
 
-  if (pageNumber > 2) {
+  if (pageNumber > 2 && totalPages > 3) {
     buttons += `<button
           id="pag-btn-dots-left"
           class="pag-btn-white pag-btn-number"
@@ -205,7 +227,7 @@ function mainButtons(firstPage, lastPage, totalPages, pageNumber) {
         </button>`;
   }
 
-  if (pageNumber + 2 <= totalPages) {
+  if (pageNumber + 2 <= totalPages && totalPages > 3) {
     buttons += `<button
           id="pag-btn-dots-left"
           class="pag-btn-white pag-btn-number"

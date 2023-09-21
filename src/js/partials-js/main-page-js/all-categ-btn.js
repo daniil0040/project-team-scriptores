@@ -1,4 +1,8 @@
-import { createAllCategCardsMarkup } from './all-categ-cards';
+import {
+  addPagination,
+  createAllCategCardsMarkup,
+  fillStars,
+} from './all-categ-cards';
 import { getAllRecipes } from '../service-api';
 import { cardsContainer } from './categories';
 import { resetPrev } from './categories';
@@ -19,6 +23,8 @@ const auditAllCateg = function () {
         const likeButtons = document.querySelectorAll('.js-add');
         // перед завантаженням перевірка чи лайкнуті картки
         restoreLikeStates(likeButtons);
+        addPagination(data);
+        fillStars();
       })
       .catch(error => {
         console.log(error);
