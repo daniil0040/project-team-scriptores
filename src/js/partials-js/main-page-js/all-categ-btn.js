@@ -1,4 +1,8 @@
-import { createAllCategCardsMarkup } from './all-categ-cards';
+import {
+  addPagination,
+  createAllCategCardsMarkup,
+  fillStars,
+} from './all-categ-cards';
 import { getAllRecipes } from '../service-api';
 import { cardsContainer } from './categories';
 import { resetPrev } from './categories';
@@ -12,6 +16,8 @@ const auditAllCateg = function () {
     getAllRecipes()
       .then(data => {
         cardsContainer.innerHTML = createAllCategCardsMarkup(data.results);
+        addPagination(data);
+        fillStars();
       })
       .catch(error => {
         console.log(error);

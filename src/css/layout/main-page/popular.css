@@ -36,7 +36,7 @@
 }
 
 .popular-recipes-title {
-  color: var(--primary-brand-color);
+  color: var(--see-recipe-text-color);
   margin-bottom: 20px;
   font-size: 18px;
   line-height: 1.33;

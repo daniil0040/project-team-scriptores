@@ -1,6 +1,6 @@
 import './partials-js/menu';
 import common from '../js/partials-js/components/common.json';
-import { createAllCategCardsMarkup } from './partials-js/main-page-js/all-categ-cards';
+import { createAllCategCardsMarkup, fillStars } from './partials-js/main-page-js/all-categ-cards';
 
 let cardArr = JSON.parse(localStorage.getItem(common.LS_RECIPES)) ?? [];
 
@@ -49,8 +49,9 @@ function pullOutCategories(categoriesArr) {
 function createCardsCategory(category) {
   const newCardArr = cardArr.filter(obj => obj.category === category);
     favContainer.innerHTML = createAllCategCardsMarkup(newCardArr);
+
+    fillStars();
     filledHearts();
-    
 }
 
 function markUpCategoriesBtn(arr) {
@@ -64,6 +65,7 @@ function markUpCategoriesBtn(arr) {
 
 function createFavoriteMarkUP() {
     favContainer.innerHTML = createAllCategCardsMarkup(cardArr);
+    fillStars()
     filledHearts();
     if (favStatic.classList.contains('fav-phantom')) {
         favStatic.classList.remove('fav-phantom');
