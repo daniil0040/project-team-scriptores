@@ -60,11 +60,9 @@ export function createAllCategCardsMarkup(arr) {
 export function fillStars() {
    
   const starRatings = document.querySelectorAll('.rating');
-  console.log(starRatings)
     starRatings.forEach(starRating => {
       
       const rating = starRating.firstElementChild.innerHTML;
-      console.log(rating)
   
       const roundedRating = Math.round(rating);
   
