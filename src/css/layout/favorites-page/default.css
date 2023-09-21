@@ -9,7 +9,7 @@
 }
 
 .fav__text {
-  color: var(----primary-brand-color);
+  color: var(--primary-brand-color);
   text-align: center;
   font-size: 14px;
   font-weight: 400;
@@ -63,8 +63,10 @@
 
 .fav-categories{
   display: flex;
-  gap: 20px;
+  position: relative;
+  gap: 12px;
   overflow: scroll;
+  width: calc(100% + 15px);
 }
 
 .fav-categories::-webkit-scrollbar {
@@ -72,16 +74,22 @@
 }
 
 .fav-categories .category-btn{
-  color: rgba(5, 5, 5, 0.30);
+  color: var(--category-button);
     font-family: Inter;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
-    line-height: 1.25;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
 
     padding: 14px 18px;
 
     border-radius: 15px;
-      border: 1px solid rgba(5, 5, 5, 0.20);
+      border: 1px solid var(--all-categories);
+    transition: color var(--transition);
+    transition: background-color var(--transition);
+    transition: border-color var(--transition);
   
 }
 
@@ -117,11 +125,21 @@
 
   .fav__text{
     padding-top: 30px;
+    width: 480px;
   }
 
   .fav-empty{
     padding-top: 0;
     padding-bottom: 320px;
+  }
+
+  .fav-categories{
+    gap: 15px;
+  }
+
+  .fav-categories .category-btn{
+    line-height: 1.25;
+    font-size: 16;
   }
 }
 
