@@ -145,6 +145,9 @@
     font-size: 14px;
     font-weight: 500;
     line-height: normal;
+    background-color: var(--background-color);
+    color: var(--primary-brand-color);
+    transition: var(--transition);
 }
 
 .star-list{
