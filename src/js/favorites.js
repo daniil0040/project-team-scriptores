@@ -16,7 +16,8 @@ function startFavorite() {
         favEmpty.classList.add('is-none');
         createFavoriteMarkUP();
         creatCategoriesList();
-        removeCard()
+
+        removeCard();
 
     } else return;
 };
@@ -47,7 +48,9 @@ function pullOutCategories(categoriesArr) {
 
 function createCardsCategory(category) {
   const newCardArr = cardArr.filter(obj => obj.category === category);
-  favContainer.innerHTML = createAllCategCardsMarkup(newCardArr);
+    favContainer.innerHTML = createAllCategCardsMarkup(newCardArr);
+    filledHearts();
+    
 }
 
 function markUpCategoriesBtn(arr) {
@@ -61,6 +64,7 @@ function markUpCategoriesBtn(arr) {
 
 function createFavoriteMarkUP() {
     favContainer.innerHTML = createAllCategCardsMarkup(cardArr);
+    filledHearts();
     if (favStatic.classList.contains('fav-phantom')) {
         favStatic.classList.remove('fav-phantom');
         favContainer.classList.remove('fav-style-reset');
@@ -69,6 +73,7 @@ function createFavoriteMarkUP() {
 };
 
 function removeCard() {
+
     favContainer.addEventListener('click', (event) => {
         if (!event.target.classList.contains('js-add')) {
             return;
@@ -83,9 +88,15 @@ function removeCard() {
             favEmpty.classList.remove('is-none');
             favStatic.classList.add('fav-phantom');
             favContainer.classList.add('fav-style-reset')
-            favCategories.classList.add('is-none');
+            // favCategories.classList.add('is-none');
+            favCategories.innerHTML = "";
         }
     }); 
+};
+
+function filledHearts() {
+    const likes = document.querySelectorAll('.js-add');
+    likes.forEach(like => like.classList.add('liked'));
 }
 
 // SEE RECIPE
