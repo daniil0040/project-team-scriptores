@@ -9,17 +9,18 @@ button {
 }
 
 .all-categories {
+  color: var(--filter-input-pagination-color);
   width: 176px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
+  border: 1px solid var(--all-categories);
   border-radius: 15px;
   padding: 14px 29px;
   font-weight: 500;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all var(--transition);
 }
 .all-categories:hover,
-body.light-theme .all-categories:focus {
-  color: #f8f8f8;
-  background-color: #9bb537;
+.all-categories:focus {
+  color: var(--background-color);
+  background-color: var(--secondary-brand-color);
 }
 
 .categories-block {
@@ -51,13 +52,13 @@ body.light-theme .all-categories:focus {
 }
 
 .category-button {
-  color: rgba(5, 5, 5, 0.3);
+  color: var(--category-button);
   padding-top: 9px;
   padding-bottom: 9px;
   font-weight: 500;
   cursor: pointer;
   border-radius: 5px;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all var(--transition);
 }
 
 @media only screen and (min-width: 768px) {
@@ -69,16 +70,16 @@ body.light-theme .all-categories:focus {
 
 .category-button:hover,
 .category-button:focus {
-  color: #9bb537;
+  color: var(--secondary-brand-color);
 }
 
 .category-button:hover,
 .category-button:focus {
-  color: #9bb537;
+  color: var(--secondary-brand-color);
 }
 
 .active {
-  background-color: #9bb537 !important;
+  background-color: var(--secondary-brand-color) !important;
 }
 
 .categories-block::-webkit-scrollbar {
@@ -88,25 +89,25 @@ body.light-theme .all-categories:focus {
 }
 
 .categories-block::-webkit-scrollbar-track {
-  background-color: #f8f8f8;
+  background-color: var(--background-color);
 }
 .categories-block::-webkit-scrollbar-thumb {
   background: rgba(5, 5, 5, 0.18);
   border-radius: 12px;
 }
 .categories-block::-webkit-scrollbar-thumb:hover {
-  background-color: #9bb537;
+  background-color: var(--secondary-brand-color);
 }
 
 .categories-block::-webkit-scrollbar-track {
-  background-color: #f8f8f8;
+  background-color: var(--background-color);
 }
 .categories-block::-webkit-scrollbar-thumb {
-  background: rgba(5, 5, 5, 0.18);
+  background: var(--filter-input-pagination-color);
   border-radius: 12px;
 }
 .categories-block::-webkit-scrollbar-thumb:hover {
-  background-color: #9bb537;
+  background-color: var(--background-color);
 }
 
 /* ------- pagination --------- */
@@ -144,7 +145,7 @@ body.light-theme .all-categories:focus {
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background-color: #9bb537;
+  background-color: var(--secondary-brand-color);
   border: 1px solid transparent;
   font-size: 18px;
   font-weight: 600;
@@ -166,31 +167,32 @@ body.light-theme .all-categories:focus {
 }
 
 .pag-btn-white {
+  color: var(--primary-brand-color);
   display: flex;
   align-items: center;
   justify-content: center;
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background-color: #f8f8f8;
-  border: 1px solid rgba(5, 5, 5, 0.3);
+  background-color: var(--background-color);
+  border: 1px solid var(----category-button);
   font-size: 18px;
   font-weight: 600;
   line-height: 1.23;
 }
 
 .pag-btn-white:hover {
-  background-color: #9bb537;
+  background-color: var(--background-color);
   border: none;
   cursor: pointer;
-  transition: all 300ms ease;
+  transition: var(--transition);
 }
 
 .pag-btn-on-hover {
-  background-color: #9bb537;
+  background-color: var(--secondary-brand-color);
   border: none;
   cursor: pointer;
-  transition: all 300ms ease;
+  transition: var(--transition);
 }
 
 .pag-btn-white-tablet {
@@ -198,10 +200,10 @@ body.light-theme .all-categories:focus {
 }
 
 .pag-btn-white-tablet:hover {
-  background-color: #9bb537;
+  background-color: var(--secondary-brand-color);
   border: none;
   cursor: pointer;
-  transition: all 300ms ease;
+  transition: all var(--transition);
 }
 
 .pag-btn-left-icon {

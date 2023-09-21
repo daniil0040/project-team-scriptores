@@ -17,7 +17,7 @@ import './partials-js/menu';
 // SWIPER
 import './partials-js/main-page-js/swiper';
 
-// SWItCHER
+// SWITCHER
 import './partials-js/main-page-js/switcher-theme';
 
 // ALL CATEGORIES BUTTON

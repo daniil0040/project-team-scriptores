@@ -38,20 +38,7 @@ selectors.timeSelect.addEventListener('change', handlerTimeSelect);
 selectors.resetBtn.addEventListener('click', handlerReset);
 
 async function handlerReset() {
-  selectors.searchInput.value = '';
-  // AREA RESET
-  selectors.areaSelect.selectedIndex = 0;
-  searchArea.setSelected('');
-  currentArea = '';
-  // TIME RESET
-  selectors.timeSelect.selectedIndex = 0;
-  searchTime.setSelected('');
-  currentCookingTime = '';
-  // INGREDIENTS RESET
-  selectors.ingredientsSelect.selectedIndex = 0;
-  searchIngredients.setSelected('');
-  currentIngridient = '';
-
+    resetFilters();
   const defaultData = await serviceGetByKeyWord(currentCategory);
   selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(
     defaultData.results
@@ -140,14 +127,16 @@ async function handlerTimeSelect(evt) {
 }
 
 function hendlerClickAllCategBtn(evt) {
-  currentCategory = '';
+    currentCategory = '';
+    resetFilters()
 }
 
 function hendlerClickCategories(evt) {
   if (!evt.target.classList.contains('category-button-js')) {
     return;
   }
-  currentCategory = evt.target.textContent;
+    currentCategory = evt.target.textContent;
+    resetFilters()
 }
 
 async function handlerInput(evt) {
@@ -215,6 +204,23 @@ export async function serviceGetByKeyWord(
   return recipes;
 }
 
+function resetFilters() {
+    // SEARCH RESET
+    selectors.searchInput.value = '';
+  // AREA RESET
+  selectors.areaSelect.selectedIndex = 0;
+  searchArea.setSelected('');
+  currentArea = '';
+  // TIME RESET
+  selectors.timeSelect.selectedIndex = 0;
+  searchTime.setSelected('');
+  currentCookingTime = '';
+  // INGREDIENTS RESET
+  selectors.ingredientsSelect.selectedIndex = 0;
+  searchIngredients.setSelected('');
+    currentIngridient = '';
+    // 
+}
 export async function getRecipesByFilters(
   pageNumber = 1,
   currentCategory = '',

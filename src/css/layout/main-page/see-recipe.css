@@ -1,10 +1,11 @@
 .modal-box {
     width: 335px;
-    background-color: #FFF;
+    background-color: var(--background-color);
     height: 95vh;
     overflow: auto;
     padding: 40px 20px;
     border-radius: 15px;
+    transition: var(--transition);
     
 }
 
@@ -22,21 +23,23 @@
 }
 
 .modal-title {
-    color: var(--text-color-white-theme);
+    color: var(--primary-brand-color);
     font-size: 18px;
     font-weight: 600;
     line-height: 133.33%;
     text-transform: uppercase;
     margin-bottom: 14px;
+    transition: var(--transition);
 }
 
 .raiting-time-box {
     display: flex;
-    color: rgba(5, 5, 5, 0.50);
+    color: var(--filter-input-pagination-color);
     font-size: 14px;
     font-weight: 500;
     line-height: 128.571%;
     margin-bottom: 33px;
+    transition: var(--transition);
 }
 
 .raiting-text{
@@ -53,21 +56,24 @@
 .ing-item {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid rgba(5, 5, 5, 0.10);
+    border-bottom: 1px solid var(--filter-input-pagination-color);
+    transition: var(--transition)
 }
 
 .ing-name {
-    color: #050505;
+    color: var(--primary-brand-color);
     font-size: 14px;
     font-weight: 400;
     line-height: 128.571%;
+    transition: var(--transition);
 }
 
 .ing-measure {
-    color: rgba(5, 5, 5, 0.50);
+    color: var(--filter-input-pagination-color);
     font-size: 14px;
     font-weight: 400;
     line-height: 128.571%;
+    transition: var(--transition);
 }
 
 .tags-list {
@@ -79,23 +85,26 @@
 
 .tags-item {
     border-radius: 35px;
-    border: 1px solid rgba(5, 5, 5, 0.20);
+    border: 1px solid var(--filter-input-pagination-color);
     padding: 8px 16px;
+    transition: var(--transition);
 }
 
 .tags-name {
-    color: var(--text-color-white-theme);
+    color: var(--primary-brand-color);
     font-size: 12px;
     font-weight: 500;
     line-height: 116.667%;
+    transition: var(--transition);
 }
 
 .instruction {
-    color: rgba(5, 5, 5, 0.80);
+    color: var(--see-recipe-text-color);
     font-size: 14px;
     font-weight: 400;
     line-height: 128.571%;
     margin-bottom: 40px;
+    transition: var(--transition);
 }
 
 .modal-close-btn {
@@ -104,14 +113,14 @@
     right: 14px;
     width: 24px;
     height: 24px;
-    background-size: cover;
+    color: var(--primary-brand-color);
+    font-weight: 700;
+    transition: var(--transition);
+
+    /* background-size: cover;
         background-repeat: no-repeat;
-        background-image: url('/img/sprite/icon-close-x.svg');
+        background-image: url('/img/sprite/icon-close-x.svg'); */
 
-}
-
-.modal-close {
-    fill: var(--text-color-white-theme);
 }
 
 .button-block {
@@ -122,7 +131,7 @@
 .add-to-favorite {
     height: 41px;
     padding: 12px 24px;
-    color: #F8F8F8;
+    /* color: #F8F8F8; */
     font-size: 14px;
     font-weight: 500;
     line-height: normal;
@@ -132,10 +141,13 @@
 .order-now {
     height: 41px;
     padding: 12px 0;
-    color: var(--text-color-white-theme);
+    /* color: var(--text-color-white-theme); */
     font-size: 14px;
     font-weight: 500;
     line-height: normal;
+    background-color: var(--background-color);
+    color: var(--primary-brand-color);
+    transition: var(--transition);
 }
 
 .star-list{
