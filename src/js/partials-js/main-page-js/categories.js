@@ -1,5 +1,5 @@
 import { getAllSomething } from '../service-api';
-import { addPagination, createAllCategCardsMarkup } from './all-categ-cards';
+import { addPagination, createAllCategCardsMarkup, fillStars } from './all-categ-cards';
 import { getAllRecipes } from '../service-api';
 import { buttonAllCategories } from './all-categ-btn';
 
@@ -64,6 +64,7 @@ function categorySelection(event) {
       getAllRecipes(category.textContent)
         .then(data => {
           cardsContainer.innerHTML = createAllCategCardsMarkup(data.results);
+          fillStars();
           addPagination(data);
           const prevActiveEl = document.querySelector('[active="true"]');
           if (prevActiveEl) {
