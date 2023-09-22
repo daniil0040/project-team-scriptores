@@ -46,9 +46,9 @@
       aria-label="first page"
       page-number="1"
     >
-      <span class="icon-wrap left-double">
-      </span>
+      <span class="icon-wrap left-double"></span>
     </button>
+
     <button
       id="pag-btn-prev"
       class="gag-btn-black ${n}"
@@ -56,8 +56,7 @@
       aria-label="previous page"
       page-number="${e}"
     >
-  <span class="icon-wrap left-single">
-      </span>
+    <span class="icon-wrap left-single"></span>
     </button>`}function Un(t,e){const n=t+1;let o="pag-btn-number";return t===e&&(o=""),`<button
           id="pag-btn-next"
           class="pag-btn-green ${o}"
@@ -65,9 +64,7 @@
           aria-label="next page"
           page-number="${n}"
         >
-         <span class="icon-wrap-right right-single">
-
-          </span>
+         <span class="icon-wrap-right right-single"></span>
         </button>
         
         <button
@@ -77,9 +74,7 @@
           aria-label="last page"
           page-number="${e}"
         >
-            <span class="icon-wrap-right right-double">
-
-          </span>
+        <span class="icon-wrap-right right-double"></span>
         </button>`}function Hn(t,e){let n=1;return e>1&&(n=e-1),e===t&&(n=t-2),n===0&&(n=1),n}function qn(t,e,n,o){let r="";o=Number(o),o>2&&n>3&&(r+=`<button
           id="pag-btn-dots-left"
           class="pag-btn-white pag-btn-number"
