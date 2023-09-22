@@ -1,5 +1,5 @@
 import { getAllRecipes } from '../service-api';
-import { addPagination, createAllCategCardsMarkup } from './all-categ-cards';
+import { addPagination, createAllCategCardsMarkup, fillStars } from './all-categ-cards';
 import { getRecipesByFilters, serviceGetByKeyWord } from './search-filter';
 
 document.addEventListener('click', async e => {
@@ -39,5 +39,6 @@ document.addEventListener('click', async e => {
     addPagination(data, pageNumber);
 
     document.querySelector('.cards-container-js').innerHTML = recipes;
+    fillStars();
   }
 });

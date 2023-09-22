@@ -1,6 +1,6 @@
 import './partials-js/menu';
 import common from '../js/partials-js/components/common.json';
-import { createAllCategCardsMarkup } from './partials-js/main-page-js/all-categ-cards';
+import { createAllCategCardsMarkup, fillStars } from './partials-js/main-page-js/all-categ-cards';
 
 let butt 
 let cardArr = JSON.parse(localStorage.getItem(common.LS_RECIPES)) ?? [];
@@ -19,17 +19,18 @@ function startFavorite() {
         favEmpty.classList.add('is-none');
         createFavoriteMarkUP();
         creatCategoriesList();
-        removeCard()
+
+        removeCard();
 
     } else return;
 };
 
-function creatCategoriesList() {
+ function creatCategoriesList() {
   const targetKey = 'category';
   const newArray = cardArr.map(obj => obj[targetKey]);
   const categoriesSet = new Set(newArray);
   const categoriesArr = [...categoriesSet];
-  categoriesArr.unshift('All categories');
+    categoriesArr.unshift('All categories');
   pullOutCategories(categoriesArr);
 }
 
@@ -49,12 +50,15 @@ function pullOutCategories(categoriesArr) {
 };
 
 function createCardsCategory(category) {
-    const newCardArr = cardArr.filter(obj => obj.category === category);
-    document.getElementById('paginationFAV').innerHTML = ''
-  favContainer.innerHTML = createAllCategCardsMarkup(newCardArr);
+  const newCardArr = cardArr.filter(obj => obj.category === category);
+  document.getElementById('paginationFAV').innerHTML = ''
+    favContainer.innerHTML = createAllCategCardsMarkup(newCardArr);
+
+    fillStars();
+    filledHearts();
 }
 
-function markUpCategoriesBtn(arr) {
+export function markUpCategoriesBtn(arr) {
   return arr
     .map(
       el =>
@@ -86,10 +90,8 @@ function createFavoriteMarkUP() {
         favContainer.innerHTML = createAllCategCardsMarkup(cardArr);
     }
     
-
-
-    
-
+  fillStars()
+    filledHearts();
     if (favStatic.classList.contains('fav-phantom')) {
         favStatic.classList.remove('fav-phantom');
         favContainer.classList.remove('fav-style-reset');
@@ -312,6 +314,7 @@ function cardSlicing(button) {
 
 
 function removeCard() {
+
     favContainer.addEventListener('click', (event) => {
         if (!event.target.classList.contains('js-add')) {
             return;
@@ -329,9 +332,14 @@ function removeCard() {
             favEmpty.classList.remove('is-none');
             favStatic.classList.add('fav-phantom');
             favContainer.classList.add('fav-style-reset')
-            favCategories.classList.add('is-none');
+            favCategories.innerHTML = "";
         }
     }); 
+};
+
+export function filledHearts() {
+    const likes = document.querySelectorAll('.js-add');
+    likes.forEach(like => like.classList.add('liked'));
 }
 
 function createFavoriteMarkUPsss(buttons) {

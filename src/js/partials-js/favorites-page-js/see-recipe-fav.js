@@ -2,11 +2,13 @@ import * as basicLightbox from 'basiclightbox';
 import { getRecipeById } from '../service-api';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import common from '../components/common.json';
-
+import { createAllCategCardsMarkup, fillStars } from '../main-page-js/all-categ-cards';
+import { filledHearts } from '../../favorites';
 
 const seeRecipe = document.querySelector('.fav-container-js');
 
 seeRecipe.addEventListener('click', onClickRecipe);
+
 
 function onClickRecipe(event) {
     if (!event.target.classList.contains('btn-see-recipe-js')) {
@@ -43,19 +45,30 @@ function loadBasicLightbox(card) {
     const result = arrFavorite.find(({ _id }) => _id === card._id);
     
         if (!result) {
-            favorite.textContent = "Add to favorite"
+            favorite.textContent = "Add to favorite";
+            
         } else {
             favorite.textContent = "Remove"
     };
     
-    favorite.addEventListener('click', () => favorite.textContent = addFavorite(card))
+    favorite.addEventListener('click', () => {
+        favorite.textContent = addFavorite(card);
+        const arrFavorite = JSON.parse(localStorage.getItem(common.LS_RECIPES))
+        seeRecipe.innerHTML = createAllCategCardsMarkup(arrFavorite);
+        fillStars();
+        filledHearts();
+        instance.close();
+        location.reload(true);
+    });
+    
     const closeModal = document.querySelector('.js-modal-close');
 
     closeModal.addEventListener('click', () => instance.close());
 
     document.addEventListener('keydown', (event) => {
         if (event.code === "Escape") {
-    instance.close();
+            instance.close();
+            document.removeEventListener('keydown');
         };
     });
 };

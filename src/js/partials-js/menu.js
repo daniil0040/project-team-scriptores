@@ -29,3 +29,16 @@
     bodyScrollLock.enableBodyScroll(document.body);
   });
 })();
+
+
+
+
+////// HEDR MENU ACTIVE /////////
+const linkActive = document.querySelectorAll('.header-link');
+const wLocPath = window.location.pathname;
+for (const link of linkActive) {
+  if (link.href.includes(wLocPath )) {
+    link.classList.add('active-page')
+    break;
+  }
+}
