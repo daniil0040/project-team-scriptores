@@ -69,7 +69,7 @@ export function markUpCategoriesBtn(arr) {
 
 
 function createFavoriteMarkUP() {   
-    console.log(slicedCardArr);
+    // console.log(slicedCardArr);
   if (cardArr.length > 12 && window.innerWidth > 767) {
       slicedCardArr = cardArr.slice(0, 12)
         favContainer.innerHTML = createAllCategCardsMarkup(slicedCardArr)
@@ -285,11 +285,11 @@ document.addEventListener('click', async e => {
     slicedCardArr = cardSlicing(button)
   if (button) {
     butt = button
-  console.log(button);
+  // console.log(button);
         const pageNumber = button.getAttribute('page-number');
     
         const recipes = createAllCategCardsMarkup(slicedCardArr);
-        console.log(slicedCardArr);
+        // console.log(slicedCardArr);
         favContainer.innerHTML = recipes
         
         addPaginationFavorite(cardArr, pageNumber);
@@ -321,7 +321,7 @@ function removeCard() {
         }
         const cardId = event.target.dataset.id;
       const idx = cardArr.findIndex(({ _id }) => _id === cardId);
-      console.log(butt);
+      // console.log(butt);
       cardArr.splice(idx, 1);
       localStorage.setItem(common.LS_RECIPES, JSON.stringify(cardArr));
 
@@ -345,8 +345,8 @@ export function filledHearts() {
 function createFavoriteMarkUPsss(buttons) {
   if (cardArr.length > 12 && window.innerWidth > 767) {
     if(butt) pageNumberForPog = butt.getAttribute("page-number")
-      console.log(butt);
-      console.log(buttons);
+      // console.log(butt);
+      // console.log(buttons);
         favContainer.innerHTML = createAllCategCardsMarkup(cardSlicing(buttons ))
         addPaginationFavorite(cardArr)
      
