@@ -22,7 +22,7 @@ export function createAllCategCardsMarkup(arr) {
         
       <img class="recipes-img" src="${preview}" alt="${title}" />
       <div class="card-description">
-        <button class="like-btn icon-heart  js-add" data-id="${_id}" type="button"></button>
+        <button aria-label="Like Recipe" class="like-btn icon-heart  js-add" data-id="${_id}" type="button"></button>
         <h2 class="card-heading">${title}</h2>
         <div class="text-container">
           <p class="card-text">

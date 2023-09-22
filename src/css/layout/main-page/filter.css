@@ -125,11 +125,13 @@
 
   outline: none;
   background-color: var(--background-color);
+  color: var(--select-text);
   border: 1px solid var(--filter-input-pagination-color);
   border-radius: 15px;
   transition: var(--transition);
   padding: 12px 18px;
 }
+
 .select:hover,
 .select:focus {
   border: 1px solid var(--secondary-brand-color);
@@ -158,6 +160,7 @@
   height: 124px;
   border-radius: 15px;
 }
+
 .ss-content.ss-open-below.area-select,
 .ss-content.ss-open-below.ingredients-select {
   height: 176px;

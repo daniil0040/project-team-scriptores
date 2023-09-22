@@ -14,10 +14,9 @@ window.onload = function () {
 };
 // перед завантаженням сторінки перевірка чи лайкнуті картки
 export function restoreLikeStates(buttons) {
-  console.log(buttons);
   buttons.forEach(button => {
     const recipeId = button.dataset.id;
-    if (recipesFavorite.find(({ _id }) => _id === recipeId)) {
+    if (recipesFavorite.some(({ _id }) => _id === recipeId)) {
       button.classList.add('liked');
     }
   });
@@ -30,24 +29,23 @@ function onClickHeart(evt) {
 
   const recipeLikeId = evt.target.dataset.id;
   const recipeLikeBtn = evt.target;
-  getCard(recipeLikeId, recipeLikeBtn);
+  getRecipeAndUpdateFavorite(recipeLikeId, recipeLikeBtn);
 }
 
-async function getCard(id, recipeLikeBtn) {
+async function getRecipeAndUpdateFavorite(id, recipeLikeBtn) {
   try {
     const data = await getRecipeById(id);
-    console.log(data);
-    addFavorite(data, recipeLikeBtn);
+
+    addOrRemoveFavorite(data, recipeLikeBtn);
   } catch (error) {
     console.log(error);
   }
 }
 // Додавання в local storage
-function addFavorite(objRecipe, recipeLikeBtn) {
-  const result = recipesFavorite.find(({ _id }) => _id === objRecipe._id);
+function addOrRemoveFavorite(objRecipe, recipeLikeBtn) {
   const idx = recipesFavorite.findIndex(({ _id }) => _id === objRecipe._id);
 
-  if (!result) {
+  if (idx === -1) {
     recipesFavorite.push(objRecipe);
     recipeLikeBtn.classList.add('liked');
   } else {
