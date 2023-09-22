@@ -13,6 +13,7 @@
   row-gap: 25px;
   justify-content: center;
   border-bottom: 2px solid rgba(151, 177, 52, 0.5);
+  padding-bottom: 15px;
 }
 /* 
 .footer-all::after {
