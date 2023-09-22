@@ -104,7 +104,7 @@
   border-color: var(--accent-color);
 }
 
-.fav-categories .category-btn:focus {
+.fav-categories .fav-btn-active {
   background: var(--accent-color);
   color: var(--cards-text-color-white-theme);
   border-color: var(--accent-color);
