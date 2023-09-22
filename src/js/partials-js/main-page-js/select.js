@@ -19,7 +19,7 @@ arr.unshift({ text: '', placeholder: true });
 searchTime = new SlimSelect({
   select: '.js-time-select',
   settings: {
-    showSearch: true,
+    showSearch: false,
     maxValuesShown: 4,
     searchText: 'Sorry nothing to see here',
     searchHighlight: true,
@@ -42,7 +42,7 @@ getAllSomething('areas')
       select: '.js-area-select',
 
       settings: {
-        showSearch: true,
+        showSearch: false,
         maxValuesShown: 4,
         searchText: 'Sorry nothing to see here',
         searchHighlight: true,
@@ -69,7 +69,7 @@ getAllSomething('ingredients').then(data => {
     select: '.js-ingredients-select',
 
     settings: {
-      showSearch: true,
+      showSearch: false,
       maxValuesShown: 4,
       searchText: 'Sorry nothing to see here',
       searchHighlight: true,

@@ -58,3 +58,6 @@ import {} from './partials-js/main-page-js/order-now';
 
 // LIKED RECIPE
 import './partials-js/main-page-js/liked-recipe';
+
+// CURRENT CATEGORY
+import "./partials-js/main-page-js/current-categ"

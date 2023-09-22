@@ -113,9 +113,9 @@ function renderPreviousButtons(currentPage) {
       aria-label="first page"
       page-number="1"
     >
-      <span class="icon-wrap left-double">
-      </span>
+      <span class="icon-wrap left-double"></span>
     </button>
+
     <button
       id="pag-btn-prev"
       class="gag-btn-black ${clickableClass}"
@@ -123,8 +123,7 @@ function renderPreviousButtons(currentPage) {
       aria-label="previous page"
       page-number="${previousPageNumber}"
     >
-  <span class="icon-wrap left-single">
-      </span>
+    <span class="icon-wrap left-single"></span>
     </button>`;
 }
 
@@ -143,9 +142,7 @@ function renderNextButtons(currentPage, totalPages) {
           aria-label="next page"
           page-number="${nextPageNumber}"
         >
-         <span class="icon-wrap-right right-single">
-
-          </span>
+         <span class="icon-wrap-right right-single"></span>
         </button>
         
         <button
@@ -155,9 +152,7 @@ function renderNextButtons(currentPage, totalPages) {
           aria-label="last page"
           page-number="${totalPages}"
         >
-            <span class="icon-wrap-right right-double">
-
-          </span>
+        <span class="icon-wrap-right right-double"></span>
         </button>`;
 }
 

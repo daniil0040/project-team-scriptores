@@ -165,7 +165,7 @@ async function hendlerClickAllCategBtn(evt) {
   currentArea = '';
   currentIngridient = '';
   keyWord = '';
-  resetFilters();
+    resetFilters();
 }
 
 async function hendlerClickCategories(evt) {
@@ -187,7 +187,7 @@ async function hendlerClickCategories(evt) {
     addPagination(defaultData);
   }
   currentCategory = evt.target.textContent;
-  resetFilters();
+    resetFilters();
 }
 
 async function handlerInput(evt) {
