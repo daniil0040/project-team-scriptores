@@ -146,6 +146,7 @@ if (currentArea !== ''|| currentIngridient !== '' || keyWord !== '' || currentCo
     defaultData.results
   );
   fillStars();
+  addPagination(defaultData);
 }
   currentCategory = '';
   currentCookingTime = '';
@@ -165,7 +166,8 @@ async function hendlerClickCategories(evt) {
   selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(
     defaultData.results
   );
-  fillStars();
+    fillStars();
+    addPagination(defaultData);
 }
   currentCategory = evt.target.textContent;
   resetFilters();
