@@ -38,14 +38,27 @@ function creatCategoriesList() {
 
 function pullOutCategories(categoriesArr) {
   favCategories.innerHTML = markUpCategoriesBtn(categoriesArr);
-  const categoriesBtn = document.querySelectorAll('.js-category-btn');
+    const categoriesBtn = document.querySelectorAll('.js-category-btn');
+    categoriesBtn[0].classList.add('fav-btn-active');
 
   categoriesBtn.forEach(button => {
     button.addEventListener('click', function (event) {
       const dataValue = event.currentTarget.getAttribute('data-button');
       if (dataValue === 'All categories') {
         createFavoriteMarkUP();
-      } else createCardsCategory(dataValue);
+        } else createCardsCategory(dataValue);
+        
+        categoriesBtn.forEach(buttonNotActive => {
+
+        console.log(buttonNotActive.classList.contains('fav-btn-active'));
+
+        if (buttonNotActive.classList.contains('fav-btn-active')) {
+            buttonNotActive.classList.remove('fav-btn-active');
+        }
+    }
+    )
+    
+    button.classList.add('fav-btn-active');
     });
   });
 }
