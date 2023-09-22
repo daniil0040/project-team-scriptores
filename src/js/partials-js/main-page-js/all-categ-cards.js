@@ -4,8 +4,10 @@ export const cardsContainer = document.querySelector('.cards-container-js');
 getAllRecipes()
   .then(data => {
     cardsContainer.innerHTML = createAllCategCardsMarkup(data.results);
+    fillStars();
     const recipes = createAllCategCardsMarkup(data.results);
     cardsContainer.innerHTML = recipes;
+    fillStars();
     addPagination(data);
   })
   .catch(err => {
@@ -30,7 +32,7 @@ export function createAllCategCardsMarkup(arr, isFromFavorite) {
         
       <img class="recipes-img" src="${preview}" alt="${title}" />
       <div class="card-description">
-        <button class="like-btn icon-heart  js-add" data-id="${_id}" type="button"></button>
+        <button aria-label="Like Recipe" class="like-btn icon-heart  js-add" data-id="${_id}" type="button"></button>
         <h2 class="card-heading">${title}</h2>
         <div class="text-container">
           <p class="card-text">
@@ -40,20 +42,20 @@ export function createAllCategCardsMarkup(arr, isFromFavorite) {
 
         <div class="rating">
         
-          <span class="number-rating">${Math.round(rating)}</span>
-          <div class="reting-item filled" data-item-value="">
+          <span class="number-rating">${rating.toFixed(1)}</span>
+          <div class="reting-item" data-item-value="" id="all-stars">
             
           </div>
-          <div class="reting-item filled" data-item-value="">
+          <div class="reting-item" data-item-value="" id="all-stars">
             
           </div>
-          <div class="reting-item filled" data-item-value="">
+          <div class="reting-item" data-item-value="" id="all-stars">
             
           </div>
-          <div class="reting-item filled" data-item-value="">
+          <div class="reting-item" data-item-value="" id="all-stars">
             
           </div>
-          <div class="reting-item filled"  data-item-value="">
+          <div class="reting-item"  data-item-value="" id="all-stars">
             
           </div>
      <button class="btn-see-recipe btn-see-recipe-js" type="button" data-id= "${_id}">See recipe</button>
@@ -63,6 +65,24 @@ export function createAllCategCardsMarkup(arr, isFromFavorite) {
     `;
     })
     .join('');
+}
+
+export function fillStars() {
+  const starRatings = document.querySelectorAll('.rating');
+  starRatings.forEach(starRating => {
+    const rating = starRating.firstElementChild.innerHTML;
+
+    const roundedRating = Math.round(rating);
+
+    const stars = starRating.querySelectorAll('#all-stars');
+
+    stars.forEach((star, index) => {
+      if (index < roundedRating) {
+        star.classList.add('filled');
+      }
+    });
+  });
+  return;
 }
 
 export function addPagination(results, pageNumber = 1) {
@@ -103,12 +123,9 @@ function renderPreviousButtons(currentPage) {
       aria-label="first page"
       page-number="1"
     >
-      <span class="icon-wrap">
-        <svg class="pag-btn-left-icon" width="20" height="20">
-          <use href="img/sprite/icons.svg#icon-left-two"></use>
-        </svg>
-      </span>
+      <span class="icon-wrap left-double"></span>
     </button>
+
     <button
       id="pag-btn-prev"
       class="gag-btn-black ${clickableClass}"
@@ -116,9 +133,7 @@ function renderPreviousButtons(currentPage) {
       aria-label="previous page"
       page-number="${previousPageNumber}"
     >
-      <svg class="pag-btn-left-icon" width="20" height="20">
-        <use href="img/sprite/icons.svg#icon-left-one"></use>
-      </svg>
+    <span class="icon-wrap left-single"></span>
     </button>`;
 }
 
@@ -137,25 +152,17 @@ function renderNextButtons(currentPage, totalPages) {
           aria-label="next page"
           page-number="${nextPageNumber}"
         >
-          <svg class="pag-btn-right-icon-next" width="20" height="20">
-            <use href="img/sprite/icons.svg#icon-arrow"></use>
-          </svg>
+         <span class="icon-wrap-right right-single"></span>
         </button>
         
         <button
           id="pag-btn-last"
-          class="pag-btn-green pag-btn-number"
+          class="pag-btn-green ${clickableClass}"
           type="button"
           aria-label="last page"
           page-number="${totalPages}"
         >
-          <span class="icon-container">
-            <span class="icon-wrap-right">
-              <svg class="pag-btn-right-icon" width="20" height="20">
-                <use href="img/sprite/icons.svg#icon-right-two"></use>
-              </svg>
-
-          </span>
+        <span class="icon-wrap-right right-double"></span>
         </button>`;
 }
 
@@ -180,7 +187,7 @@ function mainButtons(firstPage, lastPage, totalPages, pageNumber) {
   let buttons = '';
   pageNumber = Number(pageNumber);
 
-  if (pageNumber > 2) {
+  if (pageNumber > 2 && totalPages > 3) {
     buttons += `<button
           id="pag-btn-dots-left"
           class="pag-btn-white pag-btn-number"
@@ -215,7 +222,7 @@ function mainButtons(firstPage, lastPage, totalPages, pageNumber) {
         </button>`;
   }
 
-  if (pageNumber + 2 <= totalPages) {
+  if (pageNumber + 2 <= totalPages && totalPages > 3) {
     buttons += `<button
           id="pag-btn-dots-left"
           class="pag-btn-white pag-btn-number"

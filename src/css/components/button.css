@@ -6,29 +6,29 @@
   line-height: normal;
   font-family: Inter, sans-serif;
   border-radius: 15px;
-  transition: all 0.5s;
+  transition: var(--transition);
 }
 
 .order-now {
   min-width: 127px;
   min-height: 45px;
   padding: 14px 28px;
-  color: #050505;
-  border: 1px solid #9bb537;
+  color: var(--primary-brand-color);
+  border: 1px solid var(--secondary-brand-color);
 }
 
 @media (hover: hover) {
   .order-now:hover,
   .order-now:focus {
-    background-color: #9bb537;
-    color: #f8f8f8;
+    background-color: var(--secondary-brand-color);
+    color: var(--primary-brand-color);
   }
 }
 
 @media not (hover: hover) {
   .order-now:active {
-    background-color: #9bb537;
-    color: #f8f8f8;
+    background-color: var(--secondary-brand-color);
+    color: var(--primary-brand-color);
   }
 }
 
@@ -36,88 +36,110 @@
   min-width: 174px;
   min-height: 50px;
   padding: 14px 28px;
-  color: rgba(5, 5, 5, 0.5);
-  border: 1px solid rgba(5, 5, 5, 0.2);
+  color: var(--filter-input-pagination-color);
+  border: 1px solid var(--all-categories);
 }
 
 @media (hover: hover) {
   .all-categories:hover,
   .all-categories:focus {
-    background-color: #9bb537;
-    color: #f8f8f8;
+    background-color: var(--secondary-brand-color);
+    color: var(--primary-brand-color);
   }
 }
 
 @media not (hover: hover) {
   .all-categories:active {
-    background-color: #9bb537;
-    color: #f8f8f8;
+    background-color: var(--secondary-brand-color);
+    color: var(--primary-brand-color);
   }
 }
-
+@media only screen and (min-width: 768px) {
+  .all-categories {
+    max-width: 174px;
+  }
+}
 .add-to-favorite {
   min-width: 156px;
   min-height: 45px;
   padding: 14px 28px;
-  color: #f8f8f8;
-  background-color: #9bb537;
-  border: 1px solid #9bb537;
+  color: var(--cards-text-color-white-theme);
+  background-color: var(--secondary-brand-color);
+  border: 1px solid var(--secondary-brand-color);
 }
 
 @media (hover: hover) {
   .add-to-favorite:hover,
   .add-to-favorite:focus {
-    color: #050505;
+    color: var(--text-color-white-theme);
   }
 }
 
 @media not (hover: hover) {
   .add-to-favorite:active {
-    color: #050505;
+    color: var(--text-color-white-theme);
   }
 }
+
 .see-recipe {
-  min-width: 93px;
-  min-height: 31px;
-  padding: 8px 16px;
+  max-width: 89px;
+  max-height: 31px;
+  padding: 8px 14px;
   color: #f8f8f8;
   font-size: 12px;
   border-radius: 8px;
-  border: 1px solid #9bb537;
-  background-color: #9bb537;
+  border: 1px solid var(--secondary-brand-color);
+  background-color: var(--secondary-brand-color);
 }
 
 @media (hover: hover) {
   .see-recipe:hover,
   .see-recipe:focus {
-    color: #050505;
+    color: var(--primary-brand-color);
   }
 }
 
 @media not (hover: hover) {
   .see-recipe:active {
-    color: #050505;
+    color: var(--primary-brand-color);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .see-recipe {
+    max-width: 93px;
+    padding: 8px 16px;
   }
 }
 
 .send {
-  min-width: 360px;
-  min-height: 48px;
-  padding: 14px 162px;
-  color: #f8f8f8;
-  border: 1px solid #9bb537;
-  background-color: #9bb537;
+  max-width: 100%;
+  max-height: 46px;
+  padding: 14px 140px;
+  color: var(--background-color);
+  border: 1px solid var(--secondary-brand-color);
+  background-color: var(--secondary-brand-color);
 }
+
 
 @media (hover: hover) {
   .send:hover,
   .send:focus {
-    color: #050505;
+    color: var(--primary-brand-color);
   }
 }
 
 @media not (hover: hover) {
   .send:active {
-    color: #050505;
+    color: var(--primary-brand-color);
   }
 }
+
+@media only screen and (min-width: 768px) {
+  .send {
+    max-width: 360px;
+    max-height: 48px;
+    padding: 14px 162px;
+      }
+}
+
