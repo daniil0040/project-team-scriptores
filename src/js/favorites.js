@@ -7,7 +7,7 @@ let cardArr = JSON.parse(localStorage.getItem(common.LS_RECIPES)) ?? [];
 const favEmpty = document.querySelector('.fav-empty');
 const favContainer = document.querySelector('.fav-container');
 const favCategories = document.querySelector('.fav-categories');
-const favStatic = document.querySelector('.fav-static')
+const favStatic = document.querySelector('.fav-static');
 
 startFavorite();
 
@@ -32,7 +32,8 @@ function creatCategoriesList() {
 
 function pullOutCategories(categoriesArr) {
   favCategories.innerHTML = markUpCategoriesBtn(categoriesArr);
-  const categoriesBtn = document.querySelectorAll('.js-category-btn');
+    const categoriesBtn = document.querySelectorAll('.js-category-btn');
+    categoriesBtn[0].classList.add('fav-btn-active')
 
     categoriesBtn.forEach(button => {
         button.addEventListener('click', function (event) {
@@ -40,6 +41,20 @@ function pullOutCategories(categoriesArr) {
             if (dataValue === "All categories") {
                 createFavoriteMarkUP();
             } else createCardsCategory(dataValue);
+
+        categoriesBtn.forEach(buttonNotActive => {
+
+        console.log(buttonNotActive.classList.contains('fav-btn-active'));
+
+        if (buttonNotActive.classList.contains('fav-btn-active')) {
+            buttonNotActive.classList.remove('fav-btn-active');
+        }
+    }
+    )
+    
+    button.classList.add('fav-btn-active');
+
+
         
         });
     })

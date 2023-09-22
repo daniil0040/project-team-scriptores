@@ -8,6 +8,8 @@
   display: none;
 }
 
+
+
 .fav__text {
   color: var(--primary-brand-color);
   text-align: center;
@@ -105,6 +107,12 @@
 }
 
 .fav-categories .category-btn:focus {
+  background: var(--accent-color);
+  color: var(--cards-text-color-white-theme);
+  border-color: var(--accent-color);
+}
+
+.fav-categories .fav-btn-active {
   background: var(--accent-color);
   color: var(--cards-text-color-white-theme);
   border-color: var(--accent-color);
