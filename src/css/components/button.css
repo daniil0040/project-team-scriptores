@@ -63,7 +63,7 @@
   min-width: 156px;
   min-height: 45px;
   padding: 14px 28px;
-  color: var(--primary-brand-color);
+  color: var(--cards-text-color-white-theme);
   background-color: var(--secondary-brand-color);
   border: 1px solid var(--secondary-brand-color);
 }
@@ -71,13 +71,13 @@
 @media (hover: hover) {
   .add-to-favorite:hover,
   .add-to-favorite:focus {
-    color: var(--primary-brand-color);
+    color: var(--text-color-white-theme);
   }
 }
 
 @media not (hover: hover) {
   .add-to-favorite:active {
-    color: var(--primary-brand-color);
+    color: var(--text-color-white-theme);
   }
 }
 
