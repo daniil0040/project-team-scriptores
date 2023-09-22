@@ -6,9 +6,8 @@ import {
 } from './all-categ-cards';
 import { getAllRecipes } from '../service-api';
 import { buttonAllCategories } from './all-categ-btn';
-import common from '../components/common.json';
 import { restoreLikeStates } from '../main-page-js/liked-recipe';
-
+import common from '../components/common.json';
 let recipesFavorite = JSON.parse(localStorage.getItem(common.LS_RECIPES)) ?? [];
 const recipes = document.querySelector('.category-list-js');
 

@@ -7,6 +7,7 @@ import {
 } from './all-categ-cards';
 import debounce from 'lodash.debounce';
 import { searchTime, searchArea, searchIngredients } from './select';
+import { restoreLikeStates } from '../main-page-js/liked-recipe';
 
 const selectors = {
   areaSelect: document.querySelector('.js-area-select'),
@@ -74,6 +75,8 @@ async function handlerAreaSelect(evt) {
     selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(
       data.results
     );
+    const likeButtons = document.querySelectorAll('.js-add');
+    restoreLikeStates(likeButtons);
     fillStars();
     addPagination(data);
   } catch (error) {
@@ -96,6 +99,8 @@ async function handlerIngridientsSelect(evt) {
     selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(
       data.results
     );
+    const likeButtons = document.querySelectorAll('.js-add');
+    restoreLikeStates(likeButtons);
     fillStars();
     addPagination(data);
   } catch (error) {
@@ -126,6 +131,8 @@ async function handlerTimeSelect(evt) {
     selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(
       data.results
     );
+    const likeButtons = document.querySelectorAll('.js-add');
+    restoreLikeStates(likeButtons);
     fillStars();
 
     addPagination(data);
@@ -140,20 +147,24 @@ async function hendlerClickAllCategBtn(evt) {
   if (category) {
     category.removeAttribute('active');
   }
-if (currentArea !== ''|| currentIngridient !== '' || keyWord !== '' || currentCookingTime !== '')  {
-  const defaultData = await serviceGetByKeyWord(currentCategory);
-  selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(
-    defaultData.results
-  );
-  fillStars();
-  addPagination(defaultData);
-}
+  if (
+    currentArea !== '' ||
+    currentIngridient !== '' ||
+    keyWord !== '' ||
+    currentCookingTime !== ''
+  ) {
+    const defaultData = await serviceGetByKeyWord(currentCategory);
+    selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(
+      defaultData.results
+    );
+    fillStars();
+    addPagination(defaultData);
+  }
   currentCategory = '';
   currentCookingTime = '';
   currentArea = '';
   currentIngridient = '';
   keyWord = '';
-  console.log(currentArea);
     resetFilters();
 }
 
@@ -161,14 +172,20 @@ async function hendlerClickCategories(evt) {
   if (!evt.target.classList.contains('category-button-js')) {
     return;
   }
-  if (currentArea !== ''|| currentIngridient !== '' || keyWord !== '' || currentCookingTime !== '')  {
-  const defaultData = await serviceGetByKeyWord(currentCategory);
-  selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(
-    defaultData.results
-  );
+
+  if (
+    currentArea !== '' ||
+    currentIngridient !== '' ||
+    keyWord !== '' ||
+    currentCookingTime !== ''
+  ) {
+    const defaultData = await serviceGetByKeyWord(currentCategory);
+    selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(
+      defaultData.results
+    );
     fillStars();
     addPagination(defaultData);
-}
+  }
   currentCategory = evt.target.textContent;
     resetFilters();
 }
@@ -199,6 +216,8 @@ async function handlerInput(evt) {
     selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(
       data.results
     );
+    const likeButtons = document.querySelectorAll('.js-add');
+    restoreLikeStates(likeButtons);
     fillStars();
     addPagination(data);
   } catch (error) {
