@@ -8,6 +8,7 @@ import { cardsContainer } from './categories';
 import { resetPrev } from './categories';
 import { restoreLikeStates } from '../main-page-js/liked-recipe';
 import common from '../components/common.json';
+import { removeCatListStyle } from './categories';
 
 let recipesFavorite = JSON.parse(localStorage.getItem(common.LS_RECIPES)) ?? [];
 export const buttonAllCategories = document.querySelector('.all-categories');
@@ -25,6 +26,7 @@ const auditAllCateg = function () {
         restoreLikeStates(likeButtons);
         addPagination(data);
         fillStars();
+        removeCatListStyle();
       })
       .catch(error => {
         console.log(error);
