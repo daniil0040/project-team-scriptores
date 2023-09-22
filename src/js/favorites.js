@@ -38,14 +38,27 @@ function creatCategoriesList() {
 
 function pullOutCategories(categoriesArr) {
   favCategories.innerHTML = markUpCategoriesBtn(categoriesArr);
-  const categoriesBtn = document.querySelectorAll('.js-category-btn');
+    const categoriesBtn = document.querySelectorAll('.js-category-btn');
+    categoriesBtn[0].classList.add('fav-btn-active');
 
   categoriesBtn.forEach(button => {
     button.addEventListener('click', function (event) {
       const dataValue = event.currentTarget.getAttribute('data-button');
       if (dataValue === 'All categories') {
         createFavoriteMarkUP();
-      } else createCardsCategory(dataValue);
+        } else createCardsCategory(dataValue);
+        
+        categoriesBtn.forEach(buttonNotActive => {
+
+        console.log(buttonNotActive.classList.contains('fav-btn-active'));
+
+        if (buttonNotActive.classList.contains('fav-btn-active')) {
+            buttonNotActive.classList.remove('fav-btn-active');
+        }
+    }
+    )
+    
+    button.classList.add('fav-btn-active');
     });
   });
 }
@@ -53,7 +66,7 @@ function pullOutCategories(categoriesArr) {
 function createCardsCategory(category) {
   const newCardArr = cardArr.filter(obj => obj.category === category);
   document.getElementById('paginationFAV').innerHTML = '';
-  favContainer.innerHTML = createAllCategCardsMarkup(newCardArr);
+  favContainer.innerHTML = createAllCategCardsMarkup(newCardArr, true);
 
   fillStars();
   filledHearts();
@@ -69,18 +82,17 @@ export function markUpCategoriesBtn(arr) {
 }
 
 function createFavoriteMarkUP() {
-  // console.log(slicedCardArr);
   if (cardArr.length > 12 && window.innerWidth > 767) {
     slicedCardArr = cardArr.slice(0, 12);
-    favContainer.innerHTML = createAllCategCardsMarkup(slicedCardArr);
+    favContainer.innerHTML = createAllCategCardsMarkup(slicedCardArr, true);
     addPaginationFavorite(cardArr);
   } else if (cardArr.length > 9 && window.innerWidth <= 767) {
     slicedCardArr = cardArr.slice(0, 9);
-    favContainer.innerHTML = createAllCategCardsMarkup(slicedCardArr);
+    favContainer.innerHTML = createAllCategCardsMarkup(slicedCardArr, true);
     addPaginationFavorite(cardArr);
   } else {
     document.getElementById('paginationFAV').innerHTML = '';
-    favContainer.innerHTML = createAllCategCardsMarkup(cardArr);
+    favContainer.innerHTML = createAllCategCardsMarkup(cardArr, true);
   }
 
   fillStars();
@@ -257,14 +269,14 @@ document.addEventListener('click', async e => {
 
   slicedCardArr = cardSlicing(button);
   if (button) {
-    butt = button;
-    // console.log(button);
+    butt = button
     const pageNumber = button.getAttribute('page-number');
 
-    const recipes = createAllCategCardsMarkup(slicedCardArr);
-    // console.log(slicedCardArr);
-    favContainer.innerHTML = recipes;
-
+    const recipes = createAllCategCardsMarkup(slicedCardArr, true);
+    favContainer.innerHTML = recipes
+    
+    fillStars();
+    filledHearts();
     addPaginationFavorite(cardArr, pageNumber);
 
     // document.querySelector('.cards-container-js').innerHTML = recipes;
@@ -296,13 +308,15 @@ function removeCard() {
     localStorage.setItem(common.LS_RECIPES, JSON.stringify(cardArr));
 
     createFavoriteMarkUPsss(butt ?? 1);
-
+    fillStars();
+    filledHearts();
     creatCategoriesList();
     if (!cardArr.length) {
       favEmpty.classList.remove('is-none');
       favStatic.classList.add('fav-phantom');
       favContainer.classList.add('fav-style-reset');
-      favCategories.innerHTML = '';
+      favCategories.classList.add('is-none');
+      // favCategories.innerHTML = '';
     }
   });
 }
@@ -314,22 +328,29 @@ export function filledHearts() {
 
 function createFavoriteMarkUPsss(buttons) {
   if (cardArr.length > 12 && window.innerWidth > 767) {
-    if (butt) pageNumberForPog = butt.getAttribute('page-number');
-    // console.log(butt);
-    // console.log(buttons);
-    favContainer.innerHTML = createAllCategCardsMarkup(cardSlicing(buttons));
-    addPaginationFavorite(cardArr);
-  } else if (cardArr.length > 9 && window.innerWidth <= 767) {
-    favContainer.innerHTML = createAllCategCardsMarkup(cardSlicing(buttons));
-    addPaginationFavorite(cardArr);
-  } else {
-    document.getElementById('paginationFAV').innerHTML = '';
-    favContainer.innerHTML = createAllCategCardsMarkup(cardArr);
+    if(butt) pageNumberForPog = butt.getAttribute("page-number")
+      favContainer.innerHTML = createAllCategCardsMarkup(cardSlicing(buttons ), true)
+      addPaginationFavorite(cardArr)
+
+    }
+
+  else if (cardArr.length > 9 && window.innerWidth <= 767) {
+      if(butt) pageNumberForPog = butt.getAttribute("page-number")
+        favContainer.innerHTML = createAllCategCardsMarkup(cardSlicing(buttons), true)
+        addPaginationFavorite(cardArr)
+  } 
+    
+  else {
+        document.getElementById('paginationFAV').innerHTML = ''
+        favContainer.innerHTML = createAllCategCardsMarkup(cardArr, true);
   }
+  
+    fillStars();
+  filledHearts();
 
   if (favStatic.classList.contains('fav-phantom')) {
-    favStatic.classList.remove('fav-phantom');
-    favContainer.classList.remove('fav-style-reset');
+        favStatic.classList.remove('fav-phantom');
+        favContainer.classList.remove('fav-style-reset');
   }
   return;
 }

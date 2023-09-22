@@ -14,9 +14,10 @@
   --modal-hover: #050505;
   --category-button: rgba(5, 5, 5, 0.3);
   --all-categories: rgba(5, 5, 5, 0.2);
-  --modal-rating-back:#FFF;
-  --star-no-active:#D9D9D9;
+  --modal-rating-back: #fff;
+  --star-no-active: #d9d9d9;
   --modal-email: #ffffff;
+  --select-text: #0505054d;
   --link-icon-x: url('/img/sprite/icon-close-dark.svg');
   --category-button-oll: rgba(5, 5, 5, 0.5);
   
@@ -34,10 +35,11 @@
   --modal-hover: #9bb537;
   --category-button: rgba(255, 255, 255, 0.3);
   --all-categories: rgba(255, 255, 255, 0.2);
-  --modal-rating-back:#050505;
-  --star-no-active:#3C3B3B;
+  --modal-rating-back: #050505;
+  --star-no-active: #3c3b3b;
   --modal-email: #161616;
   --category-button-oll: rgba(255, 255, 255, 0.5);
+  --select-text: #ffffff4d;
   --link-icon-x: url('/img/sprite/icon-close-x.svg');
 }
 
@@ -54,5 +56,4 @@
   --form-border-color: #05050533;
   --star-color: #eea10c;
   --black-bg-color: #050505;
-  
 }
