@@ -236,5 +236,5 @@
   font-size: 12px;
   font-weight: 500;
   line-height: 16px;
-  color: #05050580;
+  color: var(--placeholder);
 }

@@ -96,8 +96,19 @@
   height: 22px;
 
   border: none;
-  background: transparent;
+  transition: transform 3s;
+  /* background: transparent; */
 }
+.like-btn:hover {
+  transform: scale(1.1);
+  animation: pulse 1s infinite alternate;
+}
+@keyframes pulse {
+  to {
+    transform: scale(1.5);
+  }
+}
+
 .icon-heart {
   background-image: url('/img/sprite/heart.svg');
   background-repeat: no-repeat;
@@ -120,7 +131,7 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 
-  margin-top: 198px;
+  margin-top: 214px;
   margin-bottom: 8px;
 
   user-select: none;
@@ -189,8 +200,13 @@
   display: flex;
   align-items: center;
   margin-top: 23px;
+  width: 116px;
 }
-
+@media screen and (min-width: 768px) {
+  .rating {
+    width: 96px;
+  }
+}
 .reting-item {
   width: 18px;
   height: 18px;
