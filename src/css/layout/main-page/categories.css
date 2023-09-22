@@ -153,19 +153,6 @@ button {
   cursor: pointer;
 }
 
-.pag-btn-right-icon {
-  position: absolute;
-  left: -10px;
-  bottom: -10px;
-}
-
-.icon-container {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-}
-
 .pag-btn-white {
   color: var(--primary-brand-color);
   display: flex;
@@ -274,4 +261,43 @@ button {
 
 .btn_hidden {
   display: none;
+}
+
+.right-double {
+  background-image: url('/img/sprite/right-double.svg');
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+  width: 14px;
+  height: 14px;
+  background-size: contain;
+}
+
+.right-single {
+  background-image: url('/img/sprite/right-one.svg');
+  background-repeat: no-repeat;
+  background-position: -1px;
+  width: 20px;
+  height: 20px;
+}
+
+.left-single {
+  background-image: url('/img/sprite/left-one.svg');
+  background-repeat: no-repeat;
+  background-position: -2px;
+  width: 20px;
+  height: 20px;
+}
+
+.left-double {
+  background-image: url('/img/sprite/left-double.svg');
+  width: 27px;
+  height: 27px;
+  transform: rotate(90deg);
+}
+
+@media only screen and (min-width: 768px) {
+  .left-double {
+    width: 27px;
+    height: 27px;
+  }
 }
