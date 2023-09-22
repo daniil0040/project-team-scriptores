@@ -101,7 +101,7 @@ function createMurkUpModal(card) {
     </div>
     <p class="instruction">${instructions}</p>
     <button type="button" class="modal-close-btn js-modal-close">
-    X
+    
      </button>
     <div class="button-block">
     <button class="btn add-to-favorite js-favorite-btn" type="button">Add to favorite</button>

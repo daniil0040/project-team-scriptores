@@ -1,9 +1,18 @@
 import { getAllSomething } from '../service-api';
-import { addPagination, createAllCategCardsMarkup, fillStars } from './all-categ-cards';
+import {
+  addPagination,
+  createAllCategCardsMarkup,
+  fillStars,
+} from './all-categ-cards';
 import { getAllRecipes } from '../service-api';
 import { buttonAllCategories } from './all-categ-btn';
+import common from '../components/common.json';
+import { restoreLikeStates } from '../main-page-js/liked-recipe';
 
+let recipesFavorite = JSON.parse(localStorage.getItem(common.LS_RECIPES)) ?? [];
+console.log(recipesFavorite);
 const recipes = document.querySelector('.category-list-js');
+
 export const cardsContainer = document.querySelector('.cards-container-js');
 getAllSomething('categories').then(data => {
   recipes.insertAdjacentHTML('beforeend', createCategoriesMarkup(data));
@@ -64,6 +73,9 @@ function categorySelection(event) {
       getAllRecipes(category.textContent)
         .then(data => {
           cardsContainer.innerHTML = createAllCategCardsMarkup(data.results);
+          const likeButtons = document.querySelectorAll('.js-add');
+          // перед завантаженням перевірка чи лайкнуті картки
+          restoreLikeStates(likeButtons);
           fillStars();
           addPagination(data);
           const prevActiveEl = document.querySelector('[active="true"]');
@@ -71,6 +83,7 @@ function categorySelection(event) {
             prevActiveEl.removeAttribute('active');
           }
 
+          console.log(likeButtons);
           category.setAttribute('active', true);
         })
         .catch(err => {

@@ -117,9 +117,9 @@
     font-weight: 700;
     transition: var(--transition);
 
-    /* background-size: cover;
+    background-size: cover;
         background-repeat: no-repeat;
-        background-image: url('/img/sprite/icon-close-x.svg'); */
+        background-image: var(--link-icon-x);
 
 }
 
@@ -131,17 +131,16 @@
 .add-to-favorite {
     height: 41px;
     padding: 12px 24px;
-    /* color: #F8F8F8; */
     font-size: 14px;
     font-weight: 500;
     line-height: normal;
+    transition: var(--transition);
 
 }
 
 .order-now {
     height: 41px;
     padding: 12px 0;
-    /* color: var(--text-color-white-theme); */
     font-size: 14px;
     font-weight: 500;
     line-height: normal;

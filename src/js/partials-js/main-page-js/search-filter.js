@@ -1,6 +1,10 @@
 import axios from 'axios';
 import Notiflix from 'notiflix';
-import { addPagination, createAllCategCardsMarkup, fillStars } from './all-categ-cards';
+import {
+  addPagination,
+  createAllCategCardsMarkup,
+  fillStars,
+} from './all-categ-cards';
 import debounce from 'lodash.debounce';
 import { searchTime, searchArea, searchIngredients } from './select';
 
@@ -38,12 +42,12 @@ selectors.timeSelect.addEventListener('change', handlerTimeSelect);
 selectors.resetBtn.addEventListener('click', handlerReset);
 
 async function handlerReset() {
-    resetFilters();
+  resetFilters();
   const defaultData = await serviceGetByKeyWord(currentCategory);
   selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(
     defaultData.results
   );
-  fillStars()
+  fillStars();
   addPagination(defaultData);
   return;
 }
@@ -70,7 +74,7 @@ async function handlerAreaSelect(evt) {
     selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(
       data.results
     );
-    fillStars()
+    fillStars();
     addPagination(data);
   } catch (error) {
     console.log(error);
@@ -130,17 +134,43 @@ async function handlerTimeSelect(evt) {
   }
 }
 
-function hendlerClickAllCategBtn(evt) {
-    currentCategory = '';
-    resetFilters()
+async function hendlerClickAllCategBtn(evt) {
+  const category = document.querySelector('[active="true"]');
+
+  if (category) {
+    category.removeAttribute('active');
+  }
+if (currentArea !== ''|| currentIngridient !== '' || keyWord !== '' || currentCookingTime !== '')  {
+  const defaultData = await serviceGetByKeyWord(currentCategory);
+  selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(
+    defaultData.results
+  );
+  fillStars();
+  addPagination(defaultData);
+}
+  currentCategory = '';
+  currentCookingTime = '';
+  currentArea = '';
+  currentIngridient = '';
+  keyWord = '';
+  resetFilters();
 }
 
-function hendlerClickCategories(evt) {
+async function hendlerClickCategories(evt) {
   if (!evt.target.classList.contains('category-button-js')) {
     return;
   }
-    currentCategory = evt.target.textContent;
-    resetFilters()
+  console.log(currentCategory);
+  if (currentArea !== ''|| currentIngridient !== '' || keyWord !== '' || currentCookingTime !== '')  {
+  const defaultData = await serviceGetByKeyWord(currentCategory);
+  selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(
+    defaultData.results
+  );
+    fillStars();
+    addPagination(defaultData);
+}
+  currentCategory = evt.target.textContent;
+  resetFilters();
 }
 
 async function handlerInput(evt) {
@@ -211,8 +241,8 @@ export async function serviceGetByKeyWord(
 }
 
 function resetFilters() {
-    // SEARCH RESET
-    selectors.searchInput.value = '';
+  // SEARCH RESET
+  selectors.searchInput.value = '';
   // AREA RESET
   selectors.areaSelect.selectedIndex = 0;
   searchArea.setSelected('');
@@ -224,8 +254,8 @@ function resetFilters() {
   // INGREDIENTS RESET
   selectors.ingredientsSelect.selectedIndex = 0;
   searchIngredients.setSelected('');
-    currentIngridient = '';
-    // 
+  currentIngridient = '';
+  //
 }
 export async function getRecipesByFilters(
   pageNumber = 1,
