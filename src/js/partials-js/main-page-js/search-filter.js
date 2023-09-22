@@ -153,9 +153,8 @@ if (currentArea !== ''|| currentIngridient !== '' || keyWord !== '' || currentCo
   currentArea = '';
   currentIngridient = '';
   keyWord = '';
-  if (currentArea !== '' || currentIngridient !== '' || keyWord !== '' || currentCookingTime !== '') {
+  console.log(currentArea);
     resetFilters();
-  }
 }
 
 async function hendlerClickCategories(evt) {
@@ -171,9 +170,7 @@ async function hendlerClickCategories(evt) {
     addPagination(defaultData);
 }
   currentCategory = evt.target.textContent;
-  if (currentArea !== '' || currentIngridient !== '' || keyWord !== '' || currentCookingTime !== '') {
     resetFilters();
-  }
 }
 
 async function handlerInput(evt) {
