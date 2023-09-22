@@ -2,9 +2,11 @@ import './partials-js/menu';
 import common from '../js/partials-js/components/common.json';
 import { createAllCategCardsMarkup } from './partials-js/main-page-js/all-categ-cards';
 
-let slicedCardArr 
+let butt 
 let cardArr = JSON.parse(localStorage.getItem(common.LS_RECIPES)) ?? [];
+let slicedCardArr 
 
+let pageNumberForPog = 1
 const favEmpty = document.querySelector('.fav-empty');
 const favContainer = document.querySelector('.fav-container');
 const favCategories = document.querySelector('.fav-categories');
@@ -63,17 +65,17 @@ function markUpCategoriesBtn(arr) {
 
 
 function createFavoriteMarkUP() {   
-    
-    if (cardArr.length > 12 && window.innerWidth > 767) {
-        slicedCardArr = cardArr.slice(0, 12)
+    console.log(slicedCardArr);
+  if (cardArr.length > 12 && window.innerWidth > 767) {
+      slicedCardArr = cardArr.slice(0, 12)
         favContainer.innerHTML = createAllCategCardsMarkup(slicedCardArr)
         addPaginationFavorite(cardArr)
         
         
     }
 
-    else if (cardArr.length > 9 && window.innerWidth <= 767) {
-        slicedCardArr = cardArr.slice(0, 9)
+  else if (cardArr.length > 9 && window.innerWidth <= 767) {
+       slicedCardArr = cardArr.slice(0, 9)
         favContainer.innerHTML = createAllCategCardsMarkup(slicedCardArr)
         addPaginationFavorite(cardArr)
         
@@ -95,30 +97,12 @@ function createFavoriteMarkUP() {
     return;
 };
 
-function removeCard() {
-    favContainer.addEventListener('click', (event) => {
-        if (!event.target.classList.contains('js-add')) {
-            return;
-        }
-        const cardId = event.target.dataset.id;
-        const idx = cardArr.findIndex(({ _id }) => _id === cardId);
-        cardArr.splice(idx, 1);
-        localStorage.setItem(common.LS_RECIPES, JSON.stringify(cardArr));
-        createFavoriteMarkUP();
-        creatCategoriesList();
-        if (!cardArr.length) {
-            favEmpty.classList.remove('is-none');
-            favStatic.classList.add('fav-phantom');
-            favContainer.classList.add('fav-style-reset')
-            favCategories.classList.add('is-none');
-        }
-    }); 
-}
+
 
 
 // PAGINATION
 
-function addPaginationFavorite(results, pageNumber = 1) {
+function addPaginationFavorite(results, pageNumber = pageNumberForPog) {
     const totalPages = Math.ceil(results.length / 12)
    
     const currentPage = pageNumber
@@ -296,13 +280,14 @@ let prevPage
 document.addEventListener('click', async e => {
     const button = e.target.closest('.pag-btn-number');
 
-
     slicedCardArr = cardSlicing(button)
-    if (button) {
+  if (button) {
+    butt = button
+  console.log(button);
         const pageNumber = button.getAttribute('page-number');
     
         const recipes = createAllCategCardsMarkup(slicedCardArr);
-        
+        console.log(slicedCardArr);
         favContainer.innerHTML = recipes
         
         addPaginationFavorite(cardArr, pageNumber);
@@ -312,6 +297,7 @@ document.addEventListener('click', async e => {
 });
 
 function cardSlicing(button) {
+    if(button === 1 ) return cardArr.slice(0, 12)
     if (button) prevPage = button.getAttribute("page-number")
     if (cardArr.length > 12 && window.innerWidth > 767) {
     first = 12 * prevPage - 12
@@ -322,6 +308,62 @@ function cardSlicing(button) {
     last = 9 * prevPage
     return cardArr.slice(first, last)
 
+}
+
+
+function removeCard() {
+    favContainer.addEventListener('click', (event) => {
+        if (!event.target.classList.contains('js-add')) {
+            return;
+        }
+        const cardId = event.target.dataset.id;
+      const idx = cardArr.findIndex(({ _id }) => _id === cardId);
+      console.log(butt);
+      cardArr.splice(idx, 1);
+      localStorage.setItem(common.LS_RECIPES, JSON.stringify(cardArr));
+
+      createFavoriteMarkUPsss(butt ?? 1);
+      
+        creatCategoriesList();
+        if (!cardArr.length) {
+            favEmpty.classList.remove('is-none');
+            favStatic.classList.add('fav-phantom');
+            favContainer.classList.add('fav-style-reset')
+            favCategories.classList.add('is-none');
+        }
+    }); 
+}
+
+function createFavoriteMarkUPsss(buttons) {
+  if (cardArr.length > 12 && window.innerWidth > 767) {
+    if(butt) pageNumberForPog = butt.getAttribute("page-number")
+      console.log(butt);
+      console.log(buttons);
+        favContainer.innerHTML = createAllCategCardsMarkup(cardSlicing(buttons ))
+        addPaginationFavorite(cardArr)
+     
+        
+    }
+
+  else if (cardArr.length > 9 && window.innerWidth <= 767) {
+
+        favContainer.innerHTML = createAllCategCardsMarkup(cardSlicing(buttons))
+        addPaginationFavorite(cardArr)
+        
+        
+    } 
+    else {
+        document.getElementById('paginationFAV').innerHTML = ''
+        favContainer.innerHTML = createAllCategCardsMarkup(cardArr);
+    }
+  
+  
+
+    if (favStatic.classList.contains('fav-phantom')) {
+        favStatic.classList.remove('fav-phantom');
+        favContainer.classList.remove('fav-style-reset');
+    }
+    return;
 }
 
 
