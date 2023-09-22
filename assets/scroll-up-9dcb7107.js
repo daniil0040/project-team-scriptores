@@ -5,7 +5,7 @@
         
       <img class="recipes-img" src="${e}" alt="${n}" />
       <div class="card-description">
-        <button class="like-btn icon-heart  js-add" data-id="${s}" type="button"></button>
+        <button aria-label="Like Recipe" class="like-btn icon-heart  js-add" data-id="${s}" type="button"></button>
         <h2 class="card-heading">${n}</h2>
         <div class="text-container">
           <p class="card-text">
