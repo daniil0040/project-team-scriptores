@@ -51,7 +51,7 @@ function pullOutCategories(categoriesArr) {
 function createCardsCategory(category) {
     const newCardArr = cardArr.filter(obj => obj.category === category);
     document.getElementById('paginationFAV').innerHTML = ''
-  favContainer.innerHTML = createAllCategCardsMarkup(newCardArr);
+  favContainer.innerHTML = createAllCategCardsMarkup(newCardArr, true);
 }
 
 function markUpCategoriesBtn(arr) {
@@ -65,10 +65,9 @@ function markUpCategoriesBtn(arr) {
 
 
 function createFavoriteMarkUP() {   
-    console.log(slicedCardArr);
   if (cardArr.length > 12 && window.innerWidth > 767) {
       slicedCardArr = cardArr.slice(0, 12)
-        favContainer.innerHTML = createAllCategCardsMarkup(slicedCardArr)
+        favContainer.innerHTML = createAllCategCardsMarkup(slicedCardArr, true)
         addPaginationFavorite(cardArr)
         
         
@@ -76,25 +75,22 @@ function createFavoriteMarkUP() {
 
   else if (cardArr.length > 9 && window.innerWidth <= 767) {
        slicedCardArr = cardArr.slice(0, 9)
-        favContainer.innerHTML = createAllCategCardsMarkup(slicedCardArr)
+        favContainer.innerHTML = createAllCategCardsMarkup(slicedCardArr, true)
         addPaginationFavorite(cardArr)
         
         
     } 
-    else {
-        document.getElementById('paginationFAV').innerHTML = ''
-        favContainer.innerHTML = createAllCategCardsMarkup(cardArr);
-    }
+  else {
+      document.getElementById('paginationFAV').innerHTML = ''
+      favContainer.innerHTML = createAllCategCardsMarkup(cardArr, true);
+  }
     
 
-
-    
-
-    if (favStatic.classList.contains('fav-phantom')) {
-        favStatic.classList.remove('fav-phantom');
-        favContainer.classList.remove('fav-style-reset');
-    }
-    return;
+  if (favStatic.classList.contains('fav-phantom')) {
+      favStatic.classList.remove('fav-phantom');
+      favContainer.classList.remove('fav-style-reset');
+  }
+  return;
 };
 
 
@@ -283,14 +279,12 @@ document.addEventListener('click', async e => {
     slicedCardArr = cardSlicing(button)
   if (button) {
     butt = button
-  console.log(button);
-        const pageNumber = button.getAttribute('page-number');
+    const pageNumber = button.getAttribute('page-number');
+
+    const recipes = createAllCategCardsMarkup(slicedCardArr, true);
+    favContainer.innerHTML = recipes
     
-        const recipes = createAllCategCardsMarkup(slicedCardArr);
-        console.log(slicedCardArr);
-        favContainer.innerHTML = recipes
-        
-        addPaginationFavorite(cardArr, pageNumber);
+    addPaginationFavorite(cardArr, pageNumber);
 
     // document.querySelector('.cards-container-js').innerHTML = recipes;
   }
@@ -313,57 +307,52 @@ function cardSlicing(button) {
 
 function removeCard() {
     favContainer.addEventListener('click', (event) => {
-        if (!event.target.classList.contains('js-add')) {
-            return;
-        }
-        const cardId = event.target.dataset.id;
+      if (!event.target.classList.contains('js-add')) {
+        return;
+      }
+      const cardId = event.target.dataset.id;
       const idx = cardArr.findIndex(({ _id }) => _id === cardId);
-      console.log(butt);
       cardArr.splice(idx, 1);
       localStorage.setItem(common.LS_RECIPES, JSON.stringify(cardArr));
 
       createFavoriteMarkUPsss(butt ?? 1);
       
-        creatCategoriesList();
-        if (!cardArr.length) {
-            favEmpty.classList.remove('is-none');
-            favStatic.classList.add('fav-phantom');
-            favContainer.classList.add('fav-style-reset')
-            favCategories.classList.add('is-none');
-        }
+      creatCategoriesList();
+      if (!cardArr.length) {
+          favEmpty.classList.remove('is-none');
+          favStatic.classList.add('fav-phantom');
+          favContainer.classList.add('fav-style-reset')
+          favCategories.classList.add('is-none');
+      }
     }); 
 }
 
 function createFavoriteMarkUPsss(buttons) {
   if (cardArr.length > 12 && window.innerWidth > 767) {
     if(butt) pageNumberForPog = butt.getAttribute("page-number")
-      console.log(butt);
-      console.log(buttons);
-        favContainer.innerHTML = createAllCategCardsMarkup(cardSlicing(buttons ))
-        addPaginationFavorite(cardArr)
-     
-        
+      favContainer.innerHTML = createAllCategCardsMarkup(cardSlicing(buttons ), true)
+      addPaginationFavorite(cardArr)
+
     }
 
   else if (cardArr.length > 9 && window.innerWidth <= 767) {
-
-        favContainer.innerHTML = createAllCategCardsMarkup(cardSlicing(buttons))
+      if(butt) pageNumberForPog = butt.getAttribute("page-number")
+        favContainer.innerHTML = createAllCategCardsMarkup(cardSlicing(buttons), true)
         addPaginationFavorite(cardArr)
-        
-        
-    } 
-    else {
+  } 
+    
+  else {
         document.getElementById('paginationFAV').innerHTML = ''
-        favContainer.innerHTML = createAllCategCardsMarkup(cardArr);
-    }
+        favContainer.innerHTML = createAllCategCardsMarkup(cardArr, true);
+  }
   
   
 
-    if (favStatic.classList.contains('fav-phantom')) {
+  if (favStatic.classList.contains('fav-phantom')) {
         favStatic.classList.remove('fav-phantom');
         favContainer.classList.remove('fav-style-reset');
-    }
-    return;
+  }
+  return;
 }
 
 
