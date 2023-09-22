@@ -36,9 +36,17 @@
 ////// HEDR MENU ACTIVE /////////
 const linkActive = document.querySelectorAll('.header-link');
 const wLocPath = window.location.pathname;
+const moblinkActive = document.querySelectorAll('.mob-menu-item a')
 for (const link of linkActive) {
   if (link.href.includes(wLocPath )) {
     link.classList.add('active-page')
     break;
   }
-}
+};
+
+for (const link of moblinkActive) {
+  if (link.href.includes(wLocPath )) {
+    link.classList.add('active-page-mob')
+    break;
+  }
+};

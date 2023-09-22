@@ -302,6 +302,9 @@
 
 /*////// HEDR MENU ACTIVE /////////*/
 
-/* .active-page{
+.active-page{
   color: var(--accent-color);
-}; */
+}
+.active-page-mob {
+  color: var(--modal-hover);
+  }
