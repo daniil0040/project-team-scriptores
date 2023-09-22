@@ -134,13 +134,19 @@ async function handlerTimeSelect(evt) {
   }
 }
 
-function hendlerClickAllCategBtn(evt) {
+async function hendlerClickAllCategBtn(evt) {
   const category = document.querySelector('[active="true"]');
 
   if (category) {
     category.removeAttribute('active');
   }
-
+if (currentArea !== ''|| currentIngridient !== '' || keyWord !== '' || currentCookingTime !== '')  {
+  const defaultData = await serviceGetByKeyWord(currentCategory);
+  selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(
+    defaultData.results
+  );
+  fillStars();
+}
   currentCategory = '';
   currentCookingTime = '';
   currentArea = '';
@@ -149,10 +155,18 @@ function hendlerClickAllCategBtn(evt) {
   resetFilters();
 }
 
-function hendlerClickCategories(evt) {
+async function hendlerClickCategories(evt) {
   if (!evt.target.classList.contains('category-button-js')) {
     return;
   }
+  console.log(currentCategory);
+  if (currentArea !== ''|| currentIngridient !== '' || keyWord !== '' || currentCookingTime !== '')  {
+  const defaultData = await serviceGetByKeyWord(currentCategory);
+  selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(
+    defaultData.results
+  );
+  fillStars();
+}
   currentCategory = evt.target.textContent;
   resetFilters();
 }
