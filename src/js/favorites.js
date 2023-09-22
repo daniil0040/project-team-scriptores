@@ -264,6 +264,8 @@ document.addEventListener('click', async e => {
     const recipes = createAllCategCardsMarkup(slicedCardArr);
     // console.log(slicedCardArr);
     favContainer.innerHTML = recipes;
+    fillStars();
+    filledHearts();
 
     addPaginationFavorite(cardArr, pageNumber);
 
@@ -296,7 +298,8 @@ function removeCard() {
     localStorage.setItem(common.LS_RECIPES, JSON.stringify(cardArr));
 
     createFavoriteMarkUPsss(butt ?? 1);
-
+    fillStars();
+    filledHearts();
     creatCategoriesList();
     if (!cardArr.length) {
       favEmpty.classList.remove('is-none');
@@ -326,6 +329,9 @@ function createFavoriteMarkUPsss(buttons) {
     document.getElementById('paginationFAV').innerHTML = '';
     favContainer.innerHTML = createAllCategCardsMarkup(cardArr);
   }
+
+  fillStars();
+  filledHearts();
 
   if (favStatic.classList.contains('fav-phantom')) {
     favStatic.classList.remove('fav-phantom');
