@@ -8,7 +8,7 @@ const selectors = {
 
 let currentCategory = ""
 
-selectors.categoryList.addEventListener('click', hendlerClickCategories);
+// selectors.categoryList.addEventListener('click', hendlerClickCategories);
 selectors.allCategBtn.addEventListener("click", handlerClickAllCateg)
 
 // function hendlerClickCategories(evt) {
