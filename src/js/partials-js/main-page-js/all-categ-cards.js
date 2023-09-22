@@ -1,6 +1,6 @@
 import { getAllRecipes } from '../service-api';
 export const cardsContainer = document.querySelector('.cards-container-js');
-
+ let slicesArrForMarkUp 
 getAllRecipes()
   .then(data => {
     cardsContainer.innerHTML = createAllCategCardsMarkup(data.results);
@@ -14,8 +14,18 @@ getAllRecipes()
     console.log(err);
   });
 
-export function createAllCategCardsMarkup(arr) {
-  return arr
+export function createAllCategCardsMarkup(arr, isFromFavorite) {
+  slicesArrForMarkUp = arr
+  if (window.innerWidth > 0 && !isFromFavorite) {
+    slicesArrForMarkUp = arr.slice(0, 6) 
+    } 
+  if (window.innerWidth >= 768 && !isFromFavorite)  {
+    slicesArrForMarkUp = arr.slice(0, 8)
+    }
+  if (window.innerWidth >= 1280 && !isFromFavorite)  {
+    slicesArrForMarkUp = arr.slice(0, 9) 
+  }
+  return slicesArrForMarkUp
     .map(({ preview, title, description, rating, _id, tags }) => {
       return `
     <li class="recipes-card" data-tags="${tags}" >
