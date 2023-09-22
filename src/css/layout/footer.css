@@ -41,7 +41,7 @@
   line-clamp: 2;
   -webkit-box-orient: vertical;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.1;
   letter-spacing: -0.02em;
   text-align: center;
@@ -106,20 +106,23 @@
   .footer-media {
     width: 208px;
     margin: 0;
-    padding-top: 30px;
+    padding-top: 20px;
   }
   .footer-all {
     justify-content: center;
     column-gap: 100px;
   }
+  .footer-social-list-link {
+    width: 30px;
+    height: 30px;
+  }
 }
 @media screen and (min-width: 1280px) {
   .footer {
-    padding: 25px 0;
+    padding: 20px 0;
   }
   .footer-all {
     flex-wrap: nowrap;
-    align-items: baseline;
     justify-content: center;
     gap: 100px;
   }

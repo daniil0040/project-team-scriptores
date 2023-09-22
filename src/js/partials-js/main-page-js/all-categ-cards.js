@@ -4,7 +4,7 @@ export const cardsContainer = document.querySelector('.cards-container-js');
 getAllRecipes()
   .then(data => {
     cardsContainer.innerHTML = createAllCategCardsMarkup(data.results);
-    fillStars()
+    fillStars();
     const recipes = createAllCategCardsMarkup(data.results);
     cardsContainer.innerHTML = recipes;
     fillStars();
@@ -58,24 +58,22 @@ export function createAllCategCardsMarkup(arr) {
 }
 
 export function fillStars() {
-   
   const starRatings = document.querySelectorAll('.rating');
-    starRatings.forEach(starRating => {
-      
-      const rating = starRating.firstElementChild.innerHTML;
-  
-      const roundedRating = Math.round(rating);
-  
-      const stars = starRating.querySelectorAll('#all-stars');
-  
-      stars.forEach((star, index) => {
-        if (index < roundedRating) {
-          star.classList.add('filled');
-        }
-      });
+  starRatings.forEach(starRating => {
+    const rating = starRating.firstElementChild.innerHTML;
+
+    const roundedRating = Math.round(rating);
+
+    const stars = starRating.querySelectorAll('#all-stars');
+
+    stars.forEach((star, index) => {
+      if (index < roundedRating) {
+        star.classList.add('filled');
+      }
     });
+  });
   return;
-  };
+}
 
 export function addPagination(results, pageNumber = 1) {
   const totalPages = Number(results.totalPages);
@@ -110,15 +108,12 @@ function renderPreviousButtons(currentPage) {
 
   return `<button
       id="pag-btn-start"
-      class="gag-btn-black pag-btn-number"
+      class="gag-btn-black pag-btn-number icon-left-two"
       type="button"
       aria-label="first page"
       page-number="1"
     >
-      <span class="icon-wrap">
-        <svg class="pag-btn-left-icon" width="20" height="20">
-          <use href="img/sprite/icons.svg#icon-left-two"></use>
-        </svg>
+      <span class="icon-wrap left-double">
       </span>
     </button>
     <button
@@ -128,9 +123,8 @@ function renderPreviousButtons(currentPage) {
       aria-label="previous page"
       page-number="${previousPageNumber}"
     >
-      <svg class="pag-btn-left-icon" width="20" height="20">
-        <use href="img/sprite/icons.svg#icon-left-one"></use>
-      </svg>
+  <span class="icon-wrap left-single">
+      </span>
     </button>`;
 }
 
@@ -149,23 +143,19 @@ function renderNextButtons(currentPage, totalPages) {
           aria-label="next page"
           page-number="${nextPageNumber}"
         >
-          <svg class="pag-btn-right-icon-next" width="20" height="20">
-            <use href="img/sprite/icons.svg#icon-arrow"></use>
-          </svg>
+         <span class="icon-wrap-right right-single">
+
+          </span>
         </button>
         
         <button
           id="pag-btn-last"
-          class="pag-btn-green pag-btn-number"
+          class="pag-btn-green pag-btn-number icon-right-two"
           type="button"
           aria-label="last page"
           page-number="${totalPages}"
         >
-          <span class="icon-container">
-            <span class="icon-wrap-right">
-              <svg class="pag-btn-right-icon" width="20" height="20">
-                <use href="img/sprite/icons.svg#icon-right-two"></use>
-              </svg>
+            <span class="icon-wrap-right right-double">
 
           </span>
         </button>`;
