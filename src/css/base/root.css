@@ -18,6 +18,7 @@
   --star-no-active:#D9D9D9;
   --modal-email: #ffffff;
   --link-icon-x: url('/img/sprite/icon-close-dark.svg');
+  --category-button-oll: rgba(5, 5, 5, 0.5);
   
 }
 :root[data-theme='dark'] {
@@ -36,7 +37,7 @@
   --modal-rating-back:#050505;
   --star-no-active:#3C3B3B;
   --modal-email: #161616;
-  
+  --category-button-oll: rgba(255, 255, 255, 0.5);
   --link-icon-x: url('/img/sprite/icon-close-x.svg');
 }
 
