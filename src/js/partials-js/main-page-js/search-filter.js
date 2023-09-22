@@ -153,14 +153,15 @@ if (currentArea !== ''|| currentIngridient !== '' || keyWord !== '' || currentCo
   currentArea = '';
   currentIngridient = '';
   keyWord = '';
-  resetFilters();
+  if (currentArea !== '' || currentIngridient !== '' || keyWord !== '' || currentCookingTime !== '') {
+    resetFilters();
+  }
 }
 
 async function hendlerClickCategories(evt) {
   if (!evt.target.classList.contains('category-button-js')) {
     return;
   }
-  console.log(currentCategory);
   if (currentArea !== ''|| currentIngridient !== '' || keyWord !== '' || currentCookingTime !== '')  {
   const defaultData = await serviceGetByKeyWord(currentCategory);
   selectors.cardsContainer.innerHTML = createAllCategCardsMarkup(
@@ -170,7 +171,9 @@ async function hendlerClickCategories(evt) {
     addPagination(defaultData);
 }
   currentCategory = evt.target.textContent;
-  resetFilters();
+  if (currentArea !== '' || currentIngridient !== '' || keyWord !== '' || currentCookingTime !== '') {
+    resetFilters();
+  }
 }
 
 async function handlerInput(evt) {
