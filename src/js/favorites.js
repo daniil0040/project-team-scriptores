@@ -106,7 +106,6 @@ function createFavoriteMarkUP() {
 
 function addPaginationFavorite(results, pageNumber = pageNumberForPog) {
     const totalPages = Math.ceil(results.length / 12)
-   
     const currentPage = pageNumber
     const firstPage = getFirstPageFAV(totalPages, currentPage);
 
@@ -126,6 +125,8 @@ function addPaginationFavorite(results, pageNumber = pageNumberForPog) {
   </div>`;
 
   document.getElementById('paginationFAV').innerHTML = paginationHtml;
+  fillStars();
+    filledHearts();
 }
 
 export function renderPreviousButtonsFAV(currentPage) {
