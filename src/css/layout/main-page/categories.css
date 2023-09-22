@@ -8,25 +8,6 @@ button {
   margin-bottom: 40px;
 }
 
-.all-categories {
-  color: var(--filter-input-pagination-color);
-  width: 176px;
-  border: 1px solid var(--all-categories);
-  border-radius: 15px;
-  padding: 14px 29px;
-  font-weight: 500;
-  transition: all var(--transition);
-}
-.all-categories:hover,
-.all-categories:focus {
-  color: var(--background-color);
-  background-color: var(--secondary-brand-color);
-}
-
-.all-categ-btn-active {
-  color: var(--background-color);
-  background-color: var(--secondary-brand-color);
-}
 
 .categories-block {
   margin-top: 24px;
