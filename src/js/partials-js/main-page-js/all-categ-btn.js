@@ -6,7 +6,10 @@ import {
 import { getAllRecipes } from '../service-api';
 import { cardsContainer } from './categories';
 import { resetPrev } from './categories';
+import { restoreLikeStates } from '../main-page-js/liked-recipe';
+import common from '../components/common.json';
 
+let recipesFavorite = JSON.parse(localStorage.getItem(common.LS_RECIPES)) ?? [];
 export const buttonAllCategories = document.querySelector('.all-categories');
 
 const auditAllCateg = function () {
@@ -16,6 +19,10 @@ const auditAllCateg = function () {
     getAllRecipes()
       .then(data => {
         cardsContainer.innerHTML = createAllCategCardsMarkup(data.results);
+
+        const likeButtons = document.querySelectorAll('.js-add');
+        // перед завантаженням перевірка чи лайкнуті картки
+        restoreLikeStates(likeButtons);
         addPagination(data);
         fillStars();
       })
