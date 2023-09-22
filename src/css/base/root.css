@@ -19,6 +19,8 @@
   --modal-email: #ffffff;
   --select-text: #0505054d;
   --link-icon-x: url('/img/sprite/icon-close-dark.svg');
+  --category-button-oll: rgba(5, 5, 5, 0.5);
+  
 }
 :root[data-theme='dark'] {
   --primary-brand-color: #ffffff;
@@ -36,6 +38,7 @@
   --modal-rating-back: #050505;
   --star-no-active: #3c3b3b;
   --modal-email: #161616;
+  --category-button-oll: rgba(255, 255, 255, 0.5);
   --select-text: #ffffff4d;
   --link-icon-x: url('/img/sprite/icon-close-x.svg');
 }

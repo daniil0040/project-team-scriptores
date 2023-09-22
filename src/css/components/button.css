@@ -33,10 +33,11 @@
 }
 
 .all-categories {
-  min-width: 174px;
+  min-width: 176px;
   min-height: 50px;
-  padding: 14px 28px;
-  color: var(--filter-input-pagination-color);
+  padding: 14px 29px;
+  font-size: 18px;
+  color: var(--category-button-oll);
   border: 1px solid var(--all-categories);
 }
 
@@ -56,8 +57,9 @@
 }
 @media only screen and (min-width: 768px) {
   .all-categories {
+    padding: 14px 28px;
     max-width: 174px;
-  }
+      }
 }
 .add-to-favorite {
   min-width: 156px;
