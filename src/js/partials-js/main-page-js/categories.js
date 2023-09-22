@@ -10,12 +10,12 @@ import common from '../components/common.json';
 import { restoreLikeStates } from '../main-page-js/liked-recipe';
 
 let recipesFavorite = JSON.parse(localStorage.getItem(common.LS_RECIPES)) ?? [];
-console.log(recipesFavorite);
 const recipes = document.querySelector('.category-list-js');
 
 export const cardsContainer = document.querySelector('.cards-container-js');
 getAllSomething('categories').then(data => {
   recipes.insertAdjacentHTML('beforeend', createCategoriesMarkup(data));
+  
   function createCategoriesMarkup() {
     return data
       .map(
@@ -27,6 +27,8 @@ getAllSomething('categories').then(data => {
       .join('');
   }
 });
+
+
 
 //Додаткові методи(функції) які також працюють
 
@@ -69,7 +71,9 @@ function categorySelection(event) {
   if (category.textContent !== prevCategory) {
     prevCategory = category.textContent;
     buttonAllCategories.classList.add('all-categories-button-active');
+    removeCatListStyle();
     if (category) {
+      
       getAllRecipes(category.textContent)
         .then(data => {
           cardsContainer.innerHTML = createAllCategCardsMarkup(data.results);
@@ -78,13 +82,14 @@ function categorySelection(event) {
           restoreLikeStates(likeButtons);
           fillStars();
           addPagination(data);
+          
           const prevActiveEl = document.querySelector('[active="true"]');
           if (prevActiveEl) {
             prevActiveEl.removeAttribute('active');
           }
 
-          console.log(likeButtons);
           category.setAttribute('active', true);
+          colorizeCategory(event)
         })
         .catch(err => {
           console.log(err);
@@ -96,3 +101,30 @@ function categorySelection(event) {
 export function resetPrev() {
   prevCategory = null;
 }
+
+function colorizeCategory(event) {
+  const catBtn = document.querySelectorAll(".category-button-js");
+
+  buttonAllCategories.classList.remove('all-categ-btn-active');
+  if (!event.target.classList.contains('category-button-js')) {
+    return;
+  }
+  const textCurrBtn = event.target.textContent;
+
+  catBtn.forEach(btn => {
+    btn.classList.remove('category-button-active')
+    if (btn.innerHTML === textCurrBtn) {
+      event.target.classList.add('category-button-active')
+    }
+  })
+  
+  return;
+
+  
+}
+export function removeCatListStyle() {
+  const catBtn = document.querySelectorAll(".category-button-js");
+    catBtn.forEach(btn => {
+      btn.classList.remove('category-button-active')
+    })
+  }

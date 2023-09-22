@@ -1,15 +1,13 @@
-const selectors = {
-    allCategBtn: document.querySelector(".all-categories-js"),
-    categoryList: document.querySelector('.category-list-js')
-}
+
+
 // класи для активних категорій
 // category-button-active
 // all-categ-btn-active
 
-let currentCategory = ""
+// let currentCategory = ""
 
 // selectors.categoryList.addEventListener('click', hendlerClickCategories);
-selectors.allCategBtn.addEventListener("click", handlerClickAllCateg)
+// selectors.allCategBtn.addEventListener("click", handlerClickAllCateg)
 
 // function hendlerClickCategories(evt) {
 //   if (!evt.target.classList.contains('category-button-js')) {
@@ -27,9 +25,11 @@ selectors.allCategBtn.addEventListener("click", handlerClickAllCateg)
 //     currentCategory = evt.target.textContent
 // }
 
-function handlerClickAllCateg(evt) {
-    if (currentCategory !== "") {
-        selectors.allCategBtn.classList.add("all-categ-btn-active")
-    }
-    currentCategory = ""
-}
+// function handlerClickAllCateg(evt) {
+//     if (currentCategory !== "") {
+//         selectors.allCategBtn.classList.add("all-categ-btn-active")
+//     }
+//     currentCategory = ""
+// }
+
+
